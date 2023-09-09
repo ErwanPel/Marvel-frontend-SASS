@@ -1,0 +1,95 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.header {
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  @include wrapper;
+
+  button {
+    padding: 2rem;
+    background-color: inherit;
+    border-radius: 50%;
+    color: $main-color;
+    border: none;
+    font-size: 2.2rem;
+    margin-right: 4rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(236, 232, 232);
+      transition: 0.5s;
+    }
+  }
+
+  img {
+    width: 20rem;
+  }
+}
+
+.menu {
+  position: relative;
+  background-color: $secondary-color;
+
+  &__icon {
+    color: $main-color;
+    font-size: 2.4rem;
+    border: 1px solid red;
+    padding: 1rem 1.3rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.bloc-menu {
+  position: absolute;
+  height: fit-content;
+  width: 15rem;
+  color: white;
+  z-index: 3;
+  right: -5rem;
+
+  &__item {
+    @include item-menu;
+  }
+}
+
+// @media (max-width: 1140px) {
+//   header {
+//     height: fit-content;
+//     padding-block: 3rem;
+//     flex-direction: column;
+//     gap: 4rem;
+//   }
+
+//   header button {
+//     font-size: 1.8rem;
+//   }
+
+//   header img {
+//     width: 17rem;
+//   }
+// }
+
+// @media (max-width: 830px) {
+//   /* header button {
+//     padding: 1rem;
+//     font-size: 1.4rem;
+//     margin-inline: 1rem;
+//   } */
+//   header > div:first-of-type {
+//     width: 100%;
+
+//     justify-content: space-around;
+//   }
+
+//   header > div:first-of-type > div {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+// }

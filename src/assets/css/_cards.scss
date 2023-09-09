@@ -1,0 +1,124 @@
+.cards-bloc {
+  display: flex;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 4rem;
+  gap: 4rem;
+}
+
+.card {
+  position: relative;
+  border: 4px solid red;
+  width: calc((100% - 8rem) / 3);
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: rgb(218, 217, 217);
+  margin-bottom: 4rem;
+  box-shadow: -4px -1px 5px rgb(154, 34, 34);
+}
+
+.card p:first-of-type {
+  font-weight: bold;
+}
+
+.card-description {
+  overflow: hidden;
+  overflow-wrap: break-word;
+  max-height: 14rem;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.card > :nth-child(2) {
+  width: 20rem;
+  text-align: center;
+}
+
+.to-complete {
+  color: rgb(229, 38, 38);
+  font-weight: bold;
+}
+
+.to-complete p {
+  font-size: 2rem;
+}
+
+.favorite {
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 2rem;
+  background-color: rgb(236, 232, 232);
+  position: absolute;
+  z-index: 1;
+}
+
+.favorite-modal {
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 2rem;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+}
+
+.heart {
+  font-size: 1.6rem;
+}
+
+.full-heart-modal {
+  background-color: rgba(229, 38, 38, 0.074);
+  color: rgba(236, 232, 232, 0.099);
+}
+
+.full-heart {
+  background-color: rgb(229, 38, 38);
+  color: rgb(236, 232, 232);
+}
+
+.card:hover {
+  background-color: rgb(238, 209, 209);
+  transition: 0.5s;
+}
+
+@media (max-width: 1140px) {
+  .card {
+    width: calc((100% - 4rem) / 2);
+  }
+}
+
+@media (max-width: 655px) {
+  .card {
+    width: 100%;
+    display: flex;
+    height: 30rem;
+    gap: 3rem;
+  }
+
+  .favorite {
+    top: 1.5rem;
+  }
+
+  .cards-bloc {
+    gap: 0rem;
+  }
+
+  .card p {
+    font-size: 1.4rem;
+  }
+}

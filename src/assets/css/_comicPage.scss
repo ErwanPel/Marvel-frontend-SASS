@@ -1,0 +1,44 @@
+main.comic-page {
+  height: 100vh;
+}
+
+.comic-bloc {
+  background-color: rgb(236, 232, 232);
+  display: flex;
+  align-items: center;
+  width: 65rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.comic-bloc > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.comic-bloc > :last-child {
+  padding: 4rem;
+  text-align: center;
+}
+
+.section-to-complete {
+  color: rgb(229, 38, 38);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+}
+
+.section-to-complete p {
+  font-size: 2.8rem;
+}
+
+@media (max-width: 830px) {
+  .comic-bloc {
+    flex-direction: column;
+    width: 34rem;
+  }
+}

@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+@mixin wrapper {
+  max-width: 122rem;
+  margin: 0 auto;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin custom-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin item-menu {
+  border: 1px solid rgb(153, 65, 65);
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-height: 5rem;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  text-align: center;
+  background-color: $background-site;
+
+  &:hover {
+    background-color: rgb(141, 92, 92);
+    cursor: pointer;
+  }
+
+  &:focus {
+    background-color: rgb(141, 92, 92);
+    border: 1px solid white;
+  }
+}
