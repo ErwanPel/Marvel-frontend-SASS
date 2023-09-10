@@ -1,11 +1,33 @@
 @use "../abstracts" as *;
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5% !important;
   background-color: $background-site;
 }
 
 main {
   height: 100%;
   @extend %wrapper;
+}
+
+h2 {
+  font-size: $titre-h2;
+  color: $white-color;
+  text-align: center;
+  padding-block: 4rem;
+}
+
+h3 {
+  font-size: $titre-h3;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+h4 {
+  font-size: $titre-h4;
+  text-align: center;
+}
+
+h5 {
+  font-size: $font-small;
 }
