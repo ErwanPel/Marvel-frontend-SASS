@@ -39,7 +39,7 @@ export default function Header({
   };
 
   return (
-    <header className="header">
+    <header>
       <Link to="/">
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>

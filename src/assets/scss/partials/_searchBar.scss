@@ -1,5 +1,4 @@
-@use "mixins" as *;
-@use "variables" as *;
+@use "../abstracts" as *;
 
 .sticky-bloc {
   position: sticky;
@@ -13,12 +12,11 @@
   border-bottom: 1px solid $main-color;
   padding: 2rem;
   background-color: $background-site;
-  margin-top: 5rem;
 
   .navbar {
     display: flex;
     gap: 5rem;
-    @include wrapper;
+    @extend %wrapper;
   }
 }
 

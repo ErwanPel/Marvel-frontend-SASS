@@ -17,11 +17,20 @@ export default function SearchBar({
 }) {
   const [hasFocus, setFocus] = useState(false);
 
+  console.log(data);
+
   // Initialization of an array for the autocomplete searchBar
   let arrayAutocomplete = [];
 
   data.results.map((item) => {
-    arrayAutocomplete.push(item.name.split("(")[0].trim());
+    // for research marvel's characters
+    if (item.name) {
+      arrayAutocomplete.push(item.name.split("(")[0].trim());
+      //for research marvel's comics
+    } else {
+      arrayAutocomplete.push(item.title.split("(")[0].trim());
+    }
+
     let sortArray = new Set(arrayAutocomplete);
     arrayAutocomplete = Array.from(sortArray);
   });

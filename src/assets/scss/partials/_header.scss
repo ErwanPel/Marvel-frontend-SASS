@@ -1,43 +1,43 @@
-@use "mixins" as *;
-@use "variables" as *;
+@use "../abstracts" as *;
 
-.header {
-  height: 15rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  @include wrapper;
+header {
+  @extend %wrapper;
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 2rem;
+}
 
-  button {
-    padding: 2rem;
-    background-color: inherit;
-    border-radius: 50%;
-    color: $main-color;
-    border: none;
-    font-size: 2.2rem;
-    margin-right: 4rem;
+header button {
+  padding: 2rem;
+  background-color: inherit;
+  border-radius: 50%;
+  color: $main-color;
+  border: none;
+  font-size: 2.2rem;
+  margin-right: 4rem;
 
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(236, 232, 232);
-      transition: 0.5s;
-    }
-  }
-
-  img {
-    width: 20rem;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(236, 232, 232);
+    transition: 0.5s;
   }
 }
 
+header img {
+  width: 20rem;
+}
+
 .menu {
-  position: relative;
-  background-color: $secondary-color;
+  @include absolute-element(5rem, calc(100% - 10rem));
 
   &__icon {
+    background-color: $secondary-color;
     color: $main-color;
     font-size: 2.4rem;
     border: 1px solid red;
     padding: 1rem 1.3rem;
+    position: relative;
 
     &:hover {
       cursor: pointer;
@@ -46,12 +46,11 @@
 }
 
 .bloc-menu {
-  position: absolute;
+  @include absolute-element(100%, calc(-50% - 1rem));
   height: fit-content;
-  width: 15rem;
+  width: 12rem;
   color: white;
   z-index: 3;
-  right: -5rem;
 
   &__item {
     @include item-menu;

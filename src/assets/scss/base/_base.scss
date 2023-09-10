@@ -1,21 +1,8 @@
-@use "index";
-@use "mixins" as *;
-@use "variables" as *;
-
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@use "../abstracts" as *;
 
 html {
   font-size: 62.5%;
   background-color: $background-site;
-}
-
-span,
-button,
-p,
-label,
-h2,
-h3 {
-  font-family: $font-site;
 }
 
 main {

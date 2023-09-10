@@ -56,7 +56,7 @@ export default function SignPage({ setSignModal, setToken }) {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Inscription</h3>
-      <div>
+      <div className="inputBloc">
         <label htmlFor="name">Ton nom :</label>
         <input
           type="text"
@@ -67,7 +67,7 @@ export default function SignPage({ setSignModal, setToken }) {
           value={username}
         />
       </div>
-      <div>
+      <div className="inputBloc">
         <label htmlFor="email">Ton email :</label>
         <input
           type="email"
@@ -78,7 +78,7 @@ export default function SignPage({ setSignModal, setToken }) {
           value={email}
         />
       </div>
-      <div>
+      <div className="inputBloc">
         <label htmlFor="password">Ton mot de passe :</label>
         <input
           type="password"
@@ -89,7 +89,7 @@ export default function SignPage({ setSignModal, setToken }) {
           value={password}
         />
       </div>
-      <div>
+      <div className="inputBloc">
         <label htmlFor="confirmPassword">Confirme mot de passe :</label>
         <input
           type="password"
@@ -100,7 +100,7 @@ export default function SignPage({ setSignModal, setToken }) {
           value={confirmPassword}
         />
       </div>
-      <div>
+      <div className="inputBloc">
         <label htmlFor="power">Quel serait ton pouvoir :</label>
         <input
           type="text"

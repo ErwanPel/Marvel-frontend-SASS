@@ -37,7 +37,7 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
     <form onSubmit={handleSubmit}>
       <h3>Connexion</h3>
 
-      <div>
+      <div className="inputBloc">
         <label htmlFor="email">Ton email :</label>
         <input
           type="email"
@@ -48,7 +48,7 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
           value={email}
         />
       </div>
-      <div>
+      <div className="inputBloc">
         <label htmlFor="password">Ton mot de passe :</label>
         <input
           type="password"

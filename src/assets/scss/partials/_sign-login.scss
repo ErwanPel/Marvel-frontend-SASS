@@ -1,20 +1,26 @@
+@use "../abstracts" as *;
+
 form {
-  display: flex;
+  @extend %flex-center;
   flex-direction: column;
-  align-items: center;
   gap: 3rem;
 }
 
-form > div {
+.inputBloc {
   display: flex;
   flex-direction: column;
   width: 30rem;
   gap: 1rem;
-}
 
-form input {
-  height: 3rem;
-  background-color: rgb(238, 209, 209);
+  input {
+    height: 3rem;
+    background-color: rgb(238, 209, 209);
+  }
+
+  input,
+  label {
+    font-size: 1.8rem;
+  }
 }
 
 form button {
@@ -22,14 +28,6 @@ form button {
   padding-block: 2rem;
   padding-inline: 4rem;
   border-radius: 5px;
-}
-
-:is(form) input,
-label {
-  font-size: 1.8rem;
-}
-
-form > button {
   font-size: 2rem;
   border: transparent;
   background-color: #3eb0f7;

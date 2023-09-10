@@ -5,15 +5,15 @@
   margin: 0 auto;
 }
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin custom-link {
   text-decoration: none;
   color: inherit;
+}
+
+@mixin absolute-element($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
 }
 
 @mixin item-menu {

@@ -9,7 +9,7 @@ import CharacterPage from "./pages/CharacterPage";
 import ComicPage from "./pages/ComicPage";
 import AllComicsPage from "./pages/AllComicsPage";
 
-import "./assets/css/App.scss";
+import "./assets/scss/App.css";
 
 import {
   faChevronRight,
