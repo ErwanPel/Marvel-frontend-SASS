@@ -1,18 +1,17 @@
 @use "../abstracts" as *;
 
 form {
-  @extend %flex-center;
-  flex-direction: column;
+  @include flex-center(column);
   gap: 3rem;
 }
 
 .inputBloc {
-  display: flex;
-  flex-direction: column;
+  @include flex-center(column);
   width: 30rem;
   gap: 1rem;
 
   input {
+    text-align: center;
     height: 3rem;
     background-color: rgb(238, 209, 209);
   }

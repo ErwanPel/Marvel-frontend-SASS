@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
-form, .modal-window, .modal-window__bloc, header {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+header, .searchbar .navbar, .comic-bloc, main {
+  max-width: 122rem;
+  margin: 0 auto !important;
 }
 
-header, .searchbar .navbar {
-  max-width: 122rem;
-  margin: 0 auto;
+.biography-comic, .card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-to-complete, p.to-complete, .cards-bloc__empty, .card__description--empty {
+  color: rgb(229, 38, 38);
+  font-weight: bold;
 }
 
 html {
@@ -17,19 +21,6 @@ html {
 
 main {
   height: 100%;
-}
-
-h2 {
-  font-size: 3.5rem;
-  color: rgb(236, 232, 232);
-  text-align: center;
-  padding-block: 4rem;
-}
-
-h3 {
-  font-size: 2rem;
-  text-align: center;
-  margin-block: 2rem;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -109,7 +100,6 @@ embed,
 figure,
 figcaption,
 footer,
-header,
 hgroup,
 menu,
 nav,
@@ -122,6 +112,14 @@ mark,
 audio,
 video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header {
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -176,105 +174,125 @@ button,
 p,
 label,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Rubik", sans-serif;
 }
 
 .cards-bloc {
-  display: flex;
+  flex-direction: row;
+  display: flex !important;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 4rem;
   gap: 4rem;
 }
+.cards-bloc__empty {
+  font-size: 2.2rem;
+  margin-top: 10%;
+}
 
 .card {
   position: relative;
-  border: 4px solid red;
+  border: 4px solid rgb(229, 38, 38);
   width: calc((100% - 8rem) / 3);
   height: 40rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   padding: 2rem;
-  gap: 2rem;
+  gap: 3rem;
   background-color: rgb(218, 217, 217);
   margin-bottom: 4rem;
-  box-shadow: -4px -1px 5px rgb(154, 34, 34);
+  padding-top: 5rem;
+  box-shadow: -4px -1px 5px rgb(229, 38, 38);
 }
-
-.card p:first-of-type {
+.card:hover {
+  background-color: rgb(238, 209, 209);
+  transition: 0.5s;
+}
+.card__bloc {
+  flex-direction: column;
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.card__title {
   font-weight: bold;
 }
-
-.card-description {
+.card__description {
   overflow: hidden;
   overflow-wrap: break-word;
   max-height: 14rem;
   -webkit-hyphens: auto;
   hyphens: auto;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+.card__description--empty {
+  font-size: 1.2rem;
 }
 
-.card > :nth-child(2) {
-  width: 20rem;
-  text-align: center;
-}
-
-.to-complete {
-  color: rgb(229, 38, 38);
-  font-weight: bold;
-}
-
-.to-complete p {
-  font-size: 2rem;
+.bloc-description {
+  line-height: 2rem;
+  max-height: 15rem;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .favorite {
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  right: 2rem;
+  color: black;
   background-color: rgb(236, 232, 232);
   position: absolute;
+  top: 2%;
+  left: 85%;
   z-index: 1;
 }
-
-.favorite-modal {
+.favorite__modal {
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  right: 2rem;
+  color: black;
   background-color: transparent;
   position: absolute;
+  top: 2%;
+  left: 85%;
   z-index: 1;
 }
-
-.heart {
-  font-size: 1.6rem;
-}
-
-.full-heart-modal {
-  background-color: rgba(229, 38, 38, 0.074);
-  color: rgba(236, 232, 232, 0.099);
-}
-
-.full-heart {
-  background-color: rgb(229, 38, 38);
+.favorite__fullheart {
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
   color: rgb(236, 232, 232);
+  background-color: rgb(229, 38, 38);
+  position: absolute;
+  top: 2%;
+  left: 85%;
+  z-index: 1;
 }
-
-.card:hover {
-  background-color: rgb(238, 209, 209);
-  transition: 0.5s;
+.favorite__icon {
+  font-size: 1.6rem;
 }
 
 @media (max-width: 1140px) {
@@ -299,87 +317,59 @@ h3 {
     font-size: 1.4rem;
   }
 }
-.bio-space {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-
-.bio-space div.wrapper {
-  display: flex;
+.biography-bloc {
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
 }
-
-.bio-card-left {
-  display: flex;
+.biography-bloc__left {
   flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   padding: 2rem;
   background-color: rgb(236, 232, 232);
   width: 34rem;
   height: -moz-fit-content;
   height: fit-content;
 }
-
-.bio-description {
-  width: 100%;
-}
-
-.bio-description p {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.bio-card-right {
-  display: flex;
+.biography-bloc__left div {
   flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.biography-bloc__left div p {
+  font-size: 1.4rem;
+  text-align: justify;
+  line-height: 2rem;
+}
+.biography-bloc__right {
+  flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   width: 60rem;
   padding: 2rem;
   background-color: rgb(236, 232, 232);
 }
-
-.bio-card-right > div {
+.biography-bloc__right div {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.comic-bio-card {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  width: calc((100% - 8rem) / 4);
-  text-align: center;
-  gap: 1rem;
-  height: 14rem;
-  overflow: hidden;
+p.to-complete {
+  font-size: 1.4rem;
 }
 
-.comic-bio-card p {
-  font-size: 1.2rem;
-}
-
-.comic-bio-card:hover {
-  transition: 0.5s;
-  background-color: rgb(238, 209, 209);
-}
-
-.no-comics {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-@media (max-width: 1140px) {
-  .bio-card-right {
-    width: 34rem;
-  }
-  .comic-bio-card {
-    width: calc((100% - 4rem) / 2);
-  }
-}
 @media (max-width: 830px) {
   .bio-space div.wrapper {
     display: flex;
@@ -390,42 +380,32 @@ h3 {
     width: 100%;
   }
 }
-main.comic-page {
-  height: 100vh;
-}
-
 .comic-bloc {
-  background-color: rgb(236, 232, 232);
-  display: flex;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
   align-items: center;
+  background-color: rgb(236, 232, 232);
   width: 65rem;
-  margin: 0 auto;
   padding: 2rem;
 }
-
-.comic-bloc > div {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-}
-
-.comic-bloc > :last-child {
+.comic-bloc p {
   padding: 4rem;
-  text-align: center;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  text-align: justify;
 }
 
 .section-to-complete {
-  color: rgb(229, 38, 38);
-  display: flex;
   flex-direction: column;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  height: 100%;
+  margin-top: 10%;
 }
-
 .section-to-complete p {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
 }
 
 @media (max-width: 830px) {
@@ -441,8 +421,10 @@ main.comic-page {
 }
 
 .searchbar {
-  display: flex;
+  flex-direction: row;
+  display: flex !important;
   justify-content: space-around;
+  align-items: center;
   border-bottom: 1px solid rgb(229, 38, 38);
   padding: 2rem;
   background-color: rgb(23, 22, 22);
@@ -453,7 +435,9 @@ main.comic-page {
 }
 
 .navsearch {
-  display: flex;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
 }
@@ -511,7 +495,9 @@ main.comic-page {
 }
 
 .navpage {
-  display: flex;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
 }
@@ -564,8 +550,12 @@ main.comic-page {
 }
 header {
   flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   padding: 3rem;
   gap: 2rem;
+  position: relative;
 }
 
 header button {
@@ -645,6 +635,10 @@ header img {
   position: absolute;
   top: 0;
   left: 0;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 .modal-window__bloc {
   padding: 2rem;
@@ -653,6 +647,9 @@ header img {
   z-index: 5;
   border-radius: 10px;
   flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 .modal-window__close {
   align-self: flex-end;
@@ -660,16 +657,22 @@ header img {
 
 form {
   flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   gap: 3rem;
 }
 
 .inputBloc {
-  display: flex;
   flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   width: 30rem;
   gap: 1rem;
 }
 .inputBloc input {
+  text-align: center;
   height: 3rem;
   background-color: rgb(238, 209, 209);
 }
@@ -691,4 +694,63 @@ form button {
 .error-message {
   color: red;
   margin-top: 2rem;
+}
+
+.comics-window {
+  width: 100%;
+}
+.comics-window .to-complete {
+  margin: 0 auto;
+}
+
+.biography-comic {
+  flex-direction: column;
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  width: calc((100% - 8rem) / 4);
+  text-align: center;
+  gap: 1rem;
+  height: 14rem;
+  overflow: hidden;
+}
+.biography-comic:hover {
+  transition: 0.5s;
+  background-color: rgb(238, 209, 209);
+}
+.biography-comic h5 {
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+@media (max-width: 1140px) {
+  .bio-card-right {
+    width: 34rem;
+  }
+  .comic-bio-card {
+    width: calc((100% - 4rem) / 2);
+  }
+}
+h2 {
+  font-size: 3.5rem;
+  color: rgb(236, 232, 232);
+  text-align: center;
+  padding-block: 4rem;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=App.css.map */

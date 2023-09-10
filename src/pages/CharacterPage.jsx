@@ -39,17 +39,17 @@ export default function BioCharacterPage() {
   return isLoading ? (
     <p>Downloading...</p>
   ) : (
-    <main className="bio-space">
+    <main>
       <h2>{characterData.name}</h2>
-      <div className="wrapper">
-        <div className="bio-card-left">
+      <div className="biography-bloc">
+        <div className="biography-bloc__left">
           {!characterData.thumbnail.path.match("image_not_available") && (
             <img
               src={`${characterData.thumbnail.path}/portrait_uncanny.${characterData.thumbnail.extension}`}
               alt={`image de ${characterData.name}`}
             />
           )}
-          <div className="bio-description">
+          <div>
             <h3>Description</h3>
             {characterData.description ? (
               <p className="bio-description">{characterData.description}</p>
@@ -63,7 +63,7 @@ export default function BioCharacterPage() {
             )}
           </div>
         </div>
-        <div className="bio-card-right">
+        <div className="biography-bloc__right">
           <h3>Comics</h3>
           <ComicsByCharacter characterId={characterId} />
         </div>

@@ -7,17 +7,5 @@ html {
 
 main {
   height: 100%;
-}
-
-h2 {
-  font-size: 3.5rem;
-  color: rgb(236, 232, 232);
-  text-align: center;
-  padding-block: 4rem;
-}
-
-h3 {
-  font-size: 2rem;
-  text-align: center;
-  margin-block: 2rem;
+  @extend %wrapper;
 }

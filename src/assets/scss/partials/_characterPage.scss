@@ -1,81 +1,50 @@
-.bio-space {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
+@use "../abstracts" as *;
 
-.bio-space div.wrapper {
-  display: flex;
+.biography-bloc {
+  @include flex-center(row);
+  align-items: flex-start;
   gap: 4rem;
-}
 
-.bio-card-left {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background-color: rgb(236, 232, 232);
-  width: 34rem;
-  height: fit-content;
-}
-
-.bio-description {
-  width: 100%;
-}
-.bio-description p {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.bio-card-right {
-  display: flex;
-  flex-direction: column;
-  width: 60rem;
-  padding: 2rem;
-  background-color: rgb(236, 232, 232);
-}
-
-.bio-card-right > div {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.comic-bio-card {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  width: calc((100% - 8rem) / 4);
-  text-align: center;
-  gap: 1rem;
-  height: 14rem;
-  overflow: hidden;
-}
-
-.comic-bio-card p {
-  font-size: 1.2rem;
-}
-
-.comic-bio-card:hover {
-  transition: 0.5s;
-  background-color: rgb(238, 209, 209);
-}
-
-.no-comics {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-@media (max-width: 1140px) {
-  .bio-card-right {
+  &__left {
+    @include flex-center(column);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: rgb(236, 232, 232);
     width: 34rem;
+    height: fit-content;
+
+    & div {
+      @include flex-center(column);
+      gap: 3rem;
+
+      p {
+        font-size: $font-standard;
+        text-align: justify;
+        line-height: 2rem;
+      }
+    }
   }
-  .comic-bio-card {
-    width: calc((100% - 4rem) / 2);
+
+  &__right {
+    @include flex-center(column);
+
+    gap: 2rem;
+    width: 60rem;
+    padding: 2rem;
+    background-color: rgb(236, 232, 232);
+
+    & div {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
   }
+}
+
+p.to-complete {
+  @extend %to-complete;
+  font-size: $font-standard;
 }
 
 @media (max-width: 830px) {

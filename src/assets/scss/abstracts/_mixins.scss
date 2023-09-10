@@ -1,14 +1,5 @@
 @use "variables" as *;
-
-@mixin wrapper {
-  max-width: 122rem;
-  margin: 0 auto;
-}
-
-@mixin custom-link {
-  text-decoration: none;
-  color: inherit;
-}
+@use "placeholders" as *;
 
 @mixin absolute-element($top, $left) {
   position: absolute;
@@ -16,6 +7,29 @@
   left: $left;
 }
 
+@mixin flex-center($direction: row) {
+  flex-direction: $direction;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-around($direction: row) {
+  flex-direction: $direction;
+  display: flex !important;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex-between($direction: row) {
+  flex-direction: $direction;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// This mixin is used in the header and the search bar for
+// the drop-down menu (user menu and the autocomplete research bar)
 @mixin item-menu {
   border: 1px solid rgb(153, 65, 65);
   padding: 1.5rem;
@@ -40,4 +54,16 @@
     background-color: rgb(141, 92, 92);
     border: 1px solid white;
   }
+}
+
+@mixin favorite-item($background, $color: black) {
+  @include flex-center(row);
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: $color;
+  background-color: $background;
+  @include absolute-element(2%, 85%);
+  z-index: 1;
 }

@@ -7,8 +7,7 @@
 }
 
 .searchbar {
-  display: flex;
-  justify-content: space-around;
+  @include flex-around(row);
   border-bottom: 1px solid $main-color;
   padding: 2rem;
   background-color: $background-site;
@@ -21,8 +20,7 @@
 }
 
 .navsearch {
-  display: flex;
-  align-items: center;
+  @include flex-center;
   gap: 2rem;
 
   label {
@@ -66,8 +64,7 @@
 }
 
 .navpage {
-  display: flex;
-  align-items: center;
+  @include flex-center;
   gap: 3rem;
 
   select {

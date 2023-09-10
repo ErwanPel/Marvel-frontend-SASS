@@ -1,15 +1,14 @@
-%flex-center {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
 %wrapper {
   max-width: 122rem;
-  margin: 0 auto;
+  margin: 0 auto !important;
 }
 
 %custom-link {
   text-decoration: none;
   color: inherit;
+}
+
+%to-complete {
+  color: rgb(229, 38, 38);
+  font-weight: bold;
 }

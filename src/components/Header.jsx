@@ -39,7 +39,7 @@ export default function Header({
   };
 
   return (
-    <header>
+    <header className="header">
       <Link to="/">
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
@@ -68,7 +68,7 @@ export default function Header({
               </>
             ) : (
               <div className="bloc-menu__item" onClick={removeToken}>
-                DECONNEXION
+                Deconnexion
               </div>
             )}
           </div>

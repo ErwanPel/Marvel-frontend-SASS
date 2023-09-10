@@ -26,19 +26,15 @@ export default function ComicsByCharacter({ characterId }) {
   return isLoading ? (
     <p>Downloading...</p>
   ) : (
-    <div>
-      {isLoading ? (
-        <p>Downloading...</p>
-      ) : comicData.comics.length === 0 ? (
-        <div className="no-comics">
-          <p className="to-complete">Pas de comics</p>
-        </div>
+    <div className="comics-window">
+      {comicData?.comics === undefined ? (
+        <p className="to-complete">Pas de comics</p>
       ) : (
         comicData.comics.map((comic) => {
           return (
             <Link
               key={comic._id}
-              className="comic-bio-card"
+              className="biography-comic"
               to={`/comic/${comic._id}`}
               state={{ data: comic }}
             >
@@ -46,7 +42,7 @@ export default function ComicsByCharacter({ characterId }) {
                 src={`${comic.thumbnail.path}/portrait_small.${comic.thumbnail.extension}`}
                 alt=""
               />{" "}
-              <p>{comic.title}</p>
+              <h5>{comic.title}</h5>
             </Link>
           );
         })

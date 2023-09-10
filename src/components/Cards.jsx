@@ -128,11 +128,8 @@ export default function Cards({
   };
 
   return (
-    <main
-      className="wrapper cards-bloc"
-      onClick={() => setAutocompleteList(false)}
-    >
-      {data.results.length > 0 ? (
+    <main className="cards-bloc" onClick={() => setAutocompleteList(false)}>
+      {data.results ? (
         data.results.map((element) => {
           let picture = `${element.thumbnail.path}/portrait_large.${element.thumbnail.extension}`;
 
@@ -145,14 +142,10 @@ export default function Cards({
             >
               <div
                 className={
-                  ((loginModal || signModal) &&
-                    "favorite-modal" &&
-                    (cookiesSort.indexOf(element._id) === -1
-                      ? "favorite-modal"
-                      : "favorite-modal  full-heart-modal")) ||
+                  ((loginModal || signModal) && "favorite__modal") ||
                   (cookiesSort.indexOf(element._id) === -1
                     ? "favorite"
-                    : "favorite  full-heart")
+                    : "favorite__fullheart")
                 }
                 onClick={
                   token
@@ -160,20 +153,29 @@ export default function Cards({
                     : displayModal
                 }
               >
-                <FontAwesomeIcon className="heart" icon="fa-regular fa-heart" />
+                <FontAwesomeIcon
+                  className="favorite__icon"
+                  icon="fa-regular fa-heart"
+                />
               </div>
-              <p>{element.name || element.title}</p>
-              {picture && <img src={picture} alt="picture of a hero" />}
-              {element.description ? (
-                <p className="card-description">{element.description}</p>
-              ) : (
-                <p className="to-complete">Need to be completed !</p>
-              )}
+              <div className="card__bloc">
+                <h4 className="card__title">{element.name || element.title}</h4>
+                {picture && <img src={picture} alt="picture of a hero" />}
+              </div>
+              <div className="bloc-description">
+                {element.description ? (
+                  <p className="card__description">{element.description}</p>
+                ) : (
+                  <p className="card__description--empty">
+                    Need to be completed !
+                  </p>
+                )}
+              </div>
             </Link>
           );
         })
       ) : (
-        <p className="section-to-complete">Sorry but nothing is find</p>
+        <p className="cards-bloc__empty">Sorry but nothing is find</p>
       )}
     </main>
   );

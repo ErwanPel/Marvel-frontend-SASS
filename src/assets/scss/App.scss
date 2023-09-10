@@ -1,3 +1,25 @@
-@use "./abstracts";
+@use "./abstracts" as *;
 @use "./base";
 @use "./partials";
+
+h2 {
+  font-size: $titre-h2;
+  color: $white-color;
+  text-align: center;
+  padding-block: 4rem;
+}
+
+h3 {
+  font-size: $titre-h3;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+h4 {
+  font-size: $titre-h4;
+  text-align: center;
+}
+
+h5 {
+  font-size: $font-small;
+}

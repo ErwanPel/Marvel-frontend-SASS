@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+.comics-window {
+  width: 100%;
+
+  .to-complete {
+    margin: 0 auto;
+  }
+}
+
+.biography-comic {
+  @include flex-around(column);
+  padding: 1rem;
+  border: 1px solid black;
+  width: calc((100% - 8rem) / 4);
+  text-align: center;
+  gap: 1rem;
+  height: 14rem;
+  overflow: hidden;
+  @extend %custom-link;
+
+  &:hover {
+    transition: 0.5s;
+    background-color: rgb(238, 209, 209);
+  }
+
+  h5 {
+    height: 2.5rem;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 1140px) {
+  .bio-card-right {
+    width: 34rem;
+  }
+  .comic-bio-card {
+    width: calc((100% - 4rem) / 2);
+  }
+}

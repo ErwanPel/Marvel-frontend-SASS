@@ -38,7 +38,7 @@ export default function ComicPage() {
   return isLoading ? (
     <p>Downloading...</p>
   ) : (
-    <main className="comic-page">
+    <main>
       {comicData.description ? (
         <>
           <h2>{comicData.title}</h2>
@@ -52,7 +52,10 @@ export default function ComicPage() {
                 />
               </div>
             )}
-            <p>{comicData.description}</p>
+            <div>
+              <h3>Description</h3>
+              <p>{comicData.description}</p>
+            </div>
           </div>
         </>
       ) : (
