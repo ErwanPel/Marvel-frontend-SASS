@@ -102,7 +102,21 @@ function App() {
             />
           }
         />
-        <Route path="/comic/:comicId" element={<ComicPage />} />
+        <Route
+          path="/comic/:comicId"
+          element={
+            <ComicPage
+              loginModal={loginModal}
+              signModal={signModal}
+              token={token}
+              favoriteChar={favoriteChar}
+              setFavoriteChar={setFavoriteChar}
+              setLoginModal={setLoginModal}
+              autocompleteList={autocompleteList}
+              setAutocompleteList={setAutocompleteList}
+            />
+          }
+        />
       </Routes>
       {loginModal && (
         <Modal

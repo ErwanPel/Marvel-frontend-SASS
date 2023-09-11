@@ -483,12 +483,73 @@ p.to-complete {
   background-color: #d1cfc7;
   width: 65rem;
   padding: 2rem;
+  position: relative;
 }
 .comic-bloc p {
   padding: 3rem;
   line-height: 2rem;
   font-size: 1.4rem;
   text-align: justify;
+}
+.comic-bloc .favorite {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: black;
+  background-color: rgb(236, 232, 232);
+  position: absolute;
+  top: 2rem;
+  left: calc(100% - 5rem);
+}
+.comic-bloc .favorite:hover {
+  cursor: pointer;
+}
+.comic-bloc .favorite__modal {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: black;
+  background-color: transparent;
+  position: absolute;
+  top: 2rem;
+  left: calc(100% - 5rem);
+}
+.comic-bloc .favorite__modal:hover {
+  cursor: pointer;
+}
+.comic-bloc .favorite__fullheart {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: rgb(236, 232, 232);
+  background-color: rgb(229, 38, 38);
+  position: absolute;
+  top: 2rem;
+  left: calc(100% - 5rem);
+}
+.comic-bloc .favorite__fullheart:hover {
+  cursor: pointer;
+}
+.comic-bloc .favorite__icon {
+  font-size: 1.6rem;
 }
 
 .section-to-complete {

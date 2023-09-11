@@ -6,12 +6,30 @@
   background-color: $card-color;
   width: 65rem;
   padding: 2rem;
+  position: relative;
 
   p {
     padding: 3rem;
     line-height: 2rem;
     font-size: $font-standard;
     text-align: justify;
+  }
+
+  .favorite {
+    @include favorite-item($white-color);
+    @include absolute-element(2rem, calc(100% - 5rem));
+
+    &__modal {
+      @include favorite-item(transparent);
+      @include absolute-element(2rem, calc(100% - 5rem));
+    }
+    &__fullheart {
+      @include favorite-item($main-color, $white-color);
+      @include absolute-element(2rem, calc(100% - 5rem));
+    }
+    &__icon {
+      font-size: 1.6rem;
+    }
   }
 }
 

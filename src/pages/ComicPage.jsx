@@ -1,8 +1,20 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
+import { displayModal } from "../assets/utils/displayModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function ComicPage() {
+export default function ComicPage({
+  favoriteChar,
+  setFavoriteChar,
+  token,
+  loginModal,
+  signModal,
+  favoriteComics,
+  setFavoriteComics,
+  setLoginModal,
+}) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,8 +34,6 @@ export default function ComicPage() {
     }
   };
 
-  let picture = "";
-
   useEffect(() => {
     if (location.state) {
       setComicData(location.state.data);
@@ -32,6 +42,8 @@ export default function ComicPage() {
       fetchData();
     }
   }, []);
+
+  console.log(token);
 
   return isLoading ? (
     <p>Downloading...</p>
@@ -53,6 +65,36 @@ export default function ComicPage() {
             <div>
               <h3>Description</h3>
               <p>{comicData.description}</p>
+            </div>
+            <div
+              className={
+                ((loginModal || signModal) && "favorite__modal") ||
+                (favoriteChar.indexOf(comicData._id) === -1
+                  ? "favorite"
+                  : "favorite__fullheart")
+              }
+              onClick={
+                token
+                  ? (event) =>
+                      handleFav(
+                        favoriteComics,
+                        setFavoriteComics,
+                        favoriteChar,
+                        setFavoriteChar,
+                        comicData._id,
+                        comicData.name,
+                        deleteFav,
+                        sendFav,
+                        token,
+                        event
+                      )
+                  : (event) => displayModal(setLoginModal, loginModal, event)
+              }
+            >
+              <FontAwesomeIcon
+                className="favorite__icon"
+                icon="fa-regular fa-heart"
+              />
             </div>
           </div>
         </>
