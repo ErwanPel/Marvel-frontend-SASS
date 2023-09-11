@@ -28,22 +28,24 @@
   align-items: center;
 }
 
+//This mixin write text in one line and add ellipsis at the end
+@mixin ellipsis-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 // This mixin is used in the header and the search bar for
 // the drop-down menu (user menu and the autocomplete research bar)
 @mixin item-menu {
   border: 1px solid rgb(153, 65, 65);
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-height: 5rem;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  text-align: center;
   background-color: $background-site;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.79rem;
+  height: fit-content;
+  @include ellipsis-line;
 
   &:hover {
     background-color: rgb(141, 92, 92);
@@ -52,11 +54,23 @@
 
   &:focus {
     background-color: rgb(141, 92, 92);
-    border: 1px solid white;
+    border: 1px solid $white-color;
   }
 }
 
+@mixin max-bloc-text-size($line-heigth, $number-line) {
+  line-height: $line-heigth;
+  max-height: calc($line-heigth * $number-line);
+  overflow: hidden;
+}
+
+// This mixin change the color of the favorite item if the
+// click on for favorite or not.
+// If modal is on screen, this mixin transform the favorite
+// color in transparency
 @mixin favorite-item($background, $color: black) {
+  @include absolute-element(1rem, calc(100% - 4rem));
+  z-index: 1;
   @include flex-center(row);
   border: 1px solid black;
   height: 3rem;
@@ -64,6 +78,10 @@
   border-radius: 50%;
   color: $color;
   background-color: $background;
-  @include absolute-element(2%, 85%);
-  z-index: 1;
+}
+
+@mixin white-transition-hover {
+  cursor: pointer;
+  background-color: $white-color;
+  transition: 0.5s;
 }

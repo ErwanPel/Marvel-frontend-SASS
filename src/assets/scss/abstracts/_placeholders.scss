@@ -3,11 +3,13 @@
   margin: 0 auto !important;
 }
 
+// Remove the normal appearance of the link
 %custom-link {
   text-decoration: none;
   color: inherit;
 }
 
+// This placeholder is use for message if missing text or content
 %to-complete {
   color: rgb(229, 38, 38);
   font-weight: bold;

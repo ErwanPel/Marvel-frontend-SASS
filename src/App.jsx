@@ -17,6 +17,7 @@ import {
   faAnglesRight,
   faAnglesLeft,
   faBars,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Modal from "./components/Modal";
@@ -27,7 +28,8 @@ library.add(
   faAnglesRight,
   faAnglesLeft,
   faHeart,
-  faBars
+  faBars,
+  faXmark
 );
 
 function App() {

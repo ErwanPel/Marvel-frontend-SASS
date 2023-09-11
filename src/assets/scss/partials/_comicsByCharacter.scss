@@ -21,12 +21,11 @@
 
   &:hover {
     transition: 0.5s;
-    background-color: rgb(238, 209, 209);
+    background-color: $transition-color;
   }
 
   h5 {
-    height: 2.4rem;
-    overflow: hidden;
+    @include max-bloc-text-size(1.6rem, 2);
   }
 }
 

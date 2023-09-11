@@ -9,26 +9,24 @@
     @include flex-center(column);
     gap: 2rem;
     padding: 2rem;
-    background-color: rgb(236, 232, 232);
+    padding-top: 6rem;
+    background-color: $card-color;
     width: 34rem;
-    height: fit-content;
 
     & div {
       @include flex-center(column);
-      gap: 3rem;
+      gap: 2rem;
 
       p {
         font-size: $font-standard;
         text-align: justify;
-        line-height: 2rem;
+        line-height: 2.2rem;
       }
     }
   }
 
   &__right {
     @include flex-center(column);
-
-    gap: 2rem;
     width: 60rem;
     padding: 2rem;
     background-color: rgb(236, 232, 232);

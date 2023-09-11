@@ -1,5 +1,6 @@
 import SignPage from "../pages/SignPage";
 import LoginPage from "../pages/LoginPage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Modal({
   loginModal,
@@ -26,14 +27,18 @@ export default function Modal({
         onClick={(event) => event.stopPropagation()}
       >
         {signModal && (
-          <button className="modal-window__close" onClick={closeSignModal}>
-            X
-          </button>
+          <FontAwesomeIcon
+            icon="xmark"
+            className="modal-window__close"
+            onClick={closeSignModal}
+          />
         )}
         {loginModal && (
-          <button className="modal-window__close" onClick={closeLoginModal}>
-            X
-          </button>
+          <FontAwesomeIcon
+            icon="xmark"
+            className="modal-window__close"
+            onClick={closeLoginModal}
+          />
         )}
         {signModal && (
           <SignPage

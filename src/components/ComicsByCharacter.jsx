@@ -11,7 +11,6 @@ export default function ComicsByCharacter({ characterId }) {
       const response = await axios.get(
         `https://site--marvel-backend--fwddjdqr85yq.code.run/comics/${characterId}`
       );
-
       setComicData(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -28,6 +27,8 @@ export default function ComicsByCharacter({ characterId }) {
   ) : (
     <div className="comics-window">
       {comicData?.comics === undefined ? (
+        <p className="to-complete">Oups there a technical problem</p>
+      ) : comicData?.comics.length === 0 ? (
         <p className="to-complete">Pas de comics</p>
       ) : (
         comicData.comics.map((comic) => {

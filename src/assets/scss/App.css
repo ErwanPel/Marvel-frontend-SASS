@@ -227,10 +227,9 @@ h4 {
   position: relative;
   border: 4px solid rgb(229, 38, 38);
   width: calc((100% - 8rem) / 3);
-  height: 45rem;
+  height: 43rem;
   padding: 2rem;
-  gap: 3rem;
-  background-color: rgb(218, 217, 217);
+  background-color: #d1cfc7;
   margin-bottom: 4rem;
   padding-top: 5rem;
   box-shadow: -4px -1px 5px rgb(229, 38, 38);
@@ -248,32 +247,32 @@ h4 {
   margin-bottom: 4rem;
 }
 .card__title {
+  line-height: 2.2rem;
   font-weight: bold;
 }
 .card__description {
-  overflow: hidden;
-  overflow-wrap: break-word;
-  max-height: 14rem;
-  -webkit-hyphens: auto;
-  hyphens: auto;
   font-size: 1.4rem;
+  line-height: 2.2rem;
+  max-height: 11rem;
+  overflow: hidden;
   text-align: justify;
 }
 .card__description--empty {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .bloc-description {
-  line-height: 2rem;
-  max-height: 15rem;
   flex-direction: row;
   display: flex !important;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .favorite {
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 4rem);
+  z-index: 1;
   flex-direction: row;
   display: flex !important;
   justify-content: center;
@@ -284,12 +283,12 @@ h4 {
   border-radius: 50%;
   color: black;
   background-color: rgb(236, 232, 232);
-  position: absolute;
-  top: 2%;
-  left: 85%;
-  z-index: 1;
 }
 .favorite__modal {
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 4rem);
+  z-index: 1;
   flex-direction: row;
   display: flex !important;
   justify-content: center;
@@ -300,12 +299,12 @@ h4 {
   border-radius: 50%;
   color: black;
   background-color: transparent;
-  position: absolute;
-  top: 2%;
-  left: 85%;
-  z-index: 1;
 }
 .favorite__fullheart {
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 4rem);
+  z-index: 1;
   flex-direction: row;
   display: flex !important;
   justify-content: center;
@@ -316,37 +315,11 @@ h4 {
   border-radius: 50%;
   color: rgb(236, 232, 232);
   background-color: rgb(229, 38, 38);
-  position: absolute;
-  top: 2%;
-  left: 85%;
-  z-index: 1;
 }
 .favorite__icon {
   font-size: 1.6rem;
 }
 
-@media (max-width: 1140px) {
-  .card {
-    width: calc((100% - 4rem) / 2);
-  }
-}
-@media (max-width: 655px) {
-  .card {
-    width: 100%;
-    display: flex;
-    height: 30rem;
-    gap: 3rem;
-  }
-  .favorite {
-    top: 1.5rem;
-  }
-  .cards-bloc {
-    gap: 0rem;
-  }
-  .card p {
-    font-size: 1.4rem;
-  }
-}
 .biography-bloc {
   flex-direction: row;
   display: flex !important;
@@ -362,29 +335,27 @@ h4 {
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background-color: rgb(236, 232, 232);
+  padding-top: 6rem;
+  background-color: #d1cfc7;
   width: 34rem;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 .biography-bloc__left div {
   flex-direction: column;
   display: flex !important;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 .biography-bloc__left div p {
   font-size: 1.4rem;
   text-align: justify;
-  line-height: 2rem;
+  line-height: 2.2rem;
 }
 .biography-bloc__right {
   flex-direction: column;
   display: flex !important;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   width: 60rem;
   padding: 2rem;
   background-color: rgb(236, 232, 232);
@@ -415,12 +386,12 @@ p.to-complete {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  background-color: rgb(236, 232, 232);
+  background-color: #d1cfc7;
   width: 65rem;
   padding: 2rem;
 }
 .comic-bloc p {
-  padding: 4rem;
+  padding: 3rem;
   line-height: 2rem;
   font-size: 1.4rem;
   text-align: justify;
@@ -479,21 +450,31 @@ p.to-complete {
   text-align: center;
   width: 30rem;
   height: 3rem;
+  background-color: #d1cfc7;
   font-size: 1.6rem;
+}
+.navsearch input::-moz-placeholder {
+  color: black;
+  opacity: 1;
+}
+.navsearch input::placeholder {
+  color: black;
+  opacity: 1;
 }
 .navsearch__autocomplete-bloc {
   position: relative;
-  border: 1px solid orange;
+  border: 1px solid rgb(153, 65, 65);
   width: 30rem;
 }
 .navsearch__autocomplete-bloc .autocomplete-list {
   width: 100%;
-  max-height: 20rem;
-  overflow: hidden;
-  overflow-y: scroll;
-  color: white;
+  border: 1px solid rgb(153, 65, 65);
+  max-height: 21rem;
+  color: rgb(236, 232, 232);
   position: absolute;
   z-index: 4;
+  overflow: hidden;
+  overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
@@ -502,18 +483,16 @@ p.to-complete {
 }
 .navsearch__autocomplete-bloc .item {
   border: 1px solid rgb(153, 65, 65);
+  background-color: rgb(23, 22, 22);
   padding: 1.5rem;
+  text-align: center;
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 1.79rem;
+  height: -moz-fit-content;
+  height: fit-content;
   overflow: hidden;
-  overflow-wrap: break-word;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-height: 5rem;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  text-align: center;
-  background-color: rgb(23, 22, 22);
 }
 .navsearch__autocomplete-bloc .item:hover {
   background-color: rgb(141, 92, 92);
@@ -521,7 +500,7 @@ p.to-complete {
 }
 .navsearch__autocomplete-bloc .item:focus {
   background-color: rgb(141, 92, 92);
-  border: 1px solid white;
+  border: 1px solid rgb(236, 232, 232);
 }
 
 .navpage {
@@ -583,7 +562,7 @@ header {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 2.5rem;
   gap: 2rem;
   position: relative;
 }
@@ -595,7 +574,7 @@ header button {
   color: rgb(229, 38, 38);
   border: none;
   font-size: 2.2rem;
-  margin-right: 4rem;
+  margin-inline: 4rem;
 }
 header button:hover {
   cursor: pointer;
@@ -616,38 +595,36 @@ header img {
   background-color: rgb(57, 57, 57);
   color: rgb(229, 38, 38);
   font-size: 2.4rem;
-  border: 1px solid red;
+  border: 1px solid rgb(229, 38, 38);
   padding: 1rem 1.3rem;
   position: relative;
 }
 .menu__icon:hover {
   cursor: pointer;
+  background-color: rgb(236, 232, 232);
+  transition: 0.5s;
 }
 
 .bloc-menu {
   position: absolute;
   top: 100%;
   left: calc(-50% - 1rem);
-  height: -moz-fit-content;
-  height: fit-content;
   width: 12rem;
-  color: white;
+  color: rgb(236, 232, 232);
   z-index: 3;
 }
 .bloc-menu__item {
   border: 1px solid rgb(153, 65, 65);
+  background-color: rgb(23, 22, 22);
   padding: 1.5rem;
+  text-align: center;
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 1.79rem;
+  height: -moz-fit-content;
+  height: fit-content;
   overflow: hidden;
-  overflow-wrap: break-word;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-height: 5rem;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  text-align: center;
-  background-color: rgb(23, 22, 22);
 }
 .bloc-menu__item:hover {
   background-color: rgb(141, 92, 92);
@@ -655,7 +632,7 @@ header img {
 }
 .bloc-menu__item:focus {
   background-color: rgb(141, 92, 92);
-  border: 1px solid white;
+  border: 1px solid rgb(236, 232, 232);
 }
 
 .modal-window {
@@ -672,7 +649,7 @@ header img {
 }
 .modal-window__bloc {
   padding: 2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(236, 232, 232);
   width: 40rem;
   z-index: 5;
   border-radius: 10px;
@@ -683,6 +660,14 @@ header img {
 }
 .modal-window__close {
   align-self: flex-end;
+  font-size: 2.6rem;
+}
+.modal-window__close:hover {
+  cursor: pointer;
+  color: #c56161;
+}
+.modal-window__close :active {
+  opacity: 0.5;
 }
 
 form {
@@ -751,7 +736,8 @@ form button {
   background-color: rgb(238, 209, 209);
 }
 .biography-comic h5 {
-  height: 2.4rem;
+  line-height: 1.6rem;
+  max-height: 3.2rem;
   overflow: hidden;
 }
 

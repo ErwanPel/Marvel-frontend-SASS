@@ -3,12 +3,12 @@
 .comic-bloc {
   @include flex-center(row);
   @extend %wrapper;
-  background-color: rgb(236, 232, 232);
+  background-color: $card-color;
   width: 65rem;
   padding: 2rem;
 
   p {
-    padding: 4rem;
+    padding: 3rem;
     line-height: 2rem;
     font-size: $font-standard;
     text-align: justify;
