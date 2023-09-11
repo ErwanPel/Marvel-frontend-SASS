@@ -1,10 +1,22 @@
 import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
+import { displayModal } from "../assets/utils/displayModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import ComicsByCharacter from "../components/ComicsByCharacter";
 
-export default function BioCharacterPage() {
+export default function CharacterPage({
+  favoriteChar,
+  setFavoriteChar,
+  token,
+  loginModal,
+  signModal,
+  favoriteComics,
+  setFavoriteComics,
+  setLoginModal,
+}) {
   const [characterData, setCharacterData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,24 +29,24 @@ export default function BioCharacterPage() {
         `https://site--marvel-backend--fwddjdqr85yq.code.run/character/${characterId}`
       );
       setCharacterData(response.data);
+
       setIsLoading(false);
     } catch (error) {
       console.log(error.response);
     }
   };
 
-  let picture = "";
-
   useEffect(() => {
     if (location.state) {
-      console.log("if");
       setCharacterData(location.state.data);
       setIsLoading(false);
     } else {
-      console.log("else");
       fetchData();
     }
+    console.log(characterData);
   }, []);
+
+  console.log("fav char", favoriteChar, signModal, loginModal);
 
   return isLoading ? (
     <p>Downloading...</p>
@@ -43,6 +55,36 @@ export default function BioCharacterPage() {
       <h2>{characterData.name}</h2>
       <div className="biography-bloc">
         <div className="biography-bloc__left">
+          <div
+            className={
+              ((loginModal || signModal) && "favorite__modal") ||
+              (favoriteChar.indexOf(characterData._id) === -1
+                ? "favorite"
+                : "favorite__fullheart")
+            }
+            onClick={
+              token
+                ? (event) =>
+                    handleFav(
+                      favoriteComics,
+                      setFavoriteComics,
+                      favoriteChar,
+                      setFavoriteChar,
+                      characterData._id,
+                      characterData.name,
+                      deleteFav,
+                      sendFav,
+                      token,
+                      event
+                    )
+                : (event) => displayModal(setLoginModal, loginModal, event)
+            }
+          >
+            <FontAwesomeIcon
+              className="favorite__icon"
+              icon="fa-regular fa-heart"
+            />
+          </div>
           {!characterData.thumbnail.path.match("image_not_available") && (
             <img
               src={`${characterData.thumbnail.path}/portrait_uncanny.${characterData.thumbnail.extension}`}

@@ -15,7 +15,7 @@ export default function ComicPage() {
         `https://site--marvel-backend--fwddjdqr85yq.code.run/comic/${comicId}`
       );
       setComicData(response.data);
-      console.log(comicData);
+
       setIsLoading(false);
     } catch (error) {
       console.log(error.response);
@@ -26,11 +26,9 @@ export default function ComicPage() {
 
   useEffect(() => {
     if (location.state) {
-      console.log("if");
       setComicData(location.state.data);
       setIsLoading(false);
     } else {
-      console.log("else");
       fetchData();
     }
   }, []);

@@ -8,8 +8,8 @@ export default function CharactersPage({
   loginModal,
   signModal,
   token,
-  cookiesChar,
-  setCookiesChar,
+  favoriteChar,
+  setFavoriteChar,
   setLoginModal,
   autocompleteList,
   setAutocompleteList,
@@ -20,53 +20,52 @@ export default function CharactersPage({
   const [page, setPage] = useState(1);
   const [selectPage, setSelectPage] = useState();
 
-  const fetchFav = async () => {
-    try {
-      const response = await axios.get(
-        "https://site--marvel-backend--fwddjdqr85yq.code.run/favorites",
-        { headers: { authorization: `Bearer ${token}` } }
-      );
-
-      if (response.data.characters !== undefined) {
-        setCookiesChar(response.data.characters);
-      }
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
   useEffect(() => {
+    // This useEffect contain the fetchFav function which obtain the list
+    // of the favorites characters from the database in the state favoriteChar
+
+    const fetchFav = async () => {
+      try {
+        const response = await axios.get(
+          "https://site--marvel-backend--fwddjdqr85yq.code.run/favorites",
+          { headers: { authorization: `Bearer ${token}` } }
+        );
+
+        if (response.data.characters !== undefined) {
+          setFavoriteChar(response.data.characters);
+        }
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
     fetchFav();
   }, [token]);
 
-  // useEffect(() => {
-  //   if (Cookies.get("characters")) {
-  //     setCookiesChar(JSON.parse(Cookies.get("characters")));
-  //     if (JSON.parse(Cookies.get("characters")).length === 0) {
-  //       Cookies.remove("characters");
-  //     }
-  //   }
-  // }, [Cookies.get("characters")]);
-
-  const fetchData = async () => {
-    try {
-      let name = "";
-      if (search) {
-        name = `&name=${search}`;
-      }
-      const { data } = await axios.get(
-        `https://site--marvel-backend--fwddjdqr85yq.code.run/characters?page=${page}${name}`
-      );
-      setData(data);
-      setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
-
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
   useEffect(() => {
+    // This useEffect send a request to get all the characters from the API.
+    // The limit is 100 characters by page.
+
+    const fetchData = async () => {
+      try {
+        let name = "";
+
+        // the "if condition" contain the search from the searchBar for precise the
+        // list of the characters
+        if (search) {
+          name = `&name=${search}`;
+        }
+        const { data } = await axios.get(
+          `https://site--marvel-backend--fwddjdqr85yq.code.run/characters?page=${page}${name}`
+        );
+        setData(data);
+        setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
+
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
+
     fetchData();
   }, [search, page]);
 
@@ -92,13 +91,13 @@ export default function CharactersPage({
           />
           <Cards
             data={data}
-            cookiesChar={cookiesChar}
-            setCookiesChar={setCookiesChar}
+            favoriteChar={favoriteChar}
+            setFavoriteChar={setFavoriteChar}
             loginModal={loginModal}
             setLoginModal={setLoginModal}
             signModal={signModal}
             path="/"
-            cookiesSort={cookiesChar}
+            favoriteSort={favoriteChar}
             token={token}
             setAutocompleteList={setAutocompleteList}
           />

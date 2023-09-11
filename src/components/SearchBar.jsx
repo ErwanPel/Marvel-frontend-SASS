@@ -17,8 +17,6 @@ export default function SearchBar({
 }) {
   const [hasFocus, setFocus] = useState(false);
 
-  console.log(data);
-
   // Initialization of an array for the autocomplete searchBar
   let arrayAutocomplete = [];
 

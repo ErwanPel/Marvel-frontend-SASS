@@ -8,8 +8,9 @@ export default function AllComicsPage({
   loginModal,
   signModal,
   token,
-  cookiesComics,
-  setCookiesComics,
+  setLoginModal,
+  favoriteComics,
+  setFavoriteComics,
   autocompleteList,
   setAutocompleteList,
 }) {
@@ -19,56 +20,51 @@ export default function AllComicsPage({
   const [page, setPage] = useState(1);
   const [selectPage, setSelectPage] = useState();
 
-  const fetchFav = async () => {
-    try {
-      const response = await axios.get(
-        "https://site--marvel-backend--fwddjdqr85yq.code.run/favorites",
-        { headers: { authorization: `Bearer ${token}` } }
-      );
-
-      console.log("get fav", response.data.comics);
-      if (response.data.comics !== undefined) {
-        setCookiesComics(response.data.comics);
-      }
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
   useEffect(() => {
+    // This useEffect contain the fetchFav function which obtain the list
+    // of the favorites comics from the database in the state favoriteComics
+    const fetchFav = async () => {
+      try {
+        const response = await axios.get(
+          "https://site--marvel-backend--fwddjdqr85yq.code.run/favorites",
+          { headers: { authorization: `Bearer ${token}` } }
+        );
+
+        if (response.data.comics !== undefined) {
+          setFavoriteComics(response.data.comics);
+        }
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
     fetchFav();
   }, [token]);
 
-  // useEffect(() => {
-  //   if (Cookies.get("comics")) {
-  //     setCookiesComics(JSON.parse(Cookies.get("comics")));
-  //     if (JSON.parse(Cookies.get("comics")).length === 0) {
-  //       Cookies.remove("comics");
-  //     }
-  //   }
-  // }, [Cookies.get("comics")]);
-
-  const fetchData = async () => {
-    try {
-      let title = "";
-      if (search) {
-        title = `&title=${search}`;
-      }
-      const { data } = await axios.get(
-        `https://site--marvel-backend--fwddjdqr85yq.code.run/comics?page=${page}${title}`
-      );
-      setData(data);
-      setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
   useEffect(() => {
+    // This useEffect send a request to get all comics from the API.
+    // The limit is 100 comics by page.
+    const fetchData = async () => {
+      try {
+        let title = "";
+
+        // the "if condition" contain the search from the searchBar for precise the
+        // list of the comics
+        if (search) {
+          title = `&title=${search}`;
+        }
+        const { data } = await axios.get(
+          `https://site--marvel-backend--fwddjdqr85yq.code.run/comics?page=${page}${title}`
+        );
+        setData(data);
+        setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.response);
+      }
+    };
     console.log("useEffect characters activated");
     fetchData();
-  }, [search, page, cookiesComics]);
+  }, [search, page, favoriteComics]);
 
   return (
     <>
@@ -93,12 +89,13 @@ export default function AllComicsPage({
 
           <Cards
             data={data}
-            cookiesComics={cookiesComics}
-            setCookiesComics={setCookiesComics}
+            favoriteComics={favoriteComics}
+            setFavoriteComics={setFavoriteComics}
             loginModal={loginModal}
             signModal={signModal}
             path={/comic/}
-            cookiesSort={cookiesComics}
+            favoriteSort={favoriteComics}
+            setLoginModal={setLoginModal}
             token={token}
             setAutocompleteList={setAutocompleteList}
           />

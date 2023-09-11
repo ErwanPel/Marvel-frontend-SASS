@@ -69,7 +69,6 @@
 // If modal is on screen, this mixin transform the favorite
 // color in transparency
 @mixin favorite-item($background, $color: black) {
-  @include absolute-element(1rem, calc(100% - 4rem));
   z-index: 1;
   @include flex-center(row);
   border: 1px solid black;
@@ -78,6 +77,10 @@
   border-radius: 50%;
   color: $color;
   background-color: $background;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @mixin white-transition-hover {

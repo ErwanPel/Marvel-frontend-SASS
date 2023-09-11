@@ -16,7 +16,7 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
         "https://site--marvel-backend--fwddjdqr85yq.code.run/login",
         data
       );
-      console.log(response.data);
+
       Cookies.set("token", response.data.token, { expires: 7 });
       setToken(() => response.data.token);
     } catch (error) {

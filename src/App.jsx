@@ -36,12 +36,11 @@ function App() {
   const [loginModal, setLoginModal] = useState(false);
   const [signModal, setSignModal] = useState(false);
   const [token, setToken] = useState(Cookies.get("token") || "");
-  // cookiesChar and cookiesComics are use for save either for cookies navigator
-  // or database
-  const [cookiesComics, setCookiesComics] = useState([]);
-  const [cookiesChar, setCookiesChar] = useState([]);
+  const [favoriteComics, setFavoriteComics] = useState([]);
+  const [favoriteChar, setFavoriteChar] = useState([]);
   const [autocompleteList, setAutocompleteList] = useState(false);
 
+  console.log("ici", favoriteChar);
   return (
     <Router>
       <Header
@@ -51,10 +50,10 @@ function App() {
         setSignModal={setSignModal}
         token={token}
         setToken={setToken}
-        cookiesComics={cookiesComics}
-        setCookiesComics={setCookiesComics}
-        cookiesChar={cookiesChar}
-        setCookiesChar={setCookiesChar}
+        favoriteComics={favoriteComics}
+        setFavoriteComics={setFavoriteComics}
+        favoriteChar={favoriteChar}
+        setFavoriteChar={setFavoriteChar}
         setAutocompleteList={setAutocompleteList}
       />
       <Routes>
@@ -65,15 +64,29 @@ function App() {
               loginModal={loginModal}
               signModal={signModal}
               token={token}
-              cookiesChar={cookiesChar}
-              setCookiesChar={setCookiesChar}
+              favoriteChar={favoriteChar}
+              setFavoriteChar={setFavoriteChar}
               setLoginModal={setLoginModal}
               autocompleteList={autocompleteList}
               setAutocompleteList={setAutocompleteList}
             />
           }
         />
-        <Route path="/:characterId" element={<CharacterPage />} />
+        <Route
+          path="/:characterId"
+          element={
+            <CharacterPage
+              favoriteChar={favoriteChar}
+              setFavoriteChar={setFavoriteChar}
+              token={token}
+              loginModal={loginModal}
+              setLoginModal={setLoginModal}
+              signModal={signModal}
+              favoriteComics={favoriteComics}
+              setFavoriteComics={setFavoriteComics}
+            />
+          }
+        />
         <Route
           path="/comics"
           element={
@@ -81,8 +94,8 @@ function App() {
               loginModal={loginModal}
               signModal={signModal}
               token={token}
-              cookiesComics={cookiesComics}
-              setCookiesComics={setCookiesComics}
+              favoriteComics={favoriteComics}
+              setFavoriteComics={setFavoriteComics}
               setLoginModal={setLoginModal}
               autocompleteList={autocompleteList}
               setAutocompleteList={setAutocompleteList}

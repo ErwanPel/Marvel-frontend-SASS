@@ -17,7 +17,6 @@ export default function SignPage({ setSignModal, setToken }) {
 
   const fetchData = async (data) => {
     try {
-      console.log("data", data);
       const response = await axios.post(
         "https://site--marvel-backend--fwddjdqr85yq.code.run/signup",
         data
@@ -39,7 +38,6 @@ export default function SignPage({ setSignModal, setToken }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (confirmPassword === password) {
-      console.log("oui");
       fetchData({
         username,
         email,

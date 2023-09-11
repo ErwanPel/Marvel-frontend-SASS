@@ -11,8 +11,8 @@ export default function Header({
   setSignModal,
   token,
   setToken,
-  setCookiesChar,
-  setCookiesComics,
+  setFavoriteChar,
+  setFavoriteComics,
   setAutocompleteList,
 }) {
   const [menu, setMenu] = useState(false);
@@ -33,8 +33,8 @@ export default function Header({
   const removeToken = () => {
     setMenu(() => false);
     Cookies.remove("token");
-    setCookiesChar([]);
-    setCookiesComics([]);
+    setFavoriteChar([]);
+    setFavoriteComics([]);
     setToken("");
   };
 

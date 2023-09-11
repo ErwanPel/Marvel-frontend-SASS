@@ -227,7 +227,7 @@ h4 {
   position: relative;
   border: 4px solid rgb(229, 38, 38);
   width: calc((100% - 8rem) / 3);
-  height: 43rem;
+  height: 45rem;
   padding: 2rem;
   background-color: #d1cfc7;
   margin-bottom: 4rem;
@@ -247,7 +247,10 @@ h4 {
   margin-bottom: 4rem;
 }
 .card__title {
-  line-height: 2.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 30rem;
   font-weight: bold;
 }
 .card__description {
@@ -260,18 +263,7 @@ h4 {
 .card__description--empty {
   font-size: 1.4rem;
 }
-
-.bloc-description {
-  flex-direction: row;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
-.favorite {
-  position: absolute;
-  top: 1rem;
-  left: calc(100% - 4rem);
+.card .favorite {
   z-index: 1;
   flex-direction: row;
   display: flex !important;
@@ -283,11 +275,14 @@ h4 {
   border-radius: 50%;
   color: black;
   background-color: rgb(236, 232, 232);
-}
-.favorite__modal {
   position: absolute;
   top: 1rem;
   left: calc(100% - 4rem);
+}
+.card .favorite:hover {
+  cursor: pointer;
+}
+.card .favorite__modal {
   z-index: 1;
   flex-direction: row;
   display: flex !important;
@@ -299,11 +294,14 @@ h4 {
   border-radius: 50%;
   color: black;
   background-color: transparent;
-}
-.favorite__fullheart {
   position: absolute;
   top: 1rem;
   left: calc(100% - 4rem);
+}
+.card .favorite__modal:hover {
+  cursor: pointer;
+}
+.card .favorite__fullheart {
   z-index: 1;
   flex-direction: row;
   display: flex !important;
@@ -315,11 +313,46 @@ h4 {
   border-radius: 50%;
   color: rgb(236, 232, 232);
   background-color: rgb(229, 38, 38);
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 4rem);
 }
-.favorite__icon {
+.card .favorite__fullheart:hover {
+  cursor: pointer;
+}
+.card .favorite__icon {
   font-size: 1.6rem;
 }
 
+.bloc-description {
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1140px) {
+  .card {
+    width: calc((100% - 4rem) / 2);
+  }
+}
+@media (max-width: 655px) {
+  .card {
+    width: 100%;
+    display: flex;
+    height: 30rem;
+    gap: 3rem;
+  }
+  .favorite {
+    top: 1.5rem;
+  }
+  .cards-bloc {
+    gap: 0rem;
+  }
+  .card p {
+    font-size: 1.4rem;
+  }
+}
 .biography-bloc {
   flex-direction: row;
   display: flex !important;
@@ -338,6 +371,7 @@ h4 {
   padding-top: 6rem;
   background-color: #d1cfc7;
   width: 34rem;
+  position: relative;
 }
 .biography-bloc__left div {
   flex-direction: column;
@@ -350,6 +384,66 @@ h4 {
   font-size: 1.4rem;
   text-align: justify;
   line-height: 2.2rem;
+}
+.biography-bloc__left .favorite {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: black;
+  background-color: rgb(236, 232, 232);
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 18.2rem);
+}
+.biography-bloc__left .favorite:hover {
+  cursor: pointer;
+}
+.biography-bloc__left .favorite__modal {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: black;
+  background-color: transparent;
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 18.2rem);
+}
+.biography-bloc__left .favorite__modal:hover {
+  cursor: pointer;
+}
+.biography-bloc__left .favorite__fullheart {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  color: rgb(236, 232, 232);
+  background-color: rgb(229, 38, 38);
+  position: absolute;
+  top: 1rem;
+  left: calc(100% - 18.2rem);
+}
+.biography-bloc__left .favorite__fullheart:hover {
+  cursor: pointer;
+}
+.biography-bloc__left .favorite__icon {
+  font-size: 1.6rem;
 }
 .biography-bloc__right {
   flex-direction: column;
