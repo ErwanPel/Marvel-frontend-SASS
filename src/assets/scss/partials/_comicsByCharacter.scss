@@ -12,12 +12,16 @@
   @include flex-around(column);
   padding: 1rem;
   border: 1px solid black;
-  width: calc((100% - 8rem) / 4);
+  width: calc((100% - 6rem) / 3);
   text-align: center;
   gap: 1rem;
   height: 14rem;
   overflow: hidden;
   @extend %custom-link;
+
+  // @include responsive-screen("medium") {
+  //   width: calc((100% - 4rem) / 2);
+  // }
 
   &:hover {
     transition: 0.5s;
@@ -26,14 +30,5 @@
 
   h5 {
     @include max-bloc-text-size(1.6rem, 2);
-  }
-}
-
-@media (max-width: 1140px) {
-  .bio-card-right {
-    width: 34rem;
-  }
-  .comic-bio-card {
-    width: calc((100% - 4rem) / 2);
   }
 }

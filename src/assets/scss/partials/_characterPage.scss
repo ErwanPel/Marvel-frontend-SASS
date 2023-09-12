@@ -1,9 +1,27 @@
 @use "../abstracts" as *;
 
+h2 {
+  // The css rule for 'h2' is in
+  //src/assets/scss/base/_base.scss
+
+  @include responsive-screen("small") {
+    font-size: 2.2rem;
+  }
+
+  @include responsive-screen("tiny") {
+    font-size: 2rem;
+  }
+}
+
 .biography-bloc {
   @include flex-center(row);
   align-items: flex-start;
   gap: 4rem;
+  padding: 2rem;
+
+  @include responsive-screen("medium") {
+    @include flex-center(column);
+  }
 
   &__left {
     @include flex-center(column);
@@ -47,11 +65,15 @@
     @include flex-center(column);
     width: 60rem;
     padding: 2rem;
-    background-color: rgb(236, 232, 232);
+    background-color: $card-color;
+
+    @include responsive-screen("medium") {
+      width: 100%;
+    }
 
     & div {
       margin-top: 2rem;
-      display: flex;
+      @include flex-center(row);
       flex-wrap: wrap;
       gap: 2rem;
     }
@@ -61,16 +83,4 @@
 p.to-complete {
   @extend %to-complete;
   font-size: $font-standard;
-}
-
-@media (max-width: 830px) {
-  .bio-space div.wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-
-  .comic-bio-card {
-    width: 100%;
-  }
 }

@@ -16,6 +16,14 @@
     display: flex;
     gap: 5rem;
     @extend %wrapper;
+
+    @include responsive-screen("large") {
+      @include flex-center(column);
+    }
+
+    @include responsive-screen("small") {
+      gap: 2.5rem;
+    }
   }
 }
 
@@ -23,9 +31,17 @@
   @include flex-center;
   gap: 2rem;
 
+  @include responsive-screen("small") {
+    @include flex-center(column);
+  }
+
   label {
     color: $white-color;
     font-size: 1.8rem;
+
+    @include responsive-screen("small") {
+      font-size: 1.6rem;
+    }
   }
 
   input {
@@ -40,38 +56,47 @@
       opacity: 1;
     }
   }
+}
 
-  &__autocomplete-bloc {
-    position: relative;
+.autocomplete-bloc {
+  position: relative;
+  border: 1px solid rgb(153, 65, 65);
+  width: 30rem;
+
+  .autocomplete-list {
+    width: 100%;
     border: 1px solid rgb(153, 65, 65);
-    width: 30rem;
+    max-height: 23rem;
+    color: $white-color;
+    position: absolute;
+    z-index: 4;
+    overflow: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
 
-    .autocomplete-list {
-      width: 100%;
-      border: 1px solid rgb(153, 65, 65);
-      max-height: 21rem;
-      color: $white-color;
-      position: absolute;
-      z-index: 4;
-      overflow: hidden;
-      overflow-y: scroll;
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
+    &::-webkit-scrollbar {
+      display: none;
     }
 
-    .item {
-      @include item-menu;
+    @include responsive-screen("small") {
+      max-height: 16rem;
     }
+  }
+
+  .item {
+    @include item-menu;
   }
 }
 
 .navpage {
   @include flex-center;
   gap: 3rem;
+  width: 37rem;
+
+  @include responsive-screen("tiny") {
+    gap: 2.2rem;
+  }
 
   select {
     background-color: $secondary-color;
@@ -80,6 +105,11 @@
     font-size: 1.6rem;
     text-align: center;
     height: 4.2rem;
+
+    @include responsive-screen("small") {
+      width: 10rem;
+      font-size: 1.4rem;
+    }
   }
 
   &__chevron {
@@ -87,6 +117,10 @@
     font-size: 2rem;
     padding: 1rem;
     border-radius: 80%;
+
+    @include responsive-screen("small") {
+      font-size: 1.6rem;
+    }
 
     &:hover {
       @include white-transition-hover;

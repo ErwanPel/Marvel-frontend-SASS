@@ -8,24 +8,52 @@
   padding: 2rem;
   position: relative;
 
+  @include responsive-screen("medium") {
+    flex-direction: column;
+    width: 34rem;
+    padding-top: 5rem;
+  }
+
   p {
     padding: 3rem;
     line-height: 2rem;
     font-size: $font-standard;
     text-align: justify;
+
+    @include responsive-screen("medium") {
+      padding: 1.5rem;
+    }
+  }
+
+  img {
+    @include responsive-screen("medium") {
+      margin-bottom: 2rem;
+    }
   }
 
   .favorite {
     @include favorite-item($white-color);
     @include absolute-element(2rem, calc(100% - 5rem));
 
+    @include responsive-screen("medium") {
+      @include absolute-element(1rem, calc(50% - 0.8rem));
+    }
+
     &__modal {
       @include favorite-item(transparent);
       @include absolute-element(2rem, calc(100% - 5rem));
+
+      @include responsive-screen("medium") {
+        @include absolute-element(1rem, calc(50% - 0.8rem));
+      }
     }
     &__fullheart {
       @include favorite-item($main-color, $white-color);
       @include absolute-element(2rem, calc(100% - 5rem));
+
+      @include responsive-screen("medium") {
+        @include absolute-element(1rem, calc(50% - 0.8rem));
+      }
     }
     &__icon {
       font-size: 1.6rem;
@@ -44,9 +72,9 @@
   }
 }
 
-@media (max-width: 830px) {
-  .comic-bloc {
-    flex-direction: column;
-    width: 34rem;
-  }
-}
+// @media (max-width: 830px) {
+//   .comic-bloc {
+//     flex-direction: column;
+//     width: 34rem;
+//   }
+// }

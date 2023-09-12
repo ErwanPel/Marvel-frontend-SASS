@@ -19,6 +19,10 @@ form {
   input,
   label {
     font-size: 1.8rem;
+
+    @include responsive-screen("small") {
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -30,6 +34,12 @@ form button {
   font-size: 2rem;
   border: transparent;
   background-color: #3eb0f7;
+
+  @include responsive-screen("small") {
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    font-size: 1.4rem;
+  }
 }
 
 .error-message {

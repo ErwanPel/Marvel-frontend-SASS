@@ -1,0 +1,37 @@
+$breakpoints: (
+  "tiny": (
+    max-width: 500px,
+  ),
+  "small": (
+    max-width: 655px,
+  ),
+  "medium": (
+    max-width: 830px,
+  ),
+  "large": (
+    max-width: 1140px,
+  ),
+);
+
+@mixin responsive-screen($breakpoint) {
+  $query-size: map-get(
+    $map: $breakpoints,
+    $key: $breakpoint,
+  );
+
+  @if $query-size {
+    $query: if(
+      type-of($query-size) == "string",
+      unquote($query-size),
+      inspect($query-size)
+    );
+
+    @debug $query;
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error "no value exist for `#{$breakpoint}`. Please watch the 'breakpoints' map to make sure it's defined";
+  }
+}

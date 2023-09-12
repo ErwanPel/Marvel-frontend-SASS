@@ -50,7 +50,7 @@ export default function SearchBar({
       <nav className="navbar">
         <div className="navsearch">
           <label htmlFor="search">{label}</label>
-          <div className="navsearch__autocomplete-bloc">
+          <div className="autocomplete-bloc">
             <input
               type="text"
               name="search"

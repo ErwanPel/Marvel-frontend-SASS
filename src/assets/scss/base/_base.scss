@@ -15,6 +15,16 @@ h2 {
   color: $white-color;
   text-align: center;
   padding-block: 4rem;
+
+  h2 {
+    @include responsive-screen("small") {
+      font-size: 2.2rem;
+    }
+
+    @include responsive-screen("tiny") {
+      font-size: 2rem;
+    }
+  }
 }
 
 h3 {
@@ -30,4 +40,14 @@ h4 {
 
 h5 {
   font-size: 1.2rem;
+}
+
+span,
+button,
+p,
+label,
+h2,
+h3,
+h4 {
+  font-family: $font-site;
 }

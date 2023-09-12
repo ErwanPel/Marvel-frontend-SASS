@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "placeholders" as *;
+@use "breakpoints" as *;
 
 @mixin absolute-element($top, $left) {
   position: absolute;
@@ -40,12 +41,16 @@
 @mixin item-menu {
   border: 1px solid rgb(153, 65, 65);
   background-color: $background-site;
-  padding: 1.5rem;
+  padding: 1.2rem;
   text-align: center;
   font-size: 1.6rem;
   line-height: 1.79rem;
   height: fit-content;
   @include ellipsis-line;
+
+  @include responsive-screen("small") {
+    padding: 1.2rem;
+  }
 
   &:hover {
     background-color: rgb(141, 92, 92);

@@ -6,28 +6,60 @@ header {
   padding: 2.5rem;
   gap: 2rem;
   position: relative;
+
+  @include responsive-screen("small") {
+    padding: 1.5rem;
+  }
 }
 
-header button {
-  padding: 2rem;
-  background-color: inherit;
-  border-radius: 50%;
-  color: $main-color;
-  border: none;
-  font-size: 2.2rem;
-  margin-inline: 4rem;
+header nav {
+  @include responsive-screen("small") {
+    display: flex;
+    @include flex-center(column);
+    gap: 1rem;
+  }
 
-  &:hover {
-    @include white-transition-hover;
+  button {
+    padding: 2rem;
+    background-color: inherit;
+    border-radius: 50%;
+    color: $main-color;
+    border: none;
+    font-size: 2.2rem;
+    margin-inline: 4rem;
+
+    @include responsive-screen("small") {
+      font-size: 1.8rem;
+    }
+
+    @include responsive-screen("tiny") {
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      @include white-transition-hover;
+    }
   }
 }
 
 header img {
   width: 20rem;
+
+  @include responsive-screen("small") {
+    width: 15rem;
+  }
+
+  @include responsive-screen("tiny") {
+    width: 13rem;
+  }
 }
 
 .menu {
-  @include absolute-element(5rem, calc(100% - 10rem));
+  @include absolute-element(3rem, calc(100% - 10rem));
+
+  @include responsive-screen("small") {
+    @include absolute-element(1.8rem, calc(100% - 8rem));
+  }
 
   &__icon {
     background-color: $secondary-color;
@@ -36,6 +68,10 @@ header img {
     border: 1px solid $main-color;
     padding: 1rem 1.3rem;
     position: relative;
+
+    @include responsive-screen("small") {
+      font-size: 1.6rem;
+    }
 
     &:hover {
       @include white-transition-hover;
@@ -48,6 +84,11 @@ header img {
   width: 12rem;
   color: $white-color;
   z-index: 3;
+
+  @include responsive-screen("small") {
+    width: 10rem;
+    @include absolute-element(100%, calc(-50% - 0.8rem));
+  }
 
   &__item {
     @include item-menu;

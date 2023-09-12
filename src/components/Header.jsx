@@ -43,11 +43,11 @@ export default function Header({
       <Link to="/">
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
-      <div>
+      <nav>
         <button onClick={() => navigate("/")}>PERSONNAGES</button>
 
         <button onClick={() => navigate("/comics")}>COMICS</button>
-      </div>
+      </nav>
       <div className="menu">
         <FontAwesomeIcon
           className="menu__icon"
@@ -63,7 +63,7 @@ export default function Header({
                   S'inscrire
                 </div>
                 <div className="bloc-menu__item" onClick={getLogin}>
-                  Se connecter
+                  Connexion
                 </div>
               </>
             ) : (

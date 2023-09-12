@@ -25,6 +25,19 @@
   box-shadow: -4px -1px 5px $main-color;
   @extend %custom-link;
 
+  @include responsive-screen("large") {
+    width: calc((90% - 4rem) / 2);
+  }
+
+  @include responsive-screen("medium") {
+    width: calc(90% - 4rem);
+  }
+
+  @include responsive-screen("tiny") {
+    width: 85%;
+    height: 40rem;
+  }
+
   &:hover {
     background-color: rgb(238, 209, 209);
     transition: 0.5s;
@@ -46,6 +59,10 @@
     font-size: $font-standard;
     @include max-bloc-text-size(2.2rem, 5);
     text-align: justify;
+
+    @include responsive-screen("tiny") {
+      @include max-bloc-text-size(2.2rem, 4);
+    }
 
     &--empty {
       @extend %to-complete;
@@ -73,31 +90,4 @@
 
 .bloc-description {
   @include flex-center;
-}
-
-@media (max-width: 1140px) {
-  .card {
-    width: calc((100% - 4rem) / 2);
-  }
-}
-
-@media (max-width: 655px) {
-  .card {
-    width: 100%;
-    display: flex;
-    height: 30rem;
-    gap: 3rem;
-  }
-
-  .favorite {
-    top: 1.5rem;
-  }
-
-  .cards-bloc {
-    gap: 0rem;
-  }
-
-  .card p {
-    font-size: 1.4rem;
-  }
 }
