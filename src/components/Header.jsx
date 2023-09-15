@@ -38,6 +38,9 @@ export default function Header({
     setFavoriteChar([]);
     setFavoriteComics([]);
     setDisconnectModal(true);
+    setTimeout(() => {
+      setDisconnectModal(false);
+    }, 3000);
     setToken("");
   };
 

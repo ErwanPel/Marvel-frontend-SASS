@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import Cards from "../components/Cards";
-import Cookies from "js-cookie";
+import { motion } from "framer-motion";
 
 export default function AllComicsPage({
   loginModal,
@@ -80,14 +80,31 @@ export default function AllComicsPage({
   }, [search, page, favoriteComics]);
 
   return (
-    <>
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        transition: 1000,
+        rotateY: -70,
+        translateX: -350,
+        transformOrigin: -200,
+        opacity: 0,
+        transition: {
+          duration: 0.7,
+          delay: 0.5,
+        },
+      }}
+    >
       {isLoading ? (
         <p className="wrapper">Downloading ...</p>
       ) : (
         <>
           <SearchBar
             disconnectModal={disconnectModal}
-            setDirectionCard={setDirectionCard}
             data={data}
             search={search}
             setSearch={setSearch}
@@ -103,7 +120,7 @@ export default function AllComicsPage({
           />
 
           <Cards
-            directionCard={directionCard}
+            directionCard="to left"
             data={data}
             favoriteComics={favoriteComics}
             setFavoriteComics={setFavoriteComics}
@@ -118,6 +135,6 @@ export default function AllComicsPage({
           />
         </>
       )}
-    </>
+    </motion.div>
   );
 }

@@ -4,6 +4,7 @@ import axios from "axios";
 import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
 import { displayModal } from "../assets/utils/displayModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 
 export default function ComicPage({
   favoriteChar,
@@ -53,11 +54,29 @@ export default function ComicPage({
   return isLoading ? (
     <p>Downloading...</p>
   ) : (
-    <main className="main__comic">
+    <motion.main
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        transition: 1000,
+        translateX: -800,
+        opacity: 0,
+        transition: {
+          duration: 0.7,
+
+          ease: [0.43, 0.04, 0.84, 0.52],
+        },
+      }}
+      className="main__comic"
+    >
       {comicData.description ? (
         <>
           <h2>{comicData.title}</h2>
-          <div className="comic__column">
+          <div className="comic__row">
             {backCharacter && (
               <FontAwesomeIcon
                 className="back-arrow"
@@ -120,7 +139,7 @@ export default function ComicPage({
           <p>Sorry 🦹‍♂️</p>
         </div>
       )}
-    </main>
+    </motion.main>
   );
 }
 //

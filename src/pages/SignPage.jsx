@@ -143,7 +143,13 @@ export default function SignPage({ setSignModal, setToken, setUserError }) {
         <p className="success-message">Your registration is successful :)</p>
       )}
       {error && <p className="error-message">{error}</p>}
-      <button className={agree && "button__valid"}>S'inscrire</button>
+      {success ? (
+        <button className="button__valid" onClick={() => setSignModal(false)}>
+          Fermer
+        </button>
+      ) : (
+        <button className={agree && "button__valid"}>S'inscrire</button>
+      )}
     </form>
   );
 }

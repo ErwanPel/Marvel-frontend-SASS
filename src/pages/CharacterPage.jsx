@@ -4,6 +4,7 @@ import axios from "axios";
 import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
 import { displayModal } from "../assets/utils/displayModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 
 import ComicsByCharacter from "../components/ComicsByCharacter";
 
@@ -51,7 +52,23 @@ export default function CharacterPage({
   return isLoading ? (
     <p>Downloading...</p>
   ) : (
-    <main>
+    <motion.main
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        transition: 1000,
+        translateY: 800,
+        transition: {
+          duration: 0.7,
+          ease: [0.43, 0.04, 0.84, 0.52],
+        },
+        opacity: 0,
+      }}
+    >
       <h2>{characterData.name}</h2>
       <div className="biography-bloc">
         <div className="biography-bloc__left">
@@ -110,6 +127,6 @@ export default function CharacterPage({
           <ComicsByCharacter characterId={characterId} />
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

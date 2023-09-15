@@ -91,7 +91,13 @@ export default function LoginPage({ setUserError, setLoginModal, setToken }) {
       </div>
       {success && <p className="success-message">You are connected :)</p>}
       {error && <p className="error-message">{error}</p>}
-      <button className={agree && "button__valid"}>Se connecter</button>
+      {success ? (
+        <button className="button__valid" onClick={() => setLoginModal(false)}>
+          Fermer
+        </button>
+      ) : (
+        <button className={agree && "button__valid"}>Se connecter</button>
+      )}
     </form>
   );
 }

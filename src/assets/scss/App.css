@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
-header, .searchbar .navbar, .comic-bloc, main {
+header, .searchbar .navbar, main {
   max-width: 122rem;
   margin: 0 auto !important;
 }
@@ -16,18 +16,18 @@ header, .searchbar .navbar, .comic-bloc, main {
 
 @keyframes chevron-right {
   10% {
-    transform: translateX(4%);
+    transform: translateX(8%);
   }
   75%, 100% {
-    transform: translateX(3%);
+    transform: translateX(6%);
   }
 }
 @keyframes chevron-left {
   10% {
-    transform: translateX(-4%);
+    transform: translateX(-8%);
   }
   75%, 100% {
-    transform: translateX(-3%);
+    transform: translateX(-6%);
   }
 }
 @keyframes drop-down {
@@ -73,7 +73,7 @@ header, .searchbar .navbar, .comic-bloc, main {
     transform: translateX(-2px);
   }
 }
-@keyframes solo-card-fadin-in {
+@keyframes solo-cardComic-fadin-in {
   0% {
     transform: perspective(150rem) translateY(70rem) translateX(-40rem) rotateX(50deg);
   }
@@ -354,10 +354,10 @@ h4 {
   }
 }
 .card__right {
-  animation: fade-in-cards-right 700ms;
+  animation: fade-in-cards-right 300ms;
 }
 .card__left {
-  animation: fade-in-cards-left 700ms;
+  animation: fade-in-cards-left 300ms;
 }
 .card__bloc {
   flex-direction: column;
@@ -613,12 +613,22 @@ p.to-complete {
 .back-arrow:hover {
   animation: chevron-left 2s infinite ease-in-out;
 }
+.back-arrow:active {
+  opacity: 0.7;
+}
 
-.comic__column {
+.comic__row {
   flex-direction: row;
   display: flex !important;
   justify-content: center;
   align-items: center;
+  gap: 5rem;
+}
+@media (max-width: 830px) {
+  .comic__row {
+    flex-direction: column-reverse;
+    padding-bottom: 5rem;
+  }
 }
 
 .comic-bloc {
@@ -630,7 +640,7 @@ p.to-complete {
   width: 65rem;
   padding: 2rem;
   position: relative;
-  animation: solo-card-fadin-in 800ms cubic-bezier(0.6, 0, 0.73, 0.37) backwards;
+  animation: solo-cardComic-fadin-in 800ms cubic-bezier(0.6, 0, 0.73, 0.37) backwards;
 }
 @media (max-width: 830px) {
   .comic-bloc {
@@ -1116,7 +1126,7 @@ header img {
 .disconnect-message {
   color: #3eb0f7;
   font-size: 1.6rem;
-  margin-top: 2rem;
+  margin-block: 2rem;
 }
 
 .user-error {

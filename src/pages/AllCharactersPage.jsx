@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cards from "../components/Cards";
 import SearchBar from "../components/SearchBar";
-// import Cookies from "js-cookie";
+import { motion } from "framer-motion";
 
 export default function CharactersPage({
   loginModal,
@@ -82,14 +82,32 @@ export default function CharactersPage({
   }, [search, page]);
 
   return (
-    <>
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        rotateY: 70,
+        transition: 1000,
+        translateX: 500,
+        transformOrigin: 100,
+        opacity: 0,
+        transition: {
+          duration: 0.7,
+          delay: 0.5,
+          ease: [0.43, 0.04, 0.84, 0.52],
+        },
+      }}
+    >
       {isLoading ? (
         <p>Downloading ...</p>
       ) : (
         <>
           <SearchBar
             disconnectModal={disconnectModal}
-            setDirectionCard={setDirectionCard}
             data={data}
             search={search}
             setSearch={setSearch}
@@ -104,7 +122,7 @@ export default function CharactersPage({
             setAutocompleteList={setAutocompleteList}
           />
           <Cards
-            directionCard={directionCard}
+            directionCard="to right"
             data={data}
             favoriteChar={favoriteChar}
             setFavoriteChar={setFavoriteChar}
@@ -119,6 +137,6 @@ export default function CharactersPage({
           />
         </>
       )}
-    </>
+    </motion.div>
   );
 }
