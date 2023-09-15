@@ -15,6 +15,7 @@ export default function SearchBar({
   autocompleteList,
   setAutocompleteList,
   setDirectionCard,
+  disconnectModal,
 }) {
   const [hasFocus, setFocus] = useState(false);
 
@@ -44,7 +45,9 @@ export default function SearchBar({
   return (
     <div
       className={
-        loginModal || signModal ? "searchbar" : "searchbar sticky-bloc"
+        loginModal || signModal || disconnectModal
+          ? "searchbar"
+          : "searchbar sticky-bloc"
       }
       onClick={() => setAutocompleteList(false)}
     >

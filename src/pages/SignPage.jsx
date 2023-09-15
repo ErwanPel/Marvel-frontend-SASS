@@ -1,19 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function SignPage({ setSignModal, setToken }) {
+export default function SignPage({ setSignModal, setToken, setUserError }) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [power, setPower] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState("");
+  const [agree, setAgree] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (setState, event) => {
-    setErrorMessage("");
+    setUserError(false);
+    setError("");
     setState(event.target.value);
   };
+
+  useEffect(() => {
+    const enableButton = () => {
+      const reg = /^[\w\.\-]+[\w\.\-]*@[\w\.\-]{2,}\.[a-z_\.\-]+[a-z_\-]+$/;
+      console.log("ici", reg.test(email));
+      console.log(agree, email, password);
+      if (
+        reg.test(email) === true &&
+        username &&
+        password &&
+        confirmPassword &&
+        power
+      ) {
+        setAgree(true);
+      } else {
+        setAgree(false);
+      }
+    };
+    enableButton();
+  }, [email, password, confirmPassword, username, power]);
 
   const fetchData = async (data) => {
     try {
@@ -23,6 +46,8 @@ export default function SignPage({ setSignModal, setToken }) {
       );
       Cookies.set("token", response.data.token, { expires: 7 });
       setToken(() => response.data.token);
+      setSuccess(true);
+      setTimeout(() => setSignModal(false), 3000);
     } catch (error) {
       console.log(error.response);
       if (
@@ -30,24 +55,29 @@ export default function SignPage({ setSignModal, setToken }) {
           "E11000 duplicate key error collection: marvel.users index: email_1 dup key:"
         )
       ) {
-        setErrorMessage("L'adresse mail est déjà utilisée");
+        setUserError(true);
+        setError("This adress mail is already used");
       }
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (confirmPassword === password) {
-      fetchData({
-        username,
-        email,
-        password,
-        power,
-      });
+    const reg = /^[\w\.\-]+[\w\.\-]*@[\w\.\-]{2,}\.[a-z_\.\-]+[a-z_\-]+$/;
 
-      setSignModal(false);
+    if (reg.test(email) === true) {
+      if (confirmPassword === password) {
+        fetchData({
+          username,
+          email,
+          password,
+          power,
+        });
+      } else {
+        setError("Les deux mots de passe ne sont pas identiques !");
+      }
     } else {
-      setErrorMessage("Les deux mots de passe ne sont pas identiques !");
+      setError("This adress mail is not valid");
     }
   };
 
@@ -109,8 +139,11 @@ export default function SignPage({ setSignModal, setToken }) {
           value={power}
         />
       </div>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <button>S'inscrire</button>
+      {success && (
+        <p className="success-message">Your registration is successful :)</p>
+      )}
+      {error && <p className="error-message">{error}</p>}
+      <button className={agree && "button__valid"}>S'inscrire</button>
     </form>
   );
 }

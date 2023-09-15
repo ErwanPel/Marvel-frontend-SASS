@@ -15,6 +15,7 @@ export default function CharactersPage({
   setAutocompleteList,
   directionCard,
   setDirectionCard,
+  disconnectModal,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -87,6 +88,7 @@ export default function CharactersPage({
       ) : (
         <>
           <SearchBar
+            disconnectModal={disconnectModal}
             setDirectionCard={setDirectionCard}
             data={data}
             search={search}
@@ -109,6 +111,7 @@ export default function CharactersPage({
             loginModal={loginModal}
             setLoginModal={setLoginModal}
             signModal={signModal}
+            disconnectModal={disconnectModal}
             path="/"
             favoriteSort={favoriteChar}
             token={token}

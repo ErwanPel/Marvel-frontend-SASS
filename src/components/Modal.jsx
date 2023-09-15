@@ -1,6 +1,7 @@
 import SignPage from "../pages/SignPage";
 import LoginPage from "../pages/LoginPage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 export default function Modal({
   loginModal,
@@ -8,7 +9,11 @@ export default function Modal({
   signModal,
   setSignModal,
   setToken,
+  disconnectModal,
+  setDisconnectModal,
 }) {
+  const [userError, setUserError] = useState(false);
+
   const closeSignModal = () => {
     setSignModal(() => false);
   };
@@ -17,13 +22,25 @@ export default function Modal({
     setLoginModal(() => false);
   };
 
+  const closeDisconnectModal = () => {
+    setDisconnectModal(() => false);
+  };
+
   return (
     <div
       className="modal-window"
-      onClick={loginModal ? closeLoginModal : closeSignModal}
+      onClick={
+        loginModal
+          ? closeLoginModal
+          : signModal
+          ? closeSignModal
+          : closeDisconnectModal
+      }
     >
       <div
-        className="modal-window__bloc"
+        className={
+          userError ? "modal-window__bloc user-error" : "modal-window__bloc"
+        }
         onClick={(event) => event.stopPropagation()}
       >
         {signModal && (
@@ -40,11 +57,19 @@ export default function Modal({
             onClick={closeLoginModal}
           />
         )}
+        {disconnectModal && (
+          <FontAwesomeIcon
+            icon="xmark"
+            className="modal-window__close"
+            onClick={closeDisconnectModal}
+          />
+        )}
         {signModal && (
           <SignPage
             signModal={signModal}
             setSignModal={setSignModal}
             setToken={setToken}
+            setUserError={setUserError}
           />
         )}
         {loginModal && (
@@ -52,7 +77,11 @@ export default function Modal({
             loginModal={loginModal}
             setLoginModal={setLoginModal}
             setToken={setToken}
+            setUserError={setUserError}
           />
+        )}
+        {disconnectModal && (
+          <p className="disconnect-message">You have been disconnected :)</p>
         )}
       </div>
     </div>

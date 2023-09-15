@@ -81,6 +81,22 @@ header, .searchbar .navbar, .comic-bloc, main {
     transform: perspective(150rem) translateY(0) translateX(0) rotateX(0deg);
   }
 }
+@keyframes rotate-cross {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes error-shake {
+  25% {
+    transform: translateX(3%);
+  }
+  75% {
+    transform: translateX(-3%);
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1091,10 +1107,20 @@ header img {
 }
 .modal-window__close:hover {
   cursor: pointer;
-  color: #c56161;
+  animation: rotate-cross 3s ease-out infinite;
 }
 .modal-window__close :active {
   opacity: 0.5;
+}
+
+.disconnect-message {
+  color: #3eb0f7;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.user-error {
+  animation: error-shake 200ms 3 ease-in;
 }
 
 form {
@@ -1163,7 +1189,14 @@ form button {
 }
 
 .error-message {
-  color: red;
+  color: rgb(229, 38, 38);
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.success-message {
+  color: #3eb0f7;
+  font-size: 1.6rem;
   margin-top: 2rem;
 }
 

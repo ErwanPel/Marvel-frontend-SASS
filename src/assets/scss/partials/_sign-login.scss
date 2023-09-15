@@ -62,6 +62,13 @@ form button {
 }
 
 .error-message {
-  color: red;
+  color: $main-color;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.success-message {
+  color: #3eb0f7;
+  font-size: 1.6rem;
   margin-top: 2rem;
 }

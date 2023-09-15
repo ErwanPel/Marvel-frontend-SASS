@@ -37,6 +37,7 @@ library.add(
 function App() {
   const [loginModal, setLoginModal] = useState(false);
   const [signModal, setSignModal] = useState(false);
+  const [disconnectModal, setDisconnectModal] = useState(false);
   const [token, setToken] = useState(Cookies.get("token") || "");
   const [favoriteComics, setFavoriteComics] = useState([]);
   const [favoriteChar, setFavoriteChar] = useState([]);
@@ -47,6 +48,7 @@ function App() {
   return (
     <Router>
       <Header
+        setDisconnectModal={setDisconnectModal}
         setDirectionCard={setDirectionCard}
         loginModal={loginModal}
         setLoginModal={setLoginModal}
@@ -65,6 +67,7 @@ function App() {
           path="/"
           element={
             <AllCharactersPage
+              disconnectModal={disconnectModal}
               setDirectionCard={setDirectionCard}
               directionCard={directionCard}
               loginModal={loginModal}
@@ -97,6 +100,7 @@ function App() {
           path="/comics"
           element={
             <AllComicsPage
+              disconnectModal={disconnectModal}
               setDirectionCard={setDirectionCard}
               directionCard={directionCard}
               loginModal={loginModal}
@@ -138,6 +142,12 @@ function App() {
           signModal={signModal}
           setSignModal={setSignModal}
           setToken={setToken}
+        />
+      )}
+      {disconnectModal && (
+        <Modal
+          setDisconnectModal={setDisconnectModal}
+          disconnectModal={disconnectModal}
         />
       )}
     </Router>

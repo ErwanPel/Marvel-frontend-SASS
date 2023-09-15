@@ -26,11 +26,21 @@
 
     &:hover {
       cursor: pointer;
-      color: adjust-color($color: $transition-color, $lightness: -30%);
+      animation: rotate-cross 3s ease-out infinite;
     }
 
     :active {
       opacity: 0.5;
     }
   }
+}
+
+.disconnect-message {
+  color: #3eb0f7;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.user-error {
+  animation: error-shake 200ms 3 ease-in;
 }

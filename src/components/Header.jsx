@@ -15,6 +15,7 @@ export default function Header({
   setFavoriteComics,
   setAutocompleteList,
   setDirectionCard,
+  setDisconnectModal,
 }) {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
@@ -36,12 +37,13 @@ export default function Header({
     Cookies.remove("token");
     setFavoriteChar([]);
     setFavoriteComics([]);
+    setDisconnectModal(true);
     setToken("");
   };
 
   return (
     <header className="header">
-      <Link to="/">
+      <Link to="/" onClick={() => setDirectionCard("to right")}>
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
       <nav>

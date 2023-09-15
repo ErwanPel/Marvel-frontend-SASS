@@ -2,20 +2,21 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function LoginPage({ loginModal, setLoginModal, setToken }) {
+export default function LoginPage({ setUserError, setLoginModal, setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     const enableButton = () => {
       const reg = /^[\w\.\-]+[\w\.\-]*@[\w\.\-]{2,}\.[a-z_\.\-]+[a-z_\-]+$/;
+      console.log("ici", reg.test(email));
       console.log(agree, email, password);
       if (reg.test(email) === true && password) {
-        console.log("c'est bon");
         setAgree(true);
       } else {
-        console.log("c'est pas bon");
         setAgree(false);
       }
     };
@@ -23,6 +24,8 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
   }, [email, password]);
 
   const handleChange = (setState, event) => {
+    setError("");
+    setUserError(false);
     setState(event.target.value);
   };
 
@@ -35,19 +38,29 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
 
       Cookies.set("token", response.data.token, { expires: 7 });
       setToken(() => response.data.token);
+      setSuccess(true);
+      setTimeout(() => setLoginModal(() => false), 3000);
     } catch (error) {
-      console.log(error.response);
+      console.log(error.response.data.message);
+      if (error.response.data.message) {
+        setUserError(true);
+        setError(error.response.data.message);
+      }
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const reg = /^[\w\.\-]+[\w\.\-]*@[\w\.\-]{2,}\.[a-z_\.\-]+[a-z_\-]+$/;
 
-    fetchData({
-      email,
-      password,
-    });
-    setLoginModal(() => false);
+    if (reg.test(email) === true) {
+      fetchData({
+        email,
+        password,
+      });
+    } else {
+      setError("This adress mail is not valid");
+    }
   };
 
   return (
@@ -76,6 +89,8 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
           value={password}
         />
       </div>
+      {success && <p className="success-message">You are connected :)</p>}
+      {error && <p className="error-message">{error}</p>}
       <button className={agree && "button__valid"}>Se connecter</button>
     </form>
   );

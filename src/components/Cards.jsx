@@ -19,6 +19,7 @@ export default function Cards({
   token,
   setAutocompleteList,
   directionCard,
+  disconnectModal,
 }) {
   return (
     <main className="cards-bloc" onClick={() => setAutocompleteList(false)}>
@@ -45,7 +46,8 @@ export default function Cards({
               >
                 <div
                   className={
-                    ((loginModal || signModal) && "favorite__modal") ||
+                    ((loginModal || signModal || disconnectModal) &&
+                      "favorite__modal") ||
                     (favoriteSort.indexOf(element._id) === -1
                       ? "favorite"
                       : "favorite__fullheart")

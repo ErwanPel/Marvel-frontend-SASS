@@ -15,6 +15,7 @@ export default function AllComicsPage({
   setAutocompleteList,
   directionCard,
   setDirectionCard,
+  disconnectModal,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,6 +86,7 @@ export default function AllComicsPage({
       ) : (
         <>
           <SearchBar
+            disconnectModal={disconnectModal}
             setDirectionCard={setDirectionCard}
             data={data}
             search={search}
@@ -110,6 +112,7 @@ export default function AllComicsPage({
             path={/comic/}
             favoriteSort={favoriteComics}
             setLoginModal={setLoginModal}
+            disconnectModal={disconnectModal}
             token={token}
             setAutocompleteList={setAutocompleteList}
           />

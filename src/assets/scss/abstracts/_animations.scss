@@ -80,3 +80,21 @@
     transform: perspective(150rem) translateY(0) translateX(0) rotateX(0deg);
   }
 }
+
+@keyframes rotate-cross {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes error-shake {
+  25% {
+    transform: translateX(3%);
+  }
+  75% {
+    transform: translateX(-3%);
+  }
+}
