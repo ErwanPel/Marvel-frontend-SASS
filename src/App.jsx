@@ -18,6 +18,7 @@ import {
   faAnglesLeft,
   faBars,
   faXmark,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Modal from "./components/Modal";
@@ -29,7 +30,8 @@ library.add(
   faAnglesLeft,
   faHeart,
   faBars,
-  faXmark
+  faXmark,
+  faArrowLeft
 );
 
 function App() {
@@ -39,11 +41,13 @@ function App() {
   const [favoriteComics, setFavoriteComics] = useState([]);
   const [favoriteChar, setFavoriteChar] = useState([]);
   const [autocompleteList, setAutocompleteList] = useState(false);
+  const [directionCard, setDirectionCard] = useState("to right");
 
   console.log("ici", favoriteChar);
   return (
     <Router>
       <Header
+        setDirectionCard={setDirectionCard}
         loginModal={loginModal}
         setLoginModal={setLoginModal}
         signModal={signModal}
@@ -61,6 +65,8 @@ function App() {
           path="/"
           element={
             <AllCharactersPage
+              setDirectionCard={setDirectionCard}
+              directionCard={directionCard}
               loginModal={loginModal}
               signModal={signModal}
               token={token}
@@ -91,6 +97,8 @@ function App() {
           path="/comics"
           element={
             <AllComicsPage
+              setDirectionCard={setDirectionCard}
+              directionCard={directionCard}
               loginModal={loginModal}
               signModal={signModal}
               token={token}

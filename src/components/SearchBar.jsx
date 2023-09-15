@@ -14,6 +14,7 @@ export default function SearchBar({
   signModal,
   autocompleteList,
   setAutocompleteList,
+  setDirectionCard,
 }) {
   const [hasFocus, setFocus] = useState(false);
 
@@ -100,7 +101,10 @@ export default function SearchBar({
                 : "navpage__unvisible"
             }
             icon="angles-left"
-            onClick={() => setPage(1)}
+            onClick={() => {
+              setDirectionCard("to right");
+              setPage(1);
+            }}
           />
           <FontAwesomeIcon
             className={
@@ -109,7 +113,10 @@ export default function SearchBar({
                 : "navpage__unvisible"
             }
             icon="chevron-left"
-            onClick={() => setPage(page - 1)}
+            onClick={() => {
+              setDirectionCard("to right");
+              setPage(page - 1);
+            }}
           />
           <select
             name="page"
@@ -133,7 +140,10 @@ export default function SearchBar({
                 : "navpage__unvisible"
             }
             icon="chevron-right"
-            onClick={() => setPage(page + 1)}
+            onClick={() => {
+              setDirectionCard("to left");
+              setPage(page + 1);
+            }}
           />
 
           <FontAwesomeIcon
@@ -143,7 +153,10 @@ export default function SearchBar({
                 : "navpage__unvisible"
             }
             icon="angles-right"
-            onClick={() => setPage(selectPage.length)}
+            onClick={() => {
+              setDirectionCard("to left");
+              setPage(selectPage.length);
+            }}
           />
         </div>
       </nav>

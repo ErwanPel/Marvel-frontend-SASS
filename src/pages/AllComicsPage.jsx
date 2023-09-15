@@ -13,12 +13,16 @@ export default function AllComicsPage({
   setFavoriteComics,
   autocompleteList,
   setAutocompleteList,
+  directionCard,
+  setDirectionCard,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [selectPage, setSelectPage] = useState();
+
+  const controller = new AbortController();
 
   useEffect(() => {
     // This useEffect contain the fetchFav function which obtain the list
@@ -53,17 +57,25 @@ export default function AllComicsPage({
           title = `&title=${search}`;
         }
         const { data } = await axios.get(
-          `https://site--marvel-backend--fwddjdqr85yq.code.run/comics?page=${page}${title}`
+          `https://site--marvel-backend--fwddjdqr85yq.code.run/comics?page=${page}${title}`,
+          { signal: controller.signal }
         );
         setData(data);
         setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
+        controller.abort();
       }
     };
     console.log("useEffect characters activated");
     fetchData();
+    console.log("ici", data);
+    if (data.length > 0) {
+      return () => {
+        controller.abort();
+      };
+    }
   }, [search, page, favoriteComics]);
 
   return (
@@ -73,6 +85,7 @@ export default function AllComicsPage({
       ) : (
         <>
           <SearchBar
+            setDirectionCard={setDirectionCard}
             data={data}
             search={search}
             setSearch={setSearch}
@@ -88,6 +101,7 @@ export default function AllComicsPage({
           />
 
           <Cards
+            directionCard={directionCard}
             data={data}
             favoriteComics={favoriteComics}
             setFavoriteComics={setFavoriteComics}

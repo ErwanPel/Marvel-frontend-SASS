@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 export default function LoginPage({ loginModal, setLoginModal, setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [agree, setAgree] = useState(false);
+
+  useEffect(() => {
+    const enableButton = () => {
+      const reg = /^[\w\.\-]+[\w\.\-]*@[\w\.\-]{2,}\.[a-z_\.\-]+[a-z_\-]+$/;
+      console.log(agree, email, password);
+      if (reg.test(email) === true && password) {
+        console.log("c'est bon");
+        setAgree(true);
+      } else {
+        console.log("c'est pas bon");
+        setAgree(false);
+      }
+    };
+    enableButton();
+  }, [email, password]);
 
   const handleChange = (setState, event) => {
     setState(event.target.value);
@@ -26,6 +42,7 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     fetchData({
       email,
       password,
@@ -59,8 +76,7 @@ export default function LoginPage({ loginModal, setLoginModal, setToken }) {
           value={password}
         />
       </div>
-
-      <button>Se connecter</button>
+      <button className={agree && "button__valid"}>Se connecter</button>
     </form>
   );
 }

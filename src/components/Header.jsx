@@ -14,6 +14,7 @@ export default function Header({
   setFavoriteChar,
   setFavoriteComics,
   setAutocompleteList,
+  setDirectionCard,
 }) {
   const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
@@ -44,9 +45,23 @@ export default function Header({
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
       <nav>
-        <button onClick={() => navigate("/")}>PERSONNAGES</button>
+        <button
+          onClick={() => {
+            setDirectionCard("to right");
+            navigate("/");
+          }}
+        >
+          PERSONNAGES
+        </button>
 
-        <button onClick={() => navigate("/comics")}>COMICS</button>
+        <button
+          onClick={() => {
+            setDirectionCard("to left");
+            navigate("/comics");
+          }}
+        >
+          COMICS
+        </button>
       </nav>
       <div className="menu">
         <FontAwesomeIcon

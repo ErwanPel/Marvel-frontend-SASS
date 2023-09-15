@@ -120,7 +120,7 @@
     font-size: 2rem;
     padding: 1rem;
     border-radius: 80%;
-    transition: background-color 500ms ease-in, color 150ms ease-in;
+    transition: background-color 250ms ease-in, color 150ms ease-in;
     @include responsive-screen("small") {
       font-size: 1.6rem;
     }

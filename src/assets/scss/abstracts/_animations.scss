@@ -40,3 +40,43 @@
     transform: scale(1);
   }
 }
+
+@keyframes fade-in-cards-right {
+  from {
+    transform: translateX(-9999px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-cards-left {
+  from {
+    transform: translateX(9999px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wrong-input {
+  25% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes solo-card-fadin-in {
+  0% {
+    transform: perspective(150rem) translateY(70rem) translateX(-40rem)
+      rotateX(50deg);
+  }
+  // 50% {
+  //   transform: perspective(150rem) translateY(30rem) translateX() rotateX(25deg);
+  // }
+  100% {
+    transform: perspective(150rem) translateY(0) translateX(0) rotateX(0deg);
+  }
+}

@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
@@ -17,7 +17,9 @@ export default function ComicPage({
 }) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [backCharacter, setBackCharacter] = useState(false);
 
+  const navigate = useNavigate();
   const location = useLocation();
   const { comicId } = useParams();
 
@@ -38,6 +40,9 @@ export default function ComicPage({
     if (location.state) {
       setComicData(location.state.data);
       setIsLoading(false);
+      if (location.state.back) {
+        setBackCharacter(true);
+      }
     } else {
       fetchData();
     }
@@ -48,53 +53,64 @@ export default function ComicPage({
   return isLoading ? (
     <p>Downloading...</p>
   ) : (
-    <main>
+    <main className="main__comic">
       {comicData.description ? (
         <>
           <h2>{comicData.title}</h2>
-
-          <div className="comic-bloc">
-            {!comicData.thumbnail.path.match("image_not_available") && (
+          <div className="comic__column">
+            {backCharacter && (
+              <FontAwesomeIcon
+                className="back-arrow"
+                icon="arrow-left"
+                onClick={() => {
+                  setBackCharacter(false);
+                  navigate(location.state.from);
+                }}
+              />
+            )}
+            <div className="comic-bloc">
+              {!comicData.thumbnail.path.match("image_not_available") && (
+                <div>
+                  <img
+                    src={`${comicData.thumbnail.path}/portrait_uncanny.${comicData.thumbnail.extension}`}
+                    alt=""
+                  />
+                </div>
+              )}
               <div>
-                <img
-                  src={`${comicData.thumbnail.path}/portrait_uncanny.${comicData.thumbnail.extension}`}
-                  alt=""
+                <h3>Description</h3>
+                <p>{comicData.description}</p>
+              </div>
+              <div
+                className={
+                  ((loginModal || signModal) && "favorite__modal") ||
+                  (favoriteChar.indexOf(comicData._id) === -1
+                    ? "favorite"
+                    : "favorite__fullheart")
+                }
+                onClick={
+                  token
+                    ? (event) =>
+                        handleFav(
+                          favoriteComics,
+                          setFavoriteComics,
+                          favoriteChar,
+                          setFavoriteChar,
+                          comicData._id,
+                          comicData.name,
+                          deleteFav,
+                          sendFav,
+                          token,
+                          event
+                        )
+                    : (event) => displayModal(setLoginModal, loginModal, event)
+                }
+              >
+                <FontAwesomeIcon
+                  className="favorite__icon"
+                  icon="fa-regular fa-heart"
                 />
               </div>
-            )}
-            <div>
-              <h3>Description</h3>
-              <p>{comicData.description}</p>
-            </div>
-            <div
-              className={
-                ((loginModal || signModal) && "favorite__modal") ||
-                (favoriteChar.indexOf(comicData._id) === -1
-                  ? "favorite"
-                  : "favorite__fullheart")
-              }
-              onClick={
-                token
-                  ? (event) =>
-                      handleFav(
-                        favoriteComics,
-                        setFavoriteComics,
-                        favoriteChar,
-                        setFavoriteChar,
-                        comicData._id,
-                        comicData.name,
-                        deleteFav,
-                        sendFav,
-                        token,
-                        event
-                      )
-                  : (event) => displayModal(setLoginModal, loginModal, event)
-              }
-            >
-              <FontAwesomeIcon
-                className="favorite__icon"
-                icon="fa-regular fa-heart"
-              />
             </div>
           </div>
         </>

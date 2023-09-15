@@ -13,7 +13,20 @@ form {
   input {
     text-align: center;
     height: 3rem;
-    background-color: $transition-color;
+    outline: none;
+    border-radius: 10px;
+
+    &:focus {
+      border: 3px solid black;
+    }
+
+    &:invalid {
+      background-color: $transition-color;
+    }
+
+    &:valid {
+      border: 2px solid #3eb0f7;
+    }
   }
 
   input,
@@ -27,19 +40,25 @@ form {
 }
 
 form button {
-  margin-block: 2rem;
+  margin: 1rem;
   padding-block: 2rem;
   padding-inline: 4rem;
   border-radius: 5px;
   font-size: 2rem;
   border: transparent;
-  background-color: #3eb0f7;
+  background-color: #929597;
+  cursor: not-allowed;
 
   @include responsive-screen("small") {
     padding-block: 1rem;
     padding-inline: 2rem;
     font-size: 1.4rem;
   }
+}
+
+.button__valid {
+  cursor: pointer;
+  background-color: #3eb0f7;
 }
 
 .error-message {

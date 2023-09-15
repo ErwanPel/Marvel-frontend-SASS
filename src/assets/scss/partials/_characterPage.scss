@@ -31,6 +31,7 @@ h2 {
     background-color: $card-color;
     width: 34rem;
     position: relative;
+    animation: fade-in-cards-right 800ms both;
 
     & div {
       @include flex-center(column);
@@ -68,6 +69,7 @@ h2 {
     width: 60rem;
     padding: 2rem;
     background-color: $card-color;
+    animation: fade-in-cards-left 800ms both;
 
     @include responsive-screen("medium") {
       width: 100%;

@@ -13,12 +13,16 @@ export default function CharactersPage({
   setLoginModal,
   autocompleteList,
   setAutocompleteList,
+  directionCard,
+  setDirectionCard,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [selectPage, setSelectPage] = useState();
+
+  const controller = new AbortController();
 
   useEffect(() => {
     // This useEffect contain the fetchFav function which obtain the list
@@ -55,7 +59,8 @@ export default function CharactersPage({
           name = `&name=${search}`;
         }
         const { data } = await axios.get(
-          `https://site--marvel-backend--fwddjdqr85yq.code.run/characters?page=${page}${name}`
+          `https://site--marvel-backend--fwddjdqr85yq.code.run/characters?page=${page}${name}`,
+          { signal: controller.signal }
         );
         setData(data);
         setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
@@ -63,10 +68,16 @@ export default function CharactersPage({
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
+        controller.abort();
       }
     };
 
     fetchData();
+    if (data.length > 0) {
+      return () => {
+        controller.abort();
+      };
+    }
   }, [search, page]);
 
   return (
@@ -76,6 +87,7 @@ export default function CharactersPage({
       ) : (
         <>
           <SearchBar
+            setDirectionCard={setDirectionCard}
             data={data}
             search={search}
             setSearch={setSearch}
@@ -90,6 +102,7 @@ export default function CharactersPage({
             setAutocompleteList={setAutocompleteList}
           />
           <Cards
+            directionCard={directionCard}
             data={data}
             favoriteChar={favoriteChar}
             setFavoriteChar={setFavoriteChar}

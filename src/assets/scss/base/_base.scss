@@ -8,6 +8,7 @@ html {
 main {
   height: 100%;
   @extend %wrapper;
+  overflow: hidden;
 }
 
 h2 {

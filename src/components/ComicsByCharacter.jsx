@@ -37,7 +37,7 @@ export default function ComicsByCharacter({ characterId }) {
               key={comic._id}
               className="biography-comic"
               to={`/comic/${comic._id}`}
-              state={{ data: comic }}
+              state={{ data: comic, from: `/${characterId}`, back: true }}
             >
               <img
                 src={`${comic.thumbnail.path}/portrait_small.${comic.thumbnail.extension}`}
