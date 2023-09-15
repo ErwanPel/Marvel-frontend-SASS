@@ -1,13 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Cookies from "js-cookie";
 
-import AllCharactersPage from "./pages/AllCharactersPage";
 import Header from "./components/Header";
-import CharacterPage from "./pages/CharacterPage";
-import ComicPage from "./pages/ComicPage";
-import AllComicsPage from "./pages/AllComicsPage";
 
 import "./assets/scss/App.css";
 
@@ -22,6 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Modal from "./components/Modal";
+import RouteChild from "./components/RoutesChild";
 
 library.add(
   faChevronRight,
@@ -62,7 +59,22 @@ function App() {
         setFavoriteChar={setFavoriteChar}
         setAutocompleteList={setAutocompleteList}
       />
-      <Routes>
+      <RouteChild
+        autocompleteList={autocompleteList}
+        disconnectModal={disconnectModal}
+        directionCard={directionCard}
+        setDirectionCard={setDirectionCard}
+        loginModal={loginModal}
+        setLoginModal={setLoginModal}
+        signModal={signModal}
+        token={token}
+        favoriteComics={favoriteComics}
+        setFavoriteComics={setFavoriteComics}
+        favoriteChar={favoriteChar}
+        setFavoriteChar={setFavoriteChar}
+        setAutocompleteList={setAutocompleteList}
+      />
+      {/* <Routes>
         <Route
           path="/"
           element={
@@ -129,7 +141,7 @@ function App() {
             />
           }
         />
-      </Routes>
+      </Routes> */}
       {loginModal && (
         <Modal
           loginModal={loginModal}
