@@ -23,6 +23,7 @@
   margin-bottom: 4rem;
   padding-top: 5rem;
   box-shadow: -4px -1px 5px $main-color;
+  transition: transform 300ms ease-in;
   @extend %custom-link;
 
   @include responsive-screen("large") {
@@ -40,8 +41,12 @@
 
   &:hover {
     background-color: rgb(238, 209, 209);
-    transition: 0.5s;
+    transform: perspective(800px) rotateY(4deg) scaleZ(0.9);
   }
+
+  // &:active {
+  //   transform: translateX(-9999px);
+  // }
 
   &__bloc {
     @include flex-around(column);
@@ -71,15 +76,17 @@
   }
 
   .favorite {
-    @include favorite-item($white-color);
+    @include favorite-item($icon-color);
     @include absolute-element(1rem, calc(100% - 4rem));
+    // animation: little-fav 2s ease-in-out;
 
     &__modal {
       @include favorite-item(transparent);
       @include absolute-element(1rem, calc(100% - 4rem));
     }
     &__fullheart {
-      @include favorite-item($main-color, $white-color);
+      @include favorite-item($main-color, white);
+      // transition: background-color 1s;
       @include absolute-element(1rem, calc(100% - 4rem));
     }
     &__icon {

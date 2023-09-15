@@ -27,6 +27,7 @@ header nav {
     border: none;
     font-size: 2.2rem;
     margin-inline: 4rem;
+    transition: background-color 500ms ease-in, color 150ms ease-in;
 
     @include responsive-screen("small") {
       font-size: 1.8rem;
@@ -37,7 +38,8 @@ header nav {
     }
 
     &:hover {
-      @include white-transition-hover;
+      background-color: $white-color;
+      @include darker-c($main-color, -20%);
     }
   }
 }
@@ -73,9 +75,9 @@ header img {
       font-size: 1.6rem;
     }
 
-    &:hover {
-      @include white-transition-hover;
-    }
+    // &:hover {
+    //   // @include white-transition-hover;
+    // }
   }
 }
 
@@ -84,6 +86,8 @@ header img {
   width: 12rem;
   color: $white-color;
   z-index: 3;
+  animation: drop-down 350ms ease-in-out;
+  transform-origin: top;
 
   @include responsive-screen("small") {
     width: 10rem;
@@ -94,39 +98,3 @@ header img {
     @include item-menu;
   }
 }
-
-// @media (max-width: 1140px) {
-//   header {
-//     height: fit-content;
-//     padding-block: 3rem;
-//     flex-direction: column;
-//     gap: 4rem;
-//   }
-
-//   header button {
-//     font-size: 1.8rem;
-//   }
-
-//   header img {
-//     width: 17rem;
-//   }
-// }
-
-// @media (max-width: 830px) {
-//   /* header button {
-//     padding: 1rem;
-//     font-size: 1.4rem;
-//     margin-inline: 1rem;
-//   } */
-//   header > div:first-of-type {
-//     width: 100%;
-
-//     justify-content: space-around;
-//   }
-
-//   header > div:first-of-type > div {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//   }
-// }

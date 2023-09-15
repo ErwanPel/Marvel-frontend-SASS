@@ -44,7 +44,8 @@ h2 {
     }
 
     .favorite {
-      @include favorite-item($white-color);
+      @include favorite-item($icon-color);
+      // animation: little-fav 2s ease-in-out;
       @include absolute-element(1rem, calc(100% - 18.2rem));
 
       &__modal {
@@ -52,7 +53,8 @@ h2 {
         @include absolute-element(1rem, calc(100% - 18.2rem));
       }
       &__fullheart {
-        @include favorite-item($main-color, $white-color);
+        @include favorite-item($main-color, $icon-color);
+        // transition: background-color 1s;
         @include absolute-element(1rem, calc(100% - 18.2rem));
       }
       &__icon {

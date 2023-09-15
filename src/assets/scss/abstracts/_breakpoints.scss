@@ -26,8 +26,6 @@ $breakpoints: (
       inspect($query-size)
     );
 
-    @debug $query;
-
     @media #{$query} {
       @content;
     }

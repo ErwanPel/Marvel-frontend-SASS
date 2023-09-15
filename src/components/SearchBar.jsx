@@ -94,12 +94,20 @@ export default function SearchBar({
         </div>
         <div className="navpage">
           <FontAwesomeIcon
-            className={page > 1 ? "navpage__chevron" : "navpage__unvisible"}
+            className={
+              page > 1
+                ? "navpage__chevron navpage__chevron--left"
+                : "navpage__unvisible"
+            }
             icon="angles-left"
             onClick={() => setPage(1)}
           />
           <FontAwesomeIcon
-            className={page > 1 ? "navpage__chevron" : "navpage__unvisible"}
+            className={
+              page > 1
+                ? "navpage__chevron navpage__chevron--left"
+                : "navpage__unvisible"
+            }
             icon="chevron-left"
             onClick={() => setPage(page - 1)}
           />
@@ -121,7 +129,7 @@ export default function SearchBar({
           <FontAwesomeIcon
             className={
               page < selectPage.length
-                ? "navpage__chevron"
+                ? "navpage__chevron navpage__chevron--right"
                 : "navpage__unvisible"
             }
             icon="chevron-right"
@@ -131,7 +139,7 @@ export default function SearchBar({
           <FontAwesomeIcon
             className={
               page < selectPage.length
-                ? "navpage__chevron"
+                ? "navpage__chevron navpage__chevron--right"
                 : "navpage__unvisible"
             }
             icon="angles-right"

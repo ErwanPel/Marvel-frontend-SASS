@@ -32,8 +32,9 @@
   }
 
   .favorite {
-    @include favorite-item($white-color);
+    @include favorite-item($icon-color);
     @include absolute-element(2rem, calc(100% - 5rem));
+    // animation: little-fav 2s ease-in-out;
 
     @include responsive-screen("medium") {
       @include absolute-element(1rem, calc(50% - 0.8rem));
@@ -48,7 +49,8 @@
       }
     }
     &__fullheart {
-      @include favorite-item($main-color, $white-color);
+      @include favorite-item($main-color, $icon-color);
+      // transition: background-color 1s;
       @include absolute-element(2rem, calc(100% - 5rem));
 
       @include responsive-screen("medium") {

@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "placeholders" as *;
 @use "breakpoints" as *;
+@use "animations" as *;
 
 @mixin absolute-element($top, $left) {
   position: absolute;
@@ -83,13 +84,26 @@
   color: $color;
   background-color: $background;
 
+  @if $background == $icon-color {
+    animation: little-fav 2s ease-in-out;
+  } @else if $background == $main-color {
+    transition: background-color 1s;
+  }
+
   &:hover {
     cursor: pointer;
   }
 }
 
-@mixin white-transition-hover {
-  cursor: pointer;
-  background-color: $white-color;
-  transition: 0.5s;
+@mixin darker-c($-color, $-lightness) {
+  color: scale-color($color: $-color, $lightness: $-lightness);
+}
+
+@mixin pseudo-elem-abs {
+  content: "...";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }

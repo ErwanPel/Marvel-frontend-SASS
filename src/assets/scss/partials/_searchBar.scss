@@ -19,6 +19,7 @@
 
     @include responsive-screen("large") {
       @include flex-center(column);
+      gap: 2rem;
     }
 
     @include responsive-screen("small") {
@@ -74,6 +75,8 @@
     overflow-y: scroll;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;
+    transform-origin: top;
+    animation: drop-down 150ms 0ms ease-in-out;
 
     &::-webkit-scrollbar {
       display: none;
@@ -117,13 +120,22 @@
     font-size: 2rem;
     padding: 1rem;
     border-radius: 80%;
-
+    transition: background-color 500ms ease-in, color 150ms ease-in;
     @include responsive-screen("small") {
       font-size: 1.6rem;
     }
 
     &:hover {
-      @include white-transition-hover;
+      background-color: $white-color;
+      @include darker-c($main-color, -20%);
+    }
+
+    &--right:hover {
+      animation: chevron-right 2s infinite ease-in-out;
+    }
+
+    &--left:hover {
+      animation: chevron-left 2s infinite ease-in-out;
     }
 
     &:active {
@@ -132,32 +144,14 @@
   }
 
   &__unvisible {
-    visibility: hidden;
-    // margin-inline is used for block the select and chevron icon
-    // at the same place
-    margin-inline: 1.4rem;
-  }
-}
+    color: $main-color;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 80%;
+    opacity: 0;
 
-@media (max-width: 1140px) {
-  .search-page-bloc {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 655px) {
-  .search-bloc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .select-bloc select {
-    font-size: 1.4rem;
-    height: 3rem;
+    @include responsive-screen("small") {
+      font-size: 1.6rem;
+    }
   }
 }
