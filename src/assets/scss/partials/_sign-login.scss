@@ -72,3 +72,17 @@ form button {
   font-size: 1.6rem;
   margin-top: 2rem;
 }
+
+.account-message {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

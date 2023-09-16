@@ -8,6 +8,7 @@ main {
   color: $main-color;
   font-size: 5rem;
   margin-left: 2rem;
+  animation: opacity-animation 1s 300ms ease-out both;
 
   &:hover {
     animation: chevron-left 2s infinite ease-in-out;

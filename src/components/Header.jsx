@@ -40,7 +40,7 @@ export default function Header({
     setDisconnectModal(true);
     setTimeout(() => {
       setDisconnectModal(false);
-    }, 3000);
+    }, 2000);
     setToken("");
   };
 

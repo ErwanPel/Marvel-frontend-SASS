@@ -70,6 +70,7 @@ export default function Modal({
             setSignModal={setSignModal}
             setToken={setToken}
             setUserError={setUserError}
+            setLoginModal={setLoginModal}
           />
         )}
         {loginModal && (
@@ -78,6 +79,7 @@ export default function Modal({
             setLoginModal={setLoginModal}
             setToken={setToken}
             setUserError={setUserError}
+            setSignModal={setSignModal}
           />
         )}
         {disconnectModal && (

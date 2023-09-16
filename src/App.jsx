@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 import Header from "./components/Header";
 
-import "./assets/scss/App.css";
+import "./assets/css/App.css";
 
 import {
   faChevronRight,
@@ -15,6 +15,7 @@ import {
   faBars,
   faXmark,
   faArrowLeft,
+  faCircleNotch,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import Modal from "./components/Modal";
@@ -28,7 +29,8 @@ library.add(
   faHeart,
   faBars,
   faXmark,
-  faArrowLeft
+  faArrowLeft,
+  faCircleNotch
 );
 
 function App() {
@@ -147,6 +149,7 @@ function App() {
           loginModal={loginModal}
           setLoginModal={setLoginModal}
           setToken={setToken}
+          setSignModal={setSignModal}
         />
       )}
       {signModal && (
@@ -154,6 +157,7 @@ function App() {
           signModal={signModal}
           setSignModal={setSignModal}
           setToken={setToken}
+          setLoginModal={setLoginModal}
         />
       )}
       {disconnectModal && (

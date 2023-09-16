@@ -56,6 +56,7 @@ export default function RouteChild({
               loginModal={loginModal}
               setLoginModal={setLoginModal}
               signModal={signModal}
+              disconnectModal={disconnectModal}
               favoriteComics={favoriteComics}
               setFavoriteComics={setFavoriteComics}
             />
@@ -89,6 +90,7 @@ export default function RouteChild({
               favoriteChar={favoriteChar}
               setFavoriteChar={setFavoriteChar}
               setLoginModal={setLoginModal}
+              disconnectModal={disconnectModal}
               autocompleteList={autocompleteList}
               setAutocompleteList={setAutocompleteList}
             />

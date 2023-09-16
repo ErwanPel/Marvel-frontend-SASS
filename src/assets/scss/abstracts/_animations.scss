@@ -79,7 +79,7 @@
   }
 }
 
-@keyframes rotate-cross {
+@keyframes spin {
   from {
     transform: rotate(0);
   }
@@ -94,5 +94,23 @@
   }
   75% {
     transform: translateX(-3%);
+  }
+}
+
+@keyframes appear-modal {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

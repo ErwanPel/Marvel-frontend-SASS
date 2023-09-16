@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.boxload {
+  @include flex-center;
+  height: 70vh;
+
+  &__loader {
+    color: $main-color;
+    font-size: 5rem;
+    animation: spin 1.5s infinite running;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}

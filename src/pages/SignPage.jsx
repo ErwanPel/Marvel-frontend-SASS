@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default function SignPage({ setSignModal, setToken, setUserError }) {
+export default function SignPage({
+  setSignModal,
+  setToken,
+  setUserError,
+  setLoginModal,
+}) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,6 +16,11 @@ export default function SignPage({ setSignModal, setToken, setUserError }) {
   const [error, setError] = useState("");
   const [agree, setAgree] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const handleModal = () => {
+    setLoginModal(() => true);
+    setSignModal(() => false);
+  };
 
   const handleChange = (setState, event) => {
     setUserError(false);
@@ -148,7 +158,12 @@ export default function SignPage({ setSignModal, setToken, setUserError }) {
           Fermer
         </button>
       ) : (
-        <button className={agree && "button__valid"}>S'inscrire</button>
+        <>
+          <button className={agree && "button__valid"}>S'inscrire</button>
+          <p onClick={handleModal} className="account-message">
+            Have already an account ? Log you !
+          </p>
+        </>
       )}
     </form>
   );

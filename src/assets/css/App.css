@@ -81,7 +81,7 @@ header, .searchbar .navbar, main, .page {
     transform: perspective(150rem) translateY(0) translateX(0) rotateX(0deg);
   }
 }
-@keyframes rotate-cross {
+@keyframes spin {
   from {
     transform: rotate(0);
   }
@@ -95,6 +95,22 @@ header, .searchbar .navbar, main, .page {
   }
   75% {
     transform: translateX(-3%);
+  }
+}
+@keyframes appear-modal {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes opacity-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -616,6 +632,7 @@ p.to-complete {
   color: rgb(229, 38, 38);
   font-size: 5rem;
   margin-left: 2rem;
+  animation: opacity-animation 1s 300ms ease-out both;
 }
 .back-arrow:hover {
   animation: chevron-left 2s infinite ease-in-out;
@@ -1112,6 +1129,7 @@ header img {
   display: flex !important;
   justify-content: center;
   align-items: center;
+  animation: appear-modal 500ms 50ms both;
 }
 @media (max-width: 655px) {
   .modal-window__bloc {
@@ -1124,7 +1142,7 @@ header img {
 }
 .modal-window__close:hover {
   cursor: pointer;
-  animation: rotate-cross 3s ease-out infinite;
+  animation: spin 3s ease-out infinite;
 }
 .modal-window__close :active {
   opacity: 0.5;
@@ -1217,6 +1235,18 @@ form button {
   margin-top: 2rem;
 }
 
+.account-message {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+.account-message:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.account-message:active {
+  opacity: 0.7;
+}
+
 .comics-window {
   width: 100%;
 }
@@ -1246,6 +1276,22 @@ form button {
   line-height: 1.6rem;
   max-height: 3.2rem;
   overflow: hidden;
+}
+
+.boxload {
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.boxload__loader {
+  color: rgb(229, 38, 38);
+  font-size: 5rem;
+  animation: spin 1.5s infinite running;
+}
+.boxload__loader:hover {
+  animation-play-state: paused;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -5,6 +5,7 @@ import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
 import { displayModal } from "../assets/utils/displayModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import Loader from "../components/Loader";
 
 export default function ComicPage({
   favoriteChar,
@@ -15,6 +16,7 @@ export default function ComicPage({
   favoriteComics,
   setFavoriteComics,
   setLoginModal,
+  disconnectModal,
 }) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +25,8 @@ export default function ComicPage({
   const navigate = useNavigate();
   const location = useLocation();
   const { comicId } = useParams();
+
+  console.log("ici", disconnectModal);
 
   const fetchData = async () => {
     try {
@@ -52,7 +56,7 @@ export default function ComicPage({
   console.log(token);
 
   return isLoading ? (
-    <p>Downloading...</p>
+    <Loader />
   ) : (
     <motion.main
       initial={{
@@ -99,7 +103,8 @@ export default function ComicPage({
               </div>
               <div
                 className={
-                  ((loginModal || signModal) && "favorite__modal") ||
+                  ((loginModal || signModal || disconnectModal) &&
+                    "favorite__modal") ||
                   (favoriteChar.indexOf(comicData._id) === -1
                     ? "favorite"
                     : "favorite__fullheart")

@@ -3,6 +3,7 @@ import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import Cards from "../components/Cards";
 import { motion } from "framer-motion";
+import Loader from "../components/Loader";
 
 export default function AllComicsPage({
   loginModal,
@@ -13,8 +14,6 @@ export default function AllComicsPage({
   setFavoriteComics,
   autocompleteList,
   setAutocompleteList,
-  directionCard,
-  setDirectionCard,
   disconnectModal,
 }) {
   const [data, setData] = useState([]);
@@ -104,7 +103,7 @@ export default function AllComicsPage({
       }}
     >
       {isLoading ? (
-        <p className="wrapper">Downloading ...</p>
+        <Loader />
       ) : (
         <>
           <SearchBar

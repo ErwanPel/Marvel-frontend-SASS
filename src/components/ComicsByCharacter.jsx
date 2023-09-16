@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "./Loader";
 
 export default function ComicsByCharacter({ characterId }) {
   const [comicData, setComicData] = useState([]);
@@ -23,7 +24,7 @@ export default function ComicsByCharacter({ characterId }) {
   }, [characterId]);
 
   return isLoading ? (
-    <p>Downloading...</p>
+    <Loader />
   ) : (
     <div className="comics-window">
       {comicData?.comics === undefined ? (

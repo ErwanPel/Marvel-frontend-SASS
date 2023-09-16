@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 
 import ComicsByCharacter from "../components/ComicsByCharacter";
+import Loader from "../components/Loader";
 
 export default function CharacterPage({
   favoriteChar,
@@ -17,6 +18,7 @@ export default function CharacterPage({
   favoriteComics,
   setFavoriteComics,
   setLoginModal,
+  disconnectModal,
 }) {
   const [characterData, setCharacterData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -47,10 +49,8 @@ export default function CharacterPage({
     console.log(characterData);
   }, []);
 
-  console.log("fav char", favoriteChar, signModal, loginModal);
-
   return isLoading ? (
-    <p>Downloading...</p>
+    <Loader />
   ) : (
     <motion.main
       initial={{
@@ -73,7 +73,8 @@ export default function CharacterPage({
         <div className="biography-bloc__left">
           <div
             className={
-              ((loginModal || signModal) && "favorite__modal") ||
+              ((loginModal || signModal || disconnectModal) &&
+                "favorite__modal") ||
               (favoriteChar.indexOf(characterData._id) === -1
                 ? "favorite"
                 : "favorite__fullheart")
