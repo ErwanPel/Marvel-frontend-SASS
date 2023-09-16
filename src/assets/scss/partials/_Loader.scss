@@ -1,8 +1,10 @@
 @use "../abstracts" as *;
 
 .boxload {
-  @include flex-center;
   height: 70vh;
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
 
   &__loader {
     color: $main-color;

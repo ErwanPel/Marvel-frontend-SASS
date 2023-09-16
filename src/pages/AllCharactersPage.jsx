@@ -99,8 +99,8 @@ export default function CharactersPage({
         borderColor: "rgba(228, 228, 228, 1)",
         opacity: 0,
         transition: {
-          duration: 1,
-          delay: 0.5,
+          duration: 0.8,
+
           ease: [0.43, 0.04, 0.84, 0.52],
         },
       }}

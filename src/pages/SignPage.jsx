@@ -95,7 +95,7 @@ export default function SignPage({
     <form onSubmit={handleSubmit}>
       <h3>Inscription</h3>
       <div className="inputBloc">
-        <label htmlFor="name">Ton nom :</label>
+        <label htmlFor="name">Ton pseudo :</label>
         <input
           type="text"
           name="name"

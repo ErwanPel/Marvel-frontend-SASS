@@ -60,6 +60,7 @@ export default function ComicPage({
     <Loader />
   ) : (
     <motion.main
+      className="main__comic"
       initial={{
         opacity: 0,
       }}
@@ -73,7 +74,6 @@ export default function ComicPage({
           duration: 0.7,
         },
       }}
-      className="main__comic"
     >
       {comicData.description ? (
         <>
@@ -141,6 +141,17 @@ export default function ComicPage({
         <div className="section-to-complete">
           <p>This section need to be completed ! </p>
           <p>Sorry 🦹‍♂️</p>
+          {backCharacter && (
+            <FontAwesomeIcon
+              className="back-arrow"
+              icon="arrow-left"
+              onClick={() => {
+                setMenu(false);
+                setBackCharacter(false);
+                navigate(location.state.from);
+              }}
+            />
+          )}
         </div>
       )}
     </motion.main>

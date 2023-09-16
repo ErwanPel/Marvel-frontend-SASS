@@ -46,9 +46,11 @@
 @keyframes fade-in-cards-right {
   from {
     transform: translateX(-9999px);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 

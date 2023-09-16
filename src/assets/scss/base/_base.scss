@@ -18,10 +18,9 @@ h2 {
   color: $white-color;
   text-align: center;
   padding-block: 4rem;
+  animation: fade-in-cards-left 1.1s cubic-bezier(0.47, 0.92, 0.47, 0.7) both;
 
   h2 {
-    animation: fade-in-cards-left 800ms both;
-
     @include responsive-screen("small") {
       font-size: 2.2rem;
     }

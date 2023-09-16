@@ -36,11 +36,11 @@
   }
 
   &__right {
-    animation: fade-in-cards-right 300ms;
+    animation: fade-in-cards-right 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
   }
 
   &__left {
-    animation: fade-in-cards-left 300ms;
+    animation: fade-in-cards-left 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
   }
 
   &__bloc {
