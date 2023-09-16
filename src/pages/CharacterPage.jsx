@@ -60,7 +60,6 @@ export default function CharacterPage({
         opacity: 1,
       }}
       exit={{
-        transition: 1000,
         translateY: 800,
         transition: {
           duration: 0.7,

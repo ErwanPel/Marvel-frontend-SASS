@@ -81,6 +81,7 @@ export default function AllComicsPage({
 
   return (
     <motion.div
+      className="page"
       initial={{
         opacity: 0,
       }}
@@ -88,14 +89,17 @@ export default function AllComicsPage({
         opacity: 1,
       }}
       exit={{
-        transition: 1000,
-        rotateY: -70,
-        translateX: -350,
+        rotateY: 80,
+        rotateX: 10,
+        translateX: -650,
+        translateY: -100,
         transformOrigin: -200,
+        borderColor: "white",
         opacity: 0,
         transition: {
-          duration: 0.7,
+          duration: 1,
           delay: 0.5,
+          ease: [0.43, 0.04, 0.84, 0.52],
         },
       }}
     >

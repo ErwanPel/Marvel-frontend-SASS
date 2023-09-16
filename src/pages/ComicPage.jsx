@@ -62,13 +62,10 @@ export default function ComicPage({
         opacity: 1,
       }}
       exit={{
-        transition: 1000,
         translateX: -800,
         opacity: 0,
         transition: {
           duration: 0.7,
-
-          ease: [0.43, 0.04, 0.84, 0.52],
         },
       }}
       className="main__comic"

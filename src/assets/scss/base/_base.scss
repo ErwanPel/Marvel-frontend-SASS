@@ -18,6 +18,8 @@ h2 {
   padding-block: 4rem;
 
   h2 {
+    animation: fade-in-cards-left 800ms both;
+
     @include responsive-screen("small") {
       font-size: 2.2rem;
     }

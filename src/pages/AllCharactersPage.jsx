@@ -83,20 +83,27 @@ export default function CharactersPage({
 
   return (
     <motion.div
+      className="page"
       initial={{
         opacity: 0,
       }}
       animate={{
         opacity: 1,
+        rotateY: 0,
+        translateX: 0,
+        transformOrigin: 0,
       }}
       exit={{
-        rotateY: 70,
-        transition: 1000,
-        translateX: 500,
+        rotateY: -70,
+        rotateX: 30,
+        translateX: 1200,
+        translateY: 20,
         transformOrigin: 100,
+        borderColor: "white",
+        boxShadow: "white",
         opacity: 0,
         transition: {
-          duration: 0.7,
+          duration: 1,
           delay: 0.5,
           ease: [0.43, 0.04, 0.84, 0.52],
         },
