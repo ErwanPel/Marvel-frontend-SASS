@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cards from "../components/Cards";
-import SearchBar from "../components/SearchBar";
 import { motion } from "framer-motion";
 import Loader from "../components/Loader";
+import StickyTopBar from "../components/StickyTopBar";
 
 export default function CharactersPage({
   loginModal,
@@ -15,6 +15,7 @@ export default function CharactersPage({
   autocompleteList,
   setAutocompleteList,
   disconnectModal,
+  setMenu,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +65,6 @@ export default function CharactersPage({
         );
         setData(data);
         setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
-
         setIsLoading(false);
       } catch (error) {
         console.log(error.response);
@@ -82,24 +82,21 @@ export default function CharactersPage({
 
   return (
     <motion.div
+      // the className Page is on the "cards.scss" file
       className="page"
       initial={{
         opacity: 0,
       }}
       animate={{
         opacity: 1,
-        rotateY: 0,
-        translateX: 0,
-        transformOrigin: 0,
       }}
       exit={{
         rotateY: -70,
-        rotateX: 30,
+        rotateX: 15,
         translateX: 1200,
-        translateY: 20,
+        translateY: -100,
         transformOrigin: 100,
-        borderColor: "white",
-        boxShadow: "white",
+        borderColor: "rgba(228, 228, 228, 1)",
         opacity: 0,
         transition: {
           duration: 1,
@@ -112,7 +109,8 @@ export default function CharactersPage({
         <Loader />
       ) : (
         <>
-          <SearchBar
+          <StickyTopBar
+            setMenu={setMenu}
             disconnectModal={disconnectModal}
             data={data}
             search={search}
@@ -128,6 +126,7 @@ export default function CharactersPage({
             setAutocompleteList={setAutocompleteList}
           />
           <Cards
+            setMenu={setMenu}
             directionCard="to right"
             data={data}
             favoriteChar={favoriteChar}

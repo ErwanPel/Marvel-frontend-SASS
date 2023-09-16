@@ -40,13 +40,15 @@ function App() {
   const [token, setToken] = useState(Cookies.get("token") || "");
   const [favoriteComics, setFavoriteComics] = useState([]);
   const [favoriteChar, setFavoriteChar] = useState([]);
+  const [menu, setMenu] = useState(false);
   const [autocompleteList, setAutocompleteList] = useState(false);
   const [directionCard, setDirectionCard] = useState("to right");
 
-  console.log("ici", favoriteChar);
   return (
     <Router>
       <Header
+        menu={menu}
+        setMenu={setMenu}
         setDisconnectModal={setDisconnectModal}
         setDirectionCard={setDirectionCard}
         loginModal={loginModal}
@@ -62,6 +64,7 @@ function App() {
         setAutocompleteList={setAutocompleteList}
       />
       <RouteChild
+        setMenu={setMenu}
         autocompleteList={autocompleteList}
         disconnectModal={disconnectModal}
         directionCard={directionCard}
@@ -76,74 +79,6 @@ function App() {
         setFavoriteChar={setFavoriteChar}
         setAutocompleteList={setAutocompleteList}
       />
-      {/* <Routes>
-        <Route
-          path="/"
-          element={
-            <AllCharactersPage
-              disconnectModal={disconnectModal}
-              setDirectionCard={setDirectionCard}
-              directionCard={directionCard}
-              loginModal={loginModal}
-              signModal={signModal}
-              token={token}
-              favoriteChar={favoriteChar}
-              setFavoriteChar={setFavoriteChar}
-              setLoginModal={setLoginModal}
-              autocompleteList={autocompleteList}
-              setAutocompleteList={setAutocompleteList}
-            />
-          }
-        />
-        <Route
-          path="/:characterId"
-          element={
-            <CharacterPage
-              favoriteChar={favoriteChar}
-              setFavoriteChar={setFavoriteChar}
-              token={token}
-              loginModal={loginModal}
-              setLoginModal={setLoginModal}
-              signModal={signModal}
-              favoriteComics={favoriteComics}
-              setFavoriteComics={setFavoriteComics}
-            />
-          }
-        />
-        <Route
-          path="/comics"
-          element={
-            <AllComicsPage
-              disconnectModal={disconnectModal}
-              setDirectionCard={setDirectionCard}
-              directionCard={directionCard}
-              loginModal={loginModal}
-              signModal={signModal}
-              token={token}
-              favoriteComics={favoriteComics}
-              setFavoriteComics={setFavoriteComics}
-              setLoginModal={setLoginModal}
-              autocompleteList={autocompleteList}
-              setAutocompleteList={setAutocompleteList}
-            />
-          }
-        />
-        <Route
-          path="/comic/:comicId"
-          element={
-            <ComicPage
-              loginModal={loginModal}
-              signModal={signModal}
-              token={token}
-              favoriteChar={favoriteChar}
-              setFavoriteChar={setFavoriteChar}
-              setLoginModal={setLoginModal}
-              autocompleteList={autocompleteList}
-              setAutocompleteList={setAutocompleteList}
-            />
-          }
-        />
-      </Routes> */}
       {loginModal && (
         <Modal
           loginModal={loginModal}

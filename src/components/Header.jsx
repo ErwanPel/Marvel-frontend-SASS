@@ -1,7 +1,7 @@
 import Logo from "../assets/img/LogoMarvel.webp";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { useState } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header({
@@ -16,8 +16,9 @@ export default function Header({
   setAutocompleteList,
   setDirectionCard,
   setDisconnectModal,
+  menu,
+  setMenu,
 }) {
-  const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
 
   const getSignUp = () => {
@@ -38,6 +39,7 @@ export default function Header({
     setFavoriteChar([]);
     setFavoriteComics([]);
     setDisconnectModal(true);
+    setMenu(false);
     setTimeout(() => {
       setDisconnectModal(false);
     }, 2000);
@@ -46,12 +48,20 @@ export default function Header({
 
   return (
     <header className="header">
-      <Link to="/" onClick={() => setDirectionCard("to right")}>
+      <Link
+        to="/"
+        onClick={() => {
+          setMenu(false);
+          setDirectionCard("to right");
+        }}
+      >
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
       <nav>
         <button
+          className="header__button"
           onClick={() => {
+            setMenu(false);
             setDirectionCard("to right");
             navigate("/");
           }}
@@ -60,7 +70,9 @@ export default function Header({
         </button>
 
         <button
+          className="header__button"
           onClick={() => {
+            setMenu(false);
             setDirectionCard("to left");
             navigate("/comics");
           }}

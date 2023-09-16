@@ -1,8 +1,11 @@
-@forward "cards";
-@forward "characterPage";
-@forward "comicPage";
-@forward "searchBar";
-@forward "header";
-@forward "modal";
-@forward "sign-login";
-@forward "comicsByCharacter";
+// This file regroup all the subfiles of the "partials" folder which is
+// use in the "App.scss"
+
+@forward "Cards";
+@forward "Card";
+@forward "Loader";
+@forward "StickyTopBar";
+@forward "Header";
+@forward "Modal";
+@forward "Search";
+@forward "NavPages";

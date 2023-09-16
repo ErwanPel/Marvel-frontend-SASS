@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+
+.navpage {
+  @include flex-center;
+  gap: 3rem;
+  width: 37rem;
+
+  @include responsive-screen("tiny") {
+    gap: 2.2rem;
+  }
+}
+
+.navpage__chevron {
+  color: $main-color;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 80%;
+  transition: background-color 250ms ease-in, color 150ms ease-in;
+
+  @include responsive-screen("small") {
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $white-color;
+    @include darker-c($main-color, -20%);
+  }
+
+  &--right:hover {
+    animation: chevron-right 2s infinite ease-in-out;
+  }
+
+  &--left:hover {
+    animation: chevron-left 2s infinite ease-in-out;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.navpage__unvisible {
+  color: $main-color;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 80%;
+  opacity: 0;
+
+  @include responsive-screen("small") {
+    font-size: 1.6rem;
+  }
+}
+
+select {
+  background-color: $secondary-color;
+  color: $main-color;
+  width: 10rem;
+  font-size: 1.6rem;
+  text-align: center;
+  height: 4.2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include responsive-screen("small") {
+    width: 10rem;
+    font-size: 1.4rem;
+  }
+}

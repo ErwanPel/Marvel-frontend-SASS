@@ -17,6 +17,7 @@ export default function ComicPage({
   setFavoriteComics,
   setLoginModal,
   disconnectModal,
+  setMenu,
 }) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -83,6 +84,7 @@ export default function ComicPage({
                 className="back-arrow"
                 icon="arrow-left"
                 onClick={() => {
+                  setMenu(false);
                   setBackCharacter(false);
                   navigate(location.state.from);
                 }}

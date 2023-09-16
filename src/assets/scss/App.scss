@@ -1,6 +1,11 @@
+// This is the principal scss files which regroup all the
+// scss files from the _index.scss in the folders below.
+// This file create convert all the scss files on a css file
+// which is on "src/assets/css" folders
+
 @charset 'utf-8';
 
 @use "./abstracts";
 @use "./base";
+@use "./pages";
 @use "./partials";
-@use "./components";

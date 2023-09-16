@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 
-export default function ComicsByCharacter({ characterId }) {
+export default function ComicsByCharacter({ characterId, setMenu }) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -39,6 +39,7 @@ export default function ComicsByCharacter({ characterId }) {
               className="biography-comic"
               to={`/comic/${comic._id}`}
               state={{ data: comic, from: `/${characterId}`, back: true }}
+              onClick={() => setMenu(false)}
             >
               <img
                 src={`${comic.thumbnail.path}/portrait_small.${comic.thumbnail.extension}`}

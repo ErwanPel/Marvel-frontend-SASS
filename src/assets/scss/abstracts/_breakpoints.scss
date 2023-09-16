@@ -1,3 +1,5 @@
+// This file regroup all the media query for this project
+
 $breakpoints: (
   "tiny": (
     max-width: 500px,
@@ -26,7 +28,7 @@ $breakpoints: (
       inspect($query-size)
     );
 
-    @media #{$query} {
+    @media screen and #{$query} {
       @content;
     }
   } @else {

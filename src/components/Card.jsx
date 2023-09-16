@@ -18,6 +18,7 @@ export default function Card({
   token,
   directionCard,
   disconnectModal,
+  setMenu,
 }) {
   return (
     <Link
@@ -26,6 +27,7 @@ export default function Card({
       }
       to={`${path}${element._id}`}
       state={{ data: element }}
+      onClick={() => setMenu(false)}
     >
       <div
         className={

@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 import AllCharactersPage from "../pages/AllCharactersPage";
 import CharacterPage from "../pages/CharacterPage";
@@ -22,6 +21,7 @@ export default function RouteChild({
   setFavoriteChar,
   autocompleteList,
   setAutocompleteList,
+  setMenu,
 }) {
   const location = useLocation();
 
@@ -32,6 +32,7 @@ export default function RouteChild({
           path="/"
           element={
             <AllCharactersPage
+              setMenu={setMenu}
               disconnectModal={disconnectModal}
               setDirectionCard={setDirectionCard}
               directionCard={directionCard}
@@ -50,6 +51,7 @@ export default function RouteChild({
           path="/:characterId"
           element={
             <CharacterPage
+              setMenu={setMenu}
               favoriteChar={favoriteChar}
               setFavoriteChar={setFavoriteChar}
               token={token}
@@ -66,6 +68,7 @@ export default function RouteChild({
           path="/comics"
           element={
             <AllComicsPage
+              setMenu={setMenu}
               disconnectModal={disconnectModal}
               setDirectionCard={setDirectionCard}
               directionCard={directionCard}
@@ -84,6 +87,7 @@ export default function RouteChild({
           path="/comic/:comicId"
           element={
             <ComicPage
+              setMenu={setMenu}
               loginModal={loginModal}
               signModal={signModal}
               token={token}

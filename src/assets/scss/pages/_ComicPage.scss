@@ -1,14 +1,10 @@
 @use "../abstracts" as *;
 
-main {
-  @extend %wrapper;
-}
-
 .back-arrow {
   color: $main-color;
   font-size: 5rem;
   margin-left: 2rem;
-  animation: opacity-animation 1s 300ms ease-out both;
+  animation: opacity-animation 1s 300ms ease-out;
 
   &:hover {
     animation: chevron-left 2s infinite ease-in-out;
@@ -104,10 +100,3 @@ main {
     font-size: 2.2rem;
   }
 }
-
-// @media (max-width: 830px) {
-//   .comic-bloc {
-//     flex-direction: column;
-//     width: 34rem;
-//   }
-// }

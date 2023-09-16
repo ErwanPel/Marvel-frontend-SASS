@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.sticky-bloc {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.searchbar {
+  @include flex-around(row);
+  border-bottom: 1px solid $main-color;
+  padding: 2rem;
+  background-color: $background-site;
+
+  .navbar {
+    display: flex;
+    gap: 5rem;
+    @extend %wrapper;
+
+    @include responsive-screen("large") {
+      @include flex-center(column);
+      gap: 2rem;
+    }
+
+    @include responsive-screen("small") {
+      gap: 2.5rem;
+    }
+  }
+}

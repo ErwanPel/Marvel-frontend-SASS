@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import SearchBar from "../components/SearchBar";
 import Cards from "../components/Cards";
 import { motion } from "framer-motion";
 import Loader from "../components/Loader";
+import StickyTopBar from "../components/StickyTopBar";
 
 export default function AllComicsPage({
   loginModal,
@@ -15,6 +15,7 @@ export default function AllComicsPage({
   autocompleteList,
   setAutocompleteList,
   disconnectModal,
+  setMenu,
 }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -80,12 +81,18 @@ export default function AllComicsPage({
 
   return (
     <motion.div
+      // the className Page is on the "cards.scss" file
       className="page"
       initial={{
         opacity: 0,
       }}
       animate={{
         opacity: 1,
+        transition: {
+          duration: 1,
+          delay: 0.5,
+          ease: [0.43, 0.04, 0.84, 0.52],
+        },
       }}
       exit={{
         rotateY: 80,
@@ -93,7 +100,7 @@ export default function AllComicsPage({
         translateX: -650,
         translateY: -100,
         transformOrigin: -200,
-        borderColor: "white",
+        borderColor: "rgba(228, 228, 228, 1)",
         opacity: 0,
         transition: {
           duration: 1,
@@ -106,7 +113,8 @@ export default function AllComicsPage({
         <Loader />
       ) : (
         <>
-          <SearchBar
+          <StickyTopBar
+            setMenu={setMenu}
             disconnectModal={disconnectModal}
             data={data}
             search={search}
@@ -123,6 +131,7 @@ export default function AllComicsPage({
           />
 
           <Cards
+            setMenu={setMenu}
             directionCard="to left"
             data={data}
             favoriteComics={favoriteComics}

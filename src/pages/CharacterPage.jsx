@@ -19,6 +19,7 @@ export default function CharacterPage({
   setFavoriteComics,
   setLoginModal,
   disconnectModal,
+  setMenu,
 }) {
   const [characterData, setCharacterData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -124,7 +125,7 @@ export default function CharacterPage({
         </div>
         <div className="biography-bloc__right">
           <h3>Comics</h3>
-          <ComicsByCharacter characterId={characterId} />
+          <ComicsByCharacter characterId={characterId} setMenu={setMenu} />
         </div>
       </div>
     </motion.main>

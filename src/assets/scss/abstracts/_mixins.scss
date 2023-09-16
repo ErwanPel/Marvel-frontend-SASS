@@ -1,3 +1,8 @@
+// This file regroup all the mixins used in the project
+// The mixins are classes which contains CSS properties
+// and can get arguments in paranthesis area. They are
+// instantiated with @include
+
 @use "variables" as *;
 @use "placeholders" as *;
 @use "breakpoints" as *;
@@ -97,13 +102,4 @@
 
 @mixin darker-c($-color, $-lightness) {
   color: scale-color($color: $-color, $lightness: $-lightness);
-}
-
-@mixin pseudo-elem-abs {
-  content: "...";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
 }

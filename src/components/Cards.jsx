@@ -15,6 +15,7 @@ export default function Cards({
   setAutocompleteList,
   directionCard,
   disconnectModal,
+  setMenu,
 }) {
   return (
     <main className="cards-bloc">
@@ -23,6 +24,7 @@ export default function Cards({
           let picture = `${element.thumbnail.path}/portrait_large.${element.thumbnail.extension}`;
           return (
             <Card
+              setMenu={setMenu}
               key={element._id}
               picture={picture}
               element={element}
