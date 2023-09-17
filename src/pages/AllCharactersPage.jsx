@@ -87,8 +87,8 @@ export default function CharactersPage({
       initial={{
         opacity: 0,
         rotateY: -70,
-        rotateX: 15,
-        translateX: 1200,
+        rotateX: 10,
+        translateX: 4000,
         translateY: -100,
         transformOrigin: 100,
         borderColor: "rgba(228, 228, 228, 1)",
