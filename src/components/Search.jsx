@@ -45,10 +45,10 @@ export default function Search({
           name="search"
           id="search"
           placeholder={placeholder}
+          onFocus={() => setMenu(() => false)}
           onChange={(event) => {
             setAutocompleteList(true);
             setSearch(event.target.value);
-            setMenu(() => false);
             setPage(1);
           }}
           value={search}

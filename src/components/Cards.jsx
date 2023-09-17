@@ -18,12 +18,19 @@ export default function Cards({
   setMenu,
 }) {
   return (
-    <main className="cards-bloc">
+    <main
+      className={
+        directionCard === "to right"
+          ? "cards-bloc"
+          : "cards-bloc cards-bloc__reverse"
+      }
+    >
       {data.results ? (
-        data.results.map((element) => {
+        data.results.map((element, index) => {
           let picture = `${element.thumbnail.path}/portrait_large.${element.thumbnail.extension}`;
           return (
             <Card
+              numberCard={`${index + 1}`}
               setMenu={setMenu}
               key={element._id}
               picture={picture}

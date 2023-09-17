@@ -86,9 +86,9 @@ export default function CharactersPage({
       className="page"
       initial={{
         opacity: 0,
-        rotateY: -70,
-        rotateX: 10,
-        translateX: 4000,
+        rotateY: -110,
+        rotateX: 20,
+        translateX: 2200,
         translateY: -100,
         transformOrigin: 100,
         borderColor: "rgba(228, 228, 228, 1)",
@@ -102,7 +102,7 @@ export default function CharactersPage({
         transformOrigin: 100,
         borderColor: "rgba(228, 228, 228, 0)",
         transition: {
-          duration: 0.8,
+          duration: 2,
           delay: 1.2,
           ease: [0.43, 0.04, 0.84, 0.52],
         },

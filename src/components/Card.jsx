@@ -19,11 +19,14 @@ export default function Card({
   directionCard,
   disconnectModal,
   setMenu,
+  numberCard,
 }) {
   return (
     <Link
       className={
-        directionCard === "to right" ? "card card__right" : "card card__left"
+        directionCard === "to right"
+          ? `card card__right card__right--${numberCard}`
+          : `card card__left card__left--${numberCard}`
       }
       to={`${path}${element._id}`}
       state={{ data: element }}

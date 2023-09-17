@@ -14,6 +14,14 @@
     height: 55rem;
   }
 
+  &__reverse {
+    flex-direction: row-reverse;
+
+    @include responsive-screen("tiny") {
+      flex-direction: row;
+    }
+  }
+
   &__empty {
     @extend %to-complete;
     font-size: 2.2rem;

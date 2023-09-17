@@ -415,6 +415,11 @@ h4 {
   position: relative;
   animation: fade-in-cards-right 1.2s 150ms cubic-bezier(0.26, 0.49, 0, 0.7) both;
 }
+@media screen and (max-width: 655px) {
+  .biography-bloc__left {
+    animation-timing-function: initial;
+  }
+}
 .biography-bloc__left div {
   flex-direction: column;
   display: flex !important;
@@ -764,6 +769,15 @@ form button {
     flex-wrap: nowrap;
     overflow: hidden;
     overflow-x: scroll;
+    height: 55rem;
+  }
+}
+.cards-bloc__reverse {
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 500px) {
+  .cards-bloc__reverse {
+    flex-direction: row;
   }
 }
 .cards-bloc__empty {
@@ -812,10 +826,2126 @@ form button {
   }
 }
 .card__right {
-  animation: fade-in-cards-right 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+  animation: fade-in-cards-right 1s both;
+}
+.card__right--1 {
+  animation-delay: 1s;
+}
+.card__right--2 {
+  animation-delay: 500ms;
+}
+.card__right--3 {
+  animation-delay: 0s;
+}
+.card__right--4 {
+  animation-delay: 500ms;
+}
+.card__right--5 {
+  animation-delay: 1s;
+}
+.card__right--6 {
+  animation-delay: 0s;
+}
+.card__right--7 {
+  animation-delay: 1s;
+}
+.card__right--8 {
+  animation-delay: 500ms;
+}
+.card__right--9 {
+  animation-delay: 0s;
+}
+.card__right--10 {
+  animation-delay: 500ms;
+}
+.card__right--11 {
+  animation-delay: 1s;
+}
+.card__right--12 {
+  animation-delay: 0s;
+}
+.card__right--13 {
+  animation-delay: 1s;
+}
+.card__right--14 {
+  animation-delay: 500ms;
+}
+.card__right--15 {
+  animation-delay: 0s;
+}
+.card__right--16 {
+  animation-delay: 500ms;
+}
+.card__right--17 {
+  animation-delay: 1s;
+}
+.card__right--18 {
+  animation-delay: 0s;
+}
+.card__right--19 {
+  animation-delay: 1s;
+}
+.card__right--20 {
+  animation-delay: 500ms;
+}
+.card__right--21 {
+  animation-delay: 0s;
+}
+.card__right--22 {
+  animation-delay: 500ms;
+}
+.card__right--23 {
+  animation-delay: 1s;
+}
+.card__right--24 {
+  animation-delay: 0s;
+}
+.card__right--25 {
+  animation-delay: 1s;
+}
+.card__right--26 {
+  animation-delay: 500ms;
+}
+.card__right--27 {
+  animation-delay: 0s;
+}
+.card__right--28 {
+  animation-delay: 500ms;
+}
+.card__right--29 {
+  animation-delay: 1s;
+}
+.card__right--30 {
+  animation-delay: 0s;
+}
+.card__right--31 {
+  animation-delay: 1s;
+}
+.card__right--32 {
+  animation-delay: 500ms;
+}
+.card__right--33 {
+  animation-delay: 0s;
+}
+.card__right--34 {
+  animation-delay: 500ms;
+}
+.card__right--35 {
+  animation-delay: 1s;
+}
+.card__right--36 {
+  animation-delay: 0s;
+}
+.card__right--37 {
+  animation-delay: 1s;
+}
+.card__right--38 {
+  animation-delay: 500ms;
+}
+.card__right--39 {
+  animation-delay: 0s;
+}
+.card__right--40 {
+  animation-delay: 500ms;
+}
+.card__right--41 {
+  animation-delay: 1s;
+}
+.card__right--42 {
+  animation-delay: 0s;
+}
+.card__right--43 {
+  animation-delay: 1s;
+}
+.card__right--44 {
+  animation-delay: 500ms;
+}
+.card__right--45 {
+  animation-delay: 0s;
+}
+.card__right--46 {
+  animation-delay: 500ms;
+}
+.card__right--47 {
+  animation-delay: 1s;
+}
+.card__right--48 {
+  animation-delay: 0s;
+}
+.card__right--49 {
+  animation-delay: 1s;
+}
+.card__right--50 {
+  animation-delay: 500ms;
+}
+.card__right--51 {
+  animation-delay: 0s;
+}
+.card__right--52 {
+  animation-delay: 500ms;
+}
+.card__right--53 {
+  animation-delay: 1s;
+}
+.card__right--54 {
+  animation-delay: 0s;
+}
+.card__right--55 {
+  animation-delay: 1s;
+}
+.card__right--56 {
+  animation-delay: 500ms;
+}
+.card__right--57 {
+  animation-delay: 0s;
+}
+.card__right--58 {
+  animation-delay: 500ms;
+}
+.card__right--59 {
+  animation-delay: 1s;
+}
+.card__right--60 {
+  animation-delay: 0s;
+}
+.card__right--61 {
+  animation-delay: 1s;
+}
+.card__right--62 {
+  animation-delay: 500ms;
+}
+.card__right--63 {
+  animation-delay: 0s;
+}
+.card__right--64 {
+  animation-delay: 500ms;
+}
+.card__right--65 {
+  animation-delay: 1s;
+}
+.card__right--66 {
+  animation-delay: 0s;
+}
+.card__right--67 {
+  animation-delay: 1s;
+}
+.card__right--68 {
+  animation-delay: 500ms;
+}
+.card__right--69 {
+  animation-delay: 0s;
+}
+.card__right--70 {
+  animation-delay: 500ms;
+}
+.card__right--71 {
+  animation-delay: 1s;
+}
+.card__right--72 {
+  animation-delay: 0s;
+}
+.card__right--73 {
+  animation-delay: 1s;
+}
+.card__right--74 {
+  animation-delay: 500ms;
+}
+.card__right--75 {
+  animation-delay: 0s;
+}
+.card__right--76 {
+  animation-delay: 500ms;
+}
+.card__right--77 {
+  animation-delay: 1s;
+}
+.card__right--78 {
+  animation-delay: 0s;
+}
+.card__right--79 {
+  animation-delay: 1s;
+}
+.card__right--80 {
+  animation-delay: 500ms;
+}
+.card__right--81 {
+  animation-delay: 0s;
+}
+.card__right--82 {
+  animation-delay: 500ms;
+}
+.card__right--83 {
+  animation-delay: 1s;
+}
+.card__right--84 {
+  animation-delay: 0s;
+}
+.card__right--85 {
+  animation-delay: 1s;
+}
+.card__right--86 {
+  animation-delay: 500ms;
+}
+.card__right--87 {
+  animation-delay: 0s;
+}
+.card__right--88 {
+  animation-delay: 500ms;
+}
+.card__right--89 {
+  animation-delay: 1s;
+}
+.card__right--90 {
+  animation-delay: 0s;
+}
+.card__right--91 {
+  animation-delay: 1s;
+}
+.card__right--92 {
+  animation-delay: 500ms;
+}
+.card__right--93 {
+  animation-delay: 0s;
+}
+.card__right--94 {
+  animation-delay: 500ms;
+}
+.card__right--95 {
+  animation-delay: 1s;
+}
+.card__right--96 {
+  animation-delay: 0s;
+}
+.card__right--97 {
+  animation-delay: 1s;
+}
+.card__right--98 {
+  animation-delay: 500ms;
+}
+.card__right--99 {
+  animation-delay: 0s;
+}
+.card__right--100 {
+  animation-delay: 500ms;
+}
+@media screen and (max-width: 1140px) {
+  .card__right--1 {
+    animation-delay: 500ms;
+  }
+  .card__right--2 {
+    animation-delay: 0s;
+  }
+  .card__right--3 {
+    animation-delay: 500ms;
+  }
+  .card__right--4 {
+    animation-delay: 0s;
+  }
+  .card__right--5 {
+    animation-delay: 500ms;
+  }
+  .card__right--6 {
+    animation-delay: 0s;
+  }
+  .card__right--7 {
+    animation-delay: 500ms;
+  }
+  .card__right--8 {
+    animation-delay: 0s;
+  }
+  .card__right--9 {
+    animation-delay: 500ms;
+  }
+  .card__right--10 {
+    animation-delay: 0s;
+  }
+  .card__right--11 {
+    animation-delay: 500ms;
+  }
+  .card__right--12 {
+    animation-delay: 0s;
+  }
+  .card__right--13 {
+    animation-delay: 500ms;
+  }
+  .card__right--14 {
+    animation-delay: 0s;
+  }
+  .card__right--15 {
+    animation-delay: 500ms;
+  }
+  .card__right--16 {
+    animation-delay: 0s;
+  }
+  .card__right--17 {
+    animation-delay: 500ms;
+  }
+  .card__right--18 {
+    animation-delay: 0s;
+  }
+  .card__right--19 {
+    animation-delay: 500ms;
+  }
+  .card__right--20 {
+    animation-delay: 0s;
+  }
+  .card__right--21 {
+    animation-delay: 500ms;
+  }
+  .card__right--22 {
+    animation-delay: 0s;
+  }
+  .card__right--23 {
+    animation-delay: 500ms;
+  }
+  .card__right--24 {
+    animation-delay: 0s;
+  }
+  .card__right--25 {
+    animation-delay: 500ms;
+  }
+  .card__right--26 {
+    animation-delay: 0s;
+  }
+  .card__right--27 {
+    animation-delay: 500ms;
+  }
+  .card__right--28 {
+    animation-delay: 0s;
+  }
+  .card__right--29 {
+    animation-delay: 500ms;
+  }
+  .card__right--30 {
+    animation-delay: 0s;
+  }
+  .card__right--31 {
+    animation-delay: 500ms;
+  }
+  .card__right--32 {
+    animation-delay: 0s;
+  }
+  .card__right--33 {
+    animation-delay: 500ms;
+  }
+  .card__right--34 {
+    animation-delay: 0s;
+  }
+  .card__right--35 {
+    animation-delay: 500ms;
+  }
+  .card__right--36 {
+    animation-delay: 0s;
+  }
+  .card__right--37 {
+    animation-delay: 500ms;
+  }
+  .card__right--38 {
+    animation-delay: 0s;
+  }
+  .card__right--39 {
+    animation-delay: 500ms;
+  }
+  .card__right--40 {
+    animation-delay: 0s;
+  }
+  .card__right--41 {
+    animation-delay: 500ms;
+  }
+  .card__right--42 {
+    animation-delay: 0s;
+  }
+  .card__right--43 {
+    animation-delay: 500ms;
+  }
+  .card__right--44 {
+    animation-delay: 0s;
+  }
+  .card__right--45 {
+    animation-delay: 500ms;
+  }
+  .card__right--46 {
+    animation-delay: 0s;
+  }
+  .card__right--47 {
+    animation-delay: 500ms;
+  }
+  .card__right--48 {
+    animation-delay: 0s;
+  }
+  .card__right--49 {
+    animation-delay: 500ms;
+  }
+  .card__right--50 {
+    animation-delay: 0s;
+  }
+  .card__right--51 {
+    animation-delay: 500ms;
+  }
+  .card__right--52 {
+    animation-delay: 0s;
+  }
+  .card__right--53 {
+    animation-delay: 500ms;
+  }
+  .card__right--54 {
+    animation-delay: 0s;
+  }
+  .card__right--55 {
+    animation-delay: 500ms;
+  }
+  .card__right--56 {
+    animation-delay: 0s;
+  }
+  .card__right--57 {
+    animation-delay: 500ms;
+  }
+  .card__right--58 {
+    animation-delay: 0s;
+  }
+  .card__right--59 {
+    animation-delay: 500ms;
+  }
+  .card__right--60 {
+    animation-delay: 0s;
+  }
+  .card__right--61 {
+    animation-delay: 500ms;
+  }
+  .card__right--62 {
+    animation-delay: 0s;
+  }
+  .card__right--63 {
+    animation-delay: 500ms;
+  }
+  .card__right--64 {
+    animation-delay: 0s;
+  }
+  .card__right--65 {
+    animation-delay: 500ms;
+  }
+  .card__right--66 {
+    animation-delay: 0s;
+  }
+  .card__right--67 {
+    animation-delay: 500ms;
+  }
+  .card__right--68 {
+    animation-delay: 0s;
+  }
+  .card__right--69 {
+    animation-delay: 500ms;
+  }
+  .card__right--70 {
+    animation-delay: 0s;
+  }
+  .card__right--71 {
+    animation-delay: 500ms;
+  }
+  .card__right--72 {
+    animation-delay: 0s;
+  }
+  .card__right--73 {
+    animation-delay: 500ms;
+  }
+  .card__right--74 {
+    animation-delay: 0s;
+  }
+  .card__right--75 {
+    animation-delay: 500ms;
+  }
+  .card__right--76 {
+    animation-delay: 0s;
+  }
+  .card__right--77 {
+    animation-delay: 500ms;
+  }
+  .card__right--78 {
+    animation-delay: 0s;
+  }
+  .card__right--79 {
+    animation-delay: 500ms;
+  }
+  .card__right--80 {
+    animation-delay: 0s;
+  }
+  .card__right--81 {
+    animation-delay: 500ms;
+  }
+  .card__right--82 {
+    animation-delay: 0s;
+  }
+  .card__right--83 {
+    animation-delay: 500ms;
+  }
+  .card__right--84 {
+    animation-delay: 0s;
+  }
+  .card__right--85 {
+    animation-delay: 500ms;
+  }
+  .card__right--86 {
+    animation-delay: 0s;
+  }
+  .card__right--87 {
+    animation-delay: 500ms;
+  }
+  .card__right--88 {
+    animation-delay: 0s;
+  }
+  .card__right--89 {
+    animation-delay: 500ms;
+  }
+  .card__right--90 {
+    animation-delay: 0s;
+  }
+  .card__right--91 {
+    animation-delay: 500ms;
+  }
+  .card__right--92 {
+    animation-delay: 0s;
+  }
+  .card__right--93 {
+    animation-delay: 500ms;
+  }
+  .card__right--94 {
+    animation-delay: 0s;
+  }
+  .card__right--95 {
+    animation-delay: 500ms;
+  }
+  .card__right--96 {
+    animation-delay: 0s;
+  }
+  .card__right--97 {
+    animation-delay: 500ms;
+  }
+  .card__right--98 {
+    animation-delay: 0s;
+  }
+  .card__right--99 {
+    animation-delay: 500ms;
+  }
+  .card__right--100 {
+    animation-delay: 0s;
+  }
+}
+@media screen and (max-width: 830px) {
+  .card__right--1 {
+    animation-delay: 0s;
+  }
+  .card__right--2 {
+    animation-delay: 500ms;
+  }
+  .card__right--3 {
+    animation-delay: 0s;
+  }
+  .card__right--4 {
+    animation-delay: 500ms;
+  }
+  .card__right--5 {
+    animation-delay: 0s;
+  }
+  .card__right--6 {
+    animation-delay: 500ms;
+  }
+  .card__right--7 {
+    animation-delay: 0s;
+  }
+  .card__right--8 {
+    animation-delay: 500ms;
+  }
+  .card__right--9 {
+    animation-delay: 0s;
+  }
+  .card__right--10 {
+    animation-delay: 500ms;
+  }
+  .card__right--11 {
+    animation-delay: 0s;
+  }
+  .card__right--12 {
+    animation-delay: 500ms;
+  }
+  .card__right--13 {
+    animation-delay: 0s;
+  }
+  .card__right--14 {
+    animation-delay: 500ms;
+  }
+  .card__right--15 {
+    animation-delay: 0s;
+  }
+  .card__right--16 {
+    animation-delay: 500ms;
+  }
+  .card__right--17 {
+    animation-delay: 0s;
+  }
+  .card__right--18 {
+    animation-delay: 500ms;
+  }
+  .card__right--19 {
+    animation-delay: 0s;
+  }
+  .card__right--20 {
+    animation-delay: 500ms;
+  }
+  .card__right--21 {
+    animation-delay: 0s;
+  }
+  .card__right--22 {
+    animation-delay: 500ms;
+  }
+  .card__right--23 {
+    animation-delay: 0s;
+  }
+  .card__right--24 {
+    animation-delay: 500ms;
+  }
+  .card__right--25 {
+    animation-delay: 0s;
+  }
+  .card__right--26 {
+    animation-delay: 500ms;
+  }
+  .card__right--27 {
+    animation-delay: 0s;
+  }
+  .card__right--28 {
+    animation-delay: 500ms;
+  }
+  .card__right--29 {
+    animation-delay: 0s;
+  }
+  .card__right--30 {
+    animation-delay: 500ms;
+  }
+  .card__right--31 {
+    animation-delay: 0s;
+  }
+  .card__right--32 {
+    animation-delay: 500ms;
+  }
+  .card__right--33 {
+    animation-delay: 0s;
+  }
+  .card__right--34 {
+    animation-delay: 500ms;
+  }
+  .card__right--35 {
+    animation-delay: 0s;
+  }
+  .card__right--36 {
+    animation-delay: 500ms;
+  }
+  .card__right--37 {
+    animation-delay: 0s;
+  }
+  .card__right--38 {
+    animation-delay: 500ms;
+  }
+  .card__right--39 {
+    animation-delay: 0s;
+  }
+  .card__right--40 {
+    animation-delay: 500ms;
+  }
+  .card__right--41 {
+    animation-delay: 0s;
+  }
+  .card__right--42 {
+    animation-delay: 500ms;
+  }
+  .card__right--43 {
+    animation-delay: 0s;
+  }
+  .card__right--44 {
+    animation-delay: 500ms;
+  }
+  .card__right--45 {
+    animation-delay: 0s;
+  }
+  .card__right--46 {
+    animation-delay: 500ms;
+  }
+  .card__right--47 {
+    animation-delay: 0s;
+  }
+  .card__right--48 {
+    animation-delay: 500ms;
+  }
+  .card__right--49 {
+    animation-delay: 0s;
+  }
+  .card__right--50 {
+    animation-delay: 500ms;
+  }
+  .card__right--51 {
+    animation-delay: 0s;
+  }
+  .card__right--52 {
+    animation-delay: 500ms;
+  }
+  .card__right--53 {
+    animation-delay: 0s;
+  }
+  .card__right--54 {
+    animation-delay: 500ms;
+  }
+  .card__right--55 {
+    animation-delay: 0s;
+  }
+  .card__right--56 {
+    animation-delay: 500ms;
+  }
+  .card__right--57 {
+    animation-delay: 0s;
+  }
+  .card__right--58 {
+    animation-delay: 500ms;
+  }
+  .card__right--59 {
+    animation-delay: 0s;
+  }
+  .card__right--60 {
+    animation-delay: 500ms;
+  }
+  .card__right--61 {
+    animation-delay: 0s;
+  }
+  .card__right--62 {
+    animation-delay: 500ms;
+  }
+  .card__right--63 {
+    animation-delay: 0s;
+  }
+  .card__right--64 {
+    animation-delay: 500ms;
+  }
+  .card__right--65 {
+    animation-delay: 0s;
+  }
+  .card__right--66 {
+    animation-delay: 500ms;
+  }
+  .card__right--67 {
+    animation-delay: 0s;
+  }
+  .card__right--68 {
+    animation-delay: 500ms;
+  }
+  .card__right--69 {
+    animation-delay: 0s;
+  }
+  .card__right--70 {
+    animation-delay: 500ms;
+  }
+  .card__right--71 {
+    animation-delay: 0s;
+  }
+  .card__right--72 {
+    animation-delay: 500ms;
+  }
+  .card__right--73 {
+    animation-delay: 0s;
+  }
+  .card__right--74 {
+    animation-delay: 500ms;
+  }
+  .card__right--75 {
+    animation-delay: 0s;
+  }
+  .card__right--76 {
+    animation-delay: 500ms;
+  }
+  .card__right--77 {
+    animation-delay: 0s;
+  }
+  .card__right--78 {
+    animation-delay: 500ms;
+  }
+  .card__right--79 {
+    animation-delay: 0s;
+  }
+  .card__right--80 {
+    animation-delay: 500ms;
+  }
+  .card__right--81 {
+    animation-delay: 0s;
+  }
+  .card__right--82 {
+    animation-delay: 500ms;
+  }
+  .card__right--83 {
+    animation-delay: 0s;
+  }
+  .card__right--84 {
+    animation-delay: 500ms;
+  }
+  .card__right--85 {
+    animation-delay: 0s;
+  }
+  .card__right--86 {
+    animation-delay: 500ms;
+  }
+  .card__right--87 {
+    animation-delay: 0s;
+  }
+  .card__right--88 {
+    animation-delay: 500ms;
+  }
+  .card__right--89 {
+    animation-delay: 0s;
+  }
+  .card__right--90 {
+    animation-delay: 500ms;
+  }
+  .card__right--91 {
+    animation-delay: 0s;
+  }
+  .card__right--92 {
+    animation-delay: 500ms;
+  }
+  .card__right--93 {
+    animation-delay: 0s;
+  }
+  .card__right--94 {
+    animation-delay: 500ms;
+  }
+  .card__right--95 {
+    animation-delay: 0s;
+  }
+  .card__right--96 {
+    animation-delay: 500ms;
+  }
+  .card__right--97 {
+    animation-delay: 0s;
+  }
+  .card__right--98 {
+    animation-delay: 500ms;
+  }
+  .card__right--99 {
+    animation-delay: 0s;
+  }
+  .card__right--100 {
+    animation-delay: 500ms;
+  }
+}
+@media screen and (max-width: 500px) {
+  .card__right {
+    animation-name: fade-in-cards-left;
+    animation-delay: 0s;
+  }
 }
 .card__left {
-  animation: fade-in-cards-left 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+  animation: fade-in-cards-left 1s both;
+}
+.card__left--1 {
+  animation-delay: 1s;
+}
+.card__left--2 {
+  animation-delay: 500ms;
+}
+.card__left--3 {
+  animation-delay: 0s;
+}
+.card__left--4 {
+  animation-delay: 500ms;
+}
+.card__left--5 {
+  animation-delay: 1s;
+}
+.card__left--6 {
+  animation-delay: 0s;
+}
+.card__left--7 {
+  animation-delay: 1s;
+}
+.card__left--8 {
+  animation-delay: 500ms;
+}
+.card__left--9 {
+  animation-delay: 0s;
+}
+.card__left--10 {
+  animation-delay: 500ms;
+}
+.card__left--11 {
+  animation-delay: 1s;
+}
+.card__left--12 {
+  animation-delay: 0s;
+}
+.card__left--13 {
+  animation-delay: 1s;
+}
+.card__left--14 {
+  animation-delay: 500ms;
+}
+.card__left--15 {
+  animation-delay: 0s;
+}
+.card__left--16 {
+  animation-delay: 500ms;
+}
+.card__left--17 {
+  animation-delay: 1s;
+}
+.card__left--18 {
+  animation-delay: 0s;
+}
+.card__left--19 {
+  animation-delay: 1s;
+}
+.card__left--20 {
+  animation-delay: 500ms;
+}
+.card__left--21 {
+  animation-delay: 0s;
+}
+.card__left--22 {
+  animation-delay: 500ms;
+}
+.card__left--23 {
+  animation-delay: 1s;
+}
+.card__left--24 {
+  animation-delay: 0s;
+}
+.card__left--25 {
+  animation-delay: 1s;
+}
+.card__left--26 {
+  animation-delay: 500ms;
+}
+.card__left--27 {
+  animation-delay: 0s;
+}
+.card__left--28 {
+  animation-delay: 500ms;
+}
+.card__left--29 {
+  animation-delay: 1s;
+}
+.card__left--30 {
+  animation-delay: 0s;
+}
+.card__left--31 {
+  animation-delay: 1s;
+}
+.card__left--32 {
+  animation-delay: 500ms;
+}
+.card__left--33 {
+  animation-delay: 0s;
+}
+.card__left--34 {
+  animation-delay: 500ms;
+}
+.card__left--35 {
+  animation-delay: 1s;
+}
+.card__left--36 {
+  animation-delay: 0s;
+}
+.card__left--37 {
+  animation-delay: 1s;
+}
+.card__left--38 {
+  animation-delay: 500ms;
+}
+.card__left--39 {
+  animation-delay: 0s;
+}
+.card__left--40 {
+  animation-delay: 500ms;
+}
+.card__left--41 {
+  animation-delay: 1s;
+}
+.card__left--42 {
+  animation-delay: 0s;
+}
+.card__left--43 {
+  animation-delay: 1s;
+}
+.card__left--44 {
+  animation-delay: 500ms;
+}
+.card__left--45 {
+  animation-delay: 0s;
+}
+.card__left--46 {
+  animation-delay: 500ms;
+}
+.card__left--47 {
+  animation-delay: 1s;
+}
+.card__left--48 {
+  animation-delay: 0s;
+}
+.card__left--49 {
+  animation-delay: 1s;
+}
+.card__left--50 {
+  animation-delay: 500ms;
+}
+.card__left--51 {
+  animation-delay: 0s;
+}
+.card__left--52 {
+  animation-delay: 500ms;
+}
+.card__left--53 {
+  animation-delay: 1s;
+}
+.card__left--54 {
+  animation-delay: 0s;
+}
+.card__left--55 {
+  animation-delay: 1s;
+}
+.card__left--56 {
+  animation-delay: 500ms;
+}
+.card__left--57 {
+  animation-delay: 0s;
+}
+.card__left--58 {
+  animation-delay: 500ms;
+}
+.card__left--59 {
+  animation-delay: 1s;
+}
+.card__left--60 {
+  animation-delay: 0s;
+}
+.card__left--61 {
+  animation-delay: 1s;
+}
+.card__left--62 {
+  animation-delay: 500ms;
+}
+.card__left--63 {
+  animation-delay: 0s;
+}
+.card__left--64 {
+  animation-delay: 500ms;
+}
+.card__left--65 {
+  animation-delay: 1s;
+}
+.card__left--66 {
+  animation-delay: 0s;
+}
+.card__left--67 {
+  animation-delay: 1s;
+}
+.card__left--68 {
+  animation-delay: 500ms;
+}
+.card__left--69 {
+  animation-delay: 0s;
+}
+.card__left--70 {
+  animation-delay: 500ms;
+}
+.card__left--71 {
+  animation-delay: 1s;
+}
+.card__left--72 {
+  animation-delay: 0s;
+}
+.card__left--73 {
+  animation-delay: 1s;
+}
+.card__left--74 {
+  animation-delay: 500ms;
+}
+.card__left--75 {
+  animation-delay: 0s;
+}
+.card__left--76 {
+  animation-delay: 500ms;
+}
+.card__left--77 {
+  animation-delay: 1s;
+}
+.card__left--78 {
+  animation-delay: 0s;
+}
+.card__left--79 {
+  animation-delay: 1s;
+}
+.card__left--80 {
+  animation-delay: 500ms;
+}
+.card__left--81 {
+  animation-delay: 0s;
+}
+.card__left--82 {
+  animation-delay: 500ms;
+}
+.card__left--83 {
+  animation-delay: 1s;
+}
+.card__left--84 {
+  animation-delay: 0s;
+}
+.card__left--85 {
+  animation-delay: 1s;
+}
+.card__left--86 {
+  animation-delay: 500ms;
+}
+.card__left--87 {
+  animation-delay: 0s;
+}
+.card__left--88 {
+  animation-delay: 500ms;
+}
+.card__left--89 {
+  animation-delay: 1s;
+}
+.card__left--90 {
+  animation-delay: 0s;
+}
+.card__left--91 {
+  animation-delay: 1s;
+}
+.card__left--92 {
+  animation-delay: 500ms;
+}
+.card__left--93 {
+  animation-delay: 0s;
+}
+.card__left--94 {
+  animation-delay: 500ms;
+}
+.card__left--95 {
+  animation-delay: 1s;
+}
+.card__left--96 {
+  animation-delay: 0s;
+}
+.card__left--97 {
+  animation-delay: 1s;
+}
+.card__left--98 {
+  animation-delay: 500ms;
+}
+.card__left--99 {
+  animation-delay: 0s;
+}
+.card__left--100 {
+  animation-delay: 500ms;
+}
+@media screen and (max-width: 1140px) {
+  .card__left--1 {
+    animation-delay: 500ms;
+  }
+  .card__left--2 {
+    animation-delay: 0s;
+  }
+  .card__left--3 {
+    animation-delay: 500ms;
+  }
+  .card__left--4 {
+    animation-delay: 0s;
+  }
+  .card__left--5 {
+    animation-delay: 500ms;
+  }
+  .card__left--6 {
+    animation-delay: 0s;
+  }
+  .card__left--7 {
+    animation-delay: 500ms;
+  }
+  .card__left--8 {
+    animation-delay: 0s;
+  }
+  .card__left--9 {
+    animation-delay: 500ms;
+  }
+  .card__left--10 {
+    animation-delay: 0s;
+  }
+  .card__left--11 {
+    animation-delay: 500ms;
+  }
+  .card__left--12 {
+    animation-delay: 0s;
+  }
+  .card__left--13 {
+    animation-delay: 500ms;
+  }
+  .card__left--14 {
+    animation-delay: 0s;
+  }
+  .card__left--15 {
+    animation-delay: 500ms;
+  }
+  .card__left--16 {
+    animation-delay: 0s;
+  }
+  .card__left--17 {
+    animation-delay: 500ms;
+  }
+  .card__left--18 {
+    animation-delay: 0s;
+  }
+  .card__left--19 {
+    animation-delay: 500ms;
+  }
+  .card__left--20 {
+    animation-delay: 0s;
+  }
+  .card__left--21 {
+    animation-delay: 500ms;
+  }
+  .card__left--22 {
+    animation-delay: 0s;
+  }
+  .card__left--23 {
+    animation-delay: 500ms;
+  }
+  .card__left--24 {
+    animation-delay: 0s;
+  }
+  .card__left--25 {
+    animation-delay: 500ms;
+  }
+  .card__left--26 {
+    animation-delay: 0s;
+  }
+  .card__left--27 {
+    animation-delay: 500ms;
+  }
+  .card__left--28 {
+    animation-delay: 0s;
+  }
+  .card__left--29 {
+    animation-delay: 500ms;
+  }
+  .card__left--30 {
+    animation-delay: 0s;
+  }
+  .card__left--31 {
+    animation-delay: 500ms;
+  }
+  .card__left--32 {
+    animation-delay: 0s;
+  }
+  .card__left--33 {
+    animation-delay: 500ms;
+  }
+  .card__left--34 {
+    animation-delay: 0s;
+  }
+  .card__left--35 {
+    animation-delay: 500ms;
+  }
+  .card__left--36 {
+    animation-delay: 0s;
+  }
+  .card__left--37 {
+    animation-delay: 500ms;
+  }
+  .card__left--38 {
+    animation-delay: 0s;
+  }
+  .card__left--39 {
+    animation-delay: 500ms;
+  }
+  .card__left--40 {
+    animation-delay: 0s;
+  }
+  .card__left--41 {
+    animation-delay: 500ms;
+  }
+  .card__left--42 {
+    animation-delay: 0s;
+  }
+  .card__left--43 {
+    animation-delay: 500ms;
+  }
+  .card__left--44 {
+    animation-delay: 0s;
+  }
+  .card__left--45 {
+    animation-delay: 500ms;
+  }
+  .card__left--46 {
+    animation-delay: 0s;
+  }
+  .card__left--47 {
+    animation-delay: 500ms;
+  }
+  .card__left--48 {
+    animation-delay: 0s;
+  }
+  .card__left--49 {
+    animation-delay: 500ms;
+  }
+  .card__left--50 {
+    animation-delay: 0s;
+  }
+  .card__left--51 {
+    animation-delay: 500ms;
+  }
+  .card__left--52 {
+    animation-delay: 0s;
+  }
+  .card__left--53 {
+    animation-delay: 500ms;
+  }
+  .card__left--54 {
+    animation-delay: 0s;
+  }
+  .card__left--55 {
+    animation-delay: 500ms;
+  }
+  .card__left--56 {
+    animation-delay: 0s;
+  }
+  .card__left--57 {
+    animation-delay: 500ms;
+  }
+  .card__left--58 {
+    animation-delay: 0s;
+  }
+  .card__left--59 {
+    animation-delay: 500ms;
+  }
+  .card__left--60 {
+    animation-delay: 0s;
+  }
+  .card__left--61 {
+    animation-delay: 500ms;
+  }
+  .card__left--62 {
+    animation-delay: 0s;
+  }
+  .card__left--63 {
+    animation-delay: 500ms;
+  }
+  .card__left--64 {
+    animation-delay: 0s;
+  }
+  .card__left--65 {
+    animation-delay: 500ms;
+  }
+  .card__left--66 {
+    animation-delay: 0s;
+  }
+  .card__left--67 {
+    animation-delay: 500ms;
+  }
+  .card__left--68 {
+    animation-delay: 0s;
+  }
+  .card__left--69 {
+    animation-delay: 500ms;
+  }
+  .card__left--70 {
+    animation-delay: 0s;
+  }
+  .card__left--71 {
+    animation-delay: 500ms;
+  }
+  .card__left--72 {
+    animation-delay: 0s;
+  }
+  .card__left--73 {
+    animation-delay: 500ms;
+  }
+  .card__left--74 {
+    animation-delay: 0s;
+  }
+  .card__left--75 {
+    animation-delay: 500ms;
+  }
+  .card__left--76 {
+    animation-delay: 0s;
+  }
+  .card__left--77 {
+    animation-delay: 500ms;
+  }
+  .card__left--78 {
+    animation-delay: 0s;
+  }
+  .card__left--79 {
+    animation-delay: 500ms;
+  }
+  .card__left--80 {
+    animation-delay: 0s;
+  }
+  .card__left--81 {
+    animation-delay: 500ms;
+  }
+  .card__left--82 {
+    animation-delay: 0s;
+  }
+  .card__left--83 {
+    animation-delay: 500ms;
+  }
+  .card__left--84 {
+    animation-delay: 0s;
+  }
+  .card__left--85 {
+    animation-delay: 500ms;
+  }
+  .card__left--86 {
+    animation-delay: 0s;
+  }
+  .card__left--87 {
+    animation-delay: 500ms;
+  }
+  .card__left--88 {
+    animation-delay: 0s;
+  }
+  .card__left--89 {
+    animation-delay: 500ms;
+  }
+  .card__left--90 {
+    animation-delay: 0s;
+  }
+  .card__left--91 {
+    animation-delay: 500ms;
+  }
+  .card__left--92 {
+    animation-delay: 0s;
+  }
+  .card__left--93 {
+    animation-delay: 500ms;
+  }
+  .card__left--94 {
+    animation-delay: 0s;
+  }
+  .card__left--95 {
+    animation-delay: 500ms;
+  }
+  .card__left--96 {
+    animation-delay: 0s;
+  }
+  .card__left--97 {
+    animation-delay: 500ms;
+  }
+  .card__left--98 {
+    animation-delay: 0s;
+  }
+  .card__left--99 {
+    animation-delay: 500ms;
+  }
+  .card__left--100 {
+    animation-delay: 0s;
+  }
+}
+@media screen and (max-width: 830px) {
+  .card__left--1 {
+    animation-delay: 0s;
+  }
+  .card__left--2 {
+    animation-delay: 500ms;
+  }
+  .card__left--3 {
+    animation-delay: 0s;
+  }
+  .card__left--4 {
+    animation-delay: 500ms;
+  }
+  .card__left--5 {
+    animation-delay: 0s;
+  }
+  .card__left--6 {
+    animation-delay: 500ms;
+  }
+  .card__left--7 {
+    animation-delay: 0s;
+  }
+  .card__left--8 {
+    animation-delay: 500ms;
+  }
+  .card__left--9 {
+    animation-delay: 0s;
+  }
+  .card__left--10 {
+    animation-delay: 500ms;
+  }
+  .card__left--11 {
+    animation-delay: 0s;
+  }
+  .card__left--12 {
+    animation-delay: 500ms;
+  }
+  .card__left--13 {
+    animation-delay: 0s;
+  }
+  .card__left--14 {
+    animation-delay: 500ms;
+  }
+  .card__left--15 {
+    animation-delay: 0s;
+  }
+  .card__left--16 {
+    animation-delay: 500ms;
+  }
+  .card__left--17 {
+    animation-delay: 0s;
+  }
+  .card__left--18 {
+    animation-delay: 500ms;
+  }
+  .card__left--19 {
+    animation-delay: 0s;
+  }
+  .card__left--20 {
+    animation-delay: 500ms;
+  }
+  .card__left--21 {
+    animation-delay: 0s;
+  }
+  .card__left--22 {
+    animation-delay: 500ms;
+  }
+  .card__left--23 {
+    animation-delay: 0s;
+  }
+  .card__left--24 {
+    animation-delay: 500ms;
+  }
+  .card__left--25 {
+    animation-delay: 0s;
+  }
+  .card__left--26 {
+    animation-delay: 500ms;
+  }
+  .card__left--27 {
+    animation-delay: 0s;
+  }
+  .card__left--28 {
+    animation-delay: 500ms;
+  }
+  .card__left--29 {
+    animation-delay: 0s;
+  }
+  .card__left--30 {
+    animation-delay: 500ms;
+  }
+  .card__left--31 {
+    animation-delay: 0s;
+  }
+  .card__left--32 {
+    animation-delay: 500ms;
+  }
+  .card__left--33 {
+    animation-delay: 0s;
+  }
+  .card__left--34 {
+    animation-delay: 500ms;
+  }
+  .card__left--35 {
+    animation-delay: 0s;
+  }
+  .card__left--36 {
+    animation-delay: 500ms;
+  }
+  .card__left--37 {
+    animation-delay: 0s;
+  }
+  .card__left--38 {
+    animation-delay: 500ms;
+  }
+  .card__left--39 {
+    animation-delay: 0s;
+  }
+  .card__left--40 {
+    animation-delay: 500ms;
+  }
+  .card__left--41 {
+    animation-delay: 0s;
+  }
+  .card__left--42 {
+    animation-delay: 500ms;
+  }
+  .card__left--43 {
+    animation-delay: 0s;
+  }
+  .card__left--44 {
+    animation-delay: 500ms;
+  }
+  .card__left--45 {
+    animation-delay: 0s;
+  }
+  .card__left--46 {
+    animation-delay: 500ms;
+  }
+  .card__left--47 {
+    animation-delay: 0s;
+  }
+  .card__left--48 {
+    animation-delay: 500ms;
+  }
+  .card__left--49 {
+    animation-delay: 0s;
+  }
+  .card__left--50 {
+    animation-delay: 500ms;
+  }
+  .card__left--51 {
+    animation-delay: 0s;
+  }
+  .card__left--52 {
+    animation-delay: 500ms;
+  }
+  .card__left--53 {
+    animation-delay: 0s;
+  }
+  .card__left--54 {
+    animation-delay: 500ms;
+  }
+  .card__left--55 {
+    animation-delay: 0s;
+  }
+  .card__left--56 {
+    animation-delay: 500ms;
+  }
+  .card__left--57 {
+    animation-delay: 0s;
+  }
+  .card__left--58 {
+    animation-delay: 500ms;
+  }
+  .card__left--59 {
+    animation-delay: 0s;
+  }
+  .card__left--60 {
+    animation-delay: 500ms;
+  }
+  .card__left--61 {
+    animation-delay: 0s;
+  }
+  .card__left--62 {
+    animation-delay: 500ms;
+  }
+  .card__left--63 {
+    animation-delay: 0s;
+  }
+  .card__left--64 {
+    animation-delay: 500ms;
+  }
+  .card__left--65 {
+    animation-delay: 0s;
+  }
+  .card__left--66 {
+    animation-delay: 500ms;
+  }
+  .card__left--67 {
+    animation-delay: 0s;
+  }
+  .card__left--68 {
+    animation-delay: 500ms;
+  }
+  .card__left--69 {
+    animation-delay: 0s;
+  }
+  .card__left--70 {
+    animation-delay: 500ms;
+  }
+  .card__left--71 {
+    animation-delay: 0s;
+  }
+  .card__left--72 {
+    animation-delay: 500ms;
+  }
+  .card__left--73 {
+    animation-delay: 0s;
+  }
+  .card__left--74 {
+    animation-delay: 500ms;
+  }
+  .card__left--75 {
+    animation-delay: 0s;
+  }
+  .card__left--76 {
+    animation-delay: 500ms;
+  }
+  .card__left--77 {
+    animation-delay: 0s;
+  }
+  .card__left--78 {
+    animation-delay: 500ms;
+  }
+  .card__left--79 {
+    animation-delay: 0s;
+  }
+  .card__left--80 {
+    animation-delay: 500ms;
+  }
+  .card__left--81 {
+    animation-delay: 0s;
+  }
+  .card__left--82 {
+    animation-delay: 500ms;
+  }
+  .card__left--83 {
+    animation-delay: 0s;
+  }
+  .card__left--84 {
+    animation-delay: 500ms;
+  }
+  .card__left--85 {
+    animation-delay: 0s;
+  }
+  .card__left--86 {
+    animation-delay: 500ms;
+  }
+  .card__left--87 {
+    animation-delay: 0s;
+  }
+  .card__left--88 {
+    animation-delay: 500ms;
+  }
+  .card__left--89 {
+    animation-delay: 0s;
+  }
+  .card__left--90 {
+    animation-delay: 500ms;
+  }
+  .card__left--91 {
+    animation-delay: 0s;
+  }
+  .card__left--92 {
+    animation-delay: 500ms;
+  }
+  .card__left--93 {
+    animation-delay: 0s;
+  }
+  .card__left--94 {
+    animation-delay: 500ms;
+  }
+  .card__left--95 {
+    animation-delay: 0s;
+  }
+  .card__left--96 {
+    animation-delay: 500ms;
+  }
+  .card__left--97 {
+    animation-delay: 0s;
+  }
+  .card__left--98 {
+    animation-delay: 500ms;
+  }
+  .card__left--99 {
+    animation-delay: 0s;
+  }
+  .card__left--100 {
+    animation-delay: 500ms;
+  }
+}
+@media screen and (max-width: 500px) {
+  .card__left--1 {
+    animation-delay: 0s;
+  }
+  .card__left--2 {
+    animation-delay: 0s;
+  }
+  .card__left--3 {
+    animation-delay: 0s;
+  }
+  .card__left--4 {
+    animation-delay: 0s;
+  }
+  .card__left--5 {
+    animation-delay: 0s;
+  }
+  .card__left--6 {
+    animation-delay: 0s;
+  }
+  .card__left--7 {
+    animation-delay: 0s;
+  }
+  .card__left--8 {
+    animation-delay: 0s;
+  }
+  .card__left--9 {
+    animation-delay: 0s;
+  }
+  .card__left--10 {
+    animation-delay: 0s;
+  }
+  .card__left--11 {
+    animation-delay: 0s;
+  }
+  .card__left--12 {
+    animation-delay: 0s;
+  }
+  .card__left--13 {
+    animation-delay: 0s;
+  }
+  .card__left--14 {
+    animation-delay: 0s;
+  }
+  .card__left--15 {
+    animation-delay: 0s;
+  }
+  .card__left--16 {
+    animation-delay: 0s;
+  }
+  .card__left--17 {
+    animation-delay: 0s;
+  }
+  .card__left--18 {
+    animation-delay: 0s;
+  }
+  .card__left--19 {
+    animation-delay: 0s;
+  }
+  .card__left--20 {
+    animation-delay: 0s;
+  }
+  .card__left--21 {
+    animation-delay: 0s;
+  }
+  .card__left--22 {
+    animation-delay: 0s;
+  }
+  .card__left--23 {
+    animation-delay: 0s;
+  }
+  .card__left--24 {
+    animation-delay: 0s;
+  }
+  .card__left--25 {
+    animation-delay: 0s;
+  }
+  .card__left--26 {
+    animation-delay: 0s;
+  }
+  .card__left--27 {
+    animation-delay: 0s;
+  }
+  .card__left--28 {
+    animation-delay: 0s;
+  }
+  .card__left--29 {
+    animation-delay: 0s;
+  }
+  .card__left--30 {
+    animation-delay: 0s;
+  }
+  .card__left--31 {
+    animation-delay: 0s;
+  }
+  .card__left--32 {
+    animation-delay: 0s;
+  }
+  .card__left--33 {
+    animation-delay: 0s;
+  }
+  .card__left--34 {
+    animation-delay: 0s;
+  }
+  .card__left--35 {
+    animation-delay: 0s;
+  }
+  .card__left--36 {
+    animation-delay: 0s;
+  }
+  .card__left--37 {
+    animation-delay: 0s;
+  }
+  .card__left--38 {
+    animation-delay: 0s;
+  }
+  .card__left--39 {
+    animation-delay: 0s;
+  }
+  .card__left--40 {
+    animation-delay: 0s;
+  }
+  .card__left--41 {
+    animation-delay: 0s;
+  }
+  .card__left--42 {
+    animation-delay: 0s;
+  }
+  .card__left--43 {
+    animation-delay: 0s;
+  }
+  .card__left--44 {
+    animation-delay: 0s;
+  }
+  .card__left--45 {
+    animation-delay: 0s;
+  }
+  .card__left--46 {
+    animation-delay: 0s;
+  }
+  .card__left--47 {
+    animation-delay: 0s;
+  }
+  .card__left--48 {
+    animation-delay: 0s;
+  }
+  .card__left--49 {
+    animation-delay: 0s;
+  }
+  .card__left--50 {
+    animation-delay: 0s;
+  }
+  .card__left--51 {
+    animation-delay: 0s;
+  }
+  .card__left--52 {
+    animation-delay: 0s;
+  }
+  .card__left--53 {
+    animation-delay: 0s;
+  }
+  .card__left--54 {
+    animation-delay: 0s;
+  }
+  .card__left--55 {
+    animation-delay: 0s;
+  }
+  .card__left--56 {
+    animation-delay: 0s;
+  }
+  .card__left--57 {
+    animation-delay: 0s;
+  }
+  .card__left--58 {
+    animation-delay: 0s;
+  }
+  .card__left--59 {
+    animation-delay: 0s;
+  }
+  .card__left--60 {
+    animation-delay: 0s;
+  }
+  .card__left--61 {
+    animation-delay: 0s;
+  }
+  .card__left--62 {
+    animation-delay: 0s;
+  }
+  .card__left--63 {
+    animation-delay: 0s;
+  }
+  .card__left--64 {
+    animation-delay: 0s;
+  }
+  .card__left--65 {
+    animation-delay: 0s;
+  }
+  .card__left--66 {
+    animation-delay: 0s;
+  }
+  .card__left--67 {
+    animation-delay: 0s;
+  }
+  .card__left--68 {
+    animation-delay: 0s;
+  }
+  .card__left--69 {
+    animation-delay: 0s;
+  }
+  .card__left--70 {
+    animation-delay: 0s;
+  }
+  .card__left--71 {
+    animation-delay: 0s;
+  }
+  .card__left--72 {
+    animation-delay: 0s;
+  }
+  .card__left--73 {
+    animation-delay: 0s;
+  }
+  .card__left--74 {
+    animation-delay: 0s;
+  }
+  .card__left--75 {
+    animation-delay: 0s;
+  }
+  .card__left--76 {
+    animation-delay: 0s;
+  }
+  .card__left--77 {
+    animation-delay: 0s;
+  }
+  .card__left--78 {
+    animation-delay: 0s;
+  }
+  .card__left--79 {
+    animation-delay: 0s;
+  }
+  .card__left--80 {
+    animation-delay: 0s;
+  }
+  .card__left--81 {
+    animation-delay: 0s;
+  }
+  .card__left--82 {
+    animation-delay: 0s;
+  }
+  .card__left--83 {
+    animation-delay: 0s;
+  }
+  .card__left--84 {
+    animation-delay: 0s;
+  }
+  .card__left--85 {
+    animation-delay: 0s;
+  }
+  .card__left--86 {
+    animation-delay: 0s;
+  }
+  .card__left--87 {
+    animation-delay: 0s;
+  }
+  .card__left--88 {
+    animation-delay: 0s;
+  }
+  .card__left--89 {
+    animation-delay: 0s;
+  }
+  .card__left--90 {
+    animation-delay: 0s;
+  }
+  .card__left--91 {
+    animation-delay: 0s;
+  }
+  .card__left--92 {
+    animation-delay: 0s;
+  }
+  .card__left--93 {
+    animation-delay: 0s;
+  }
+  .card__left--94 {
+    animation-delay: 0s;
+  }
+  .card__left--95 {
+    animation-delay: 0s;
+  }
+  .card__left--96 {
+    animation-delay: 0s;
+  }
+  .card__left--97 {
+    animation-delay: 0s;
+  }
+  .card__left--98 {
+    animation-delay: 0s;
+  }
+  .card__left--99 {
+    animation-delay: 0s;
+  }
+  .card__left--100 {
+    animation-delay: 0s;
+  }
 }
 .card__bloc {
   flex-direction: column;
@@ -831,6 +2961,14 @@ form button {
   text-overflow: ellipsis;
   width: 30rem;
   font-weight: bold;
+}
+@media screen and (max-width: 500px) {
+  .card__title {
+    width: 20rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 .card__description {
   font-size: 1.4rem;
@@ -993,15 +3131,25 @@ header {
     padding: 1.5rem;
   }
 }
+@media screen and (max-width: 500px) {
+  header {
+    padding-bottom: 0;
+  }
+}
 
 @media screen and (max-width: 655px) {
   header nav {
-    display: flex;
-    flex-direction: column;
+    width: 30rem;
+    flex-direction: row;
     display: flex !important;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  header nav {
+    flex-direction: column;
   }
 }
 
@@ -1014,6 +3162,11 @@ header {
   font-size: 2.2rem;
   margin-inline: 4rem;
   transition: background-color 250ms ease-in, color 150ms ease-in;
+}
+@media screen and (max-width: 830px) {
+  .header__button {
+    margin-inline: 1.5rem;
+  }
 }
 @media screen and (max-width: 655px) {
   .header__button {

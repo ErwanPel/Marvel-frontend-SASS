@@ -10,13 +10,21 @@ header {
   @include responsive-screen("small") {
     padding: 1.5rem;
   }
+
+  @include responsive-screen("tiny") {
+    padding-bottom: 0;
+  }
 }
 
 header nav {
   @include responsive-screen("small") {
-    display: flex;
-    @include flex-center(column);
+    width: 30rem;
+    @include flex-center;
     gap: 1rem;
+  }
+
+  @include responsive-screen("tiny") {
+    flex-direction: column;
   }
 }
 
@@ -29,6 +37,10 @@ header nav {
   font-size: 2.2rem;
   margin-inline: 4rem;
   transition: background-color 250ms ease-in, color 150ms ease-in;
+
+  @include responsive-screen("medium") {
+    margin-inline: 1.5rem;
+  }
 
   @include responsive-screen("small") {
     font-size: 1.8rem;

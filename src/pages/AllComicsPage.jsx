@@ -87,7 +87,7 @@ export default function AllComicsPage({
         opacity: 0,
         rotateY: 80,
         rotateX: 10,
-        translateX: -650,
+        translateX: -1500,
         translateY: -100,
         transformOrigin: -200,
         borderColor: "rgba(228, 228, 228, 1)",
@@ -101,7 +101,7 @@ export default function AllComicsPage({
         transformOrigin: 100,
         borderColor: "rgba(228, 228, 228, 0)",
         transition: {
-          duration: 0.8,
+          duration: 2,
           delay: 1.2,
           ease: [0.43, 0.04, 0.84, 0.52],
         },

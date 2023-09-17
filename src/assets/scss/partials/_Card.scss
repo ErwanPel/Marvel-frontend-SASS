@@ -36,11 +36,96 @@
   }
 
   &__right {
-    animation: fade-in-cards-right 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+    animation: fade-in-cards-right 1s both;
+
+    @for $i from 1 through 100 {
+      &--#{$i} {
+        @if $i % 3 == 0 {
+          animation-delay: 0s;
+        } @else if $i % 2 == 0 {
+          animation-delay: 500ms;
+        } @else {
+          animation-delay: 1s;
+        }
+      }
+    }
+
+    @include responsive-screen("large") {
+      @for $i from 1 through 100 {
+        &--#{$i} {
+          @if $i % 2 == 0 {
+            animation-delay: 0s;
+          } @else {
+            animation-delay: 500ms;
+          }
+        }
+      }
+    }
+
+    @include responsive-screen("medium") {
+      @for $i from 1 through 100 {
+        &--#{$i} {
+          @if $i % 2 != 0 {
+            animation-delay: 0s;
+          } @else {
+            animation-delay: 500ms;
+          }
+        }
+      }
+    }
+
+    @include responsive-screen("tiny") {
+      animation-name: fade-in-cards-left;
+      animation-delay: 0s;
+    }
   }
 
   &__left {
-    animation: fade-in-cards-left 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+    animation: fade-in-cards-left 1s both;
+
+    @for $i from 1 through 100 {
+      &--#{$i} {
+        @if $i % 3 == 0 {
+          animation-delay: 0s;
+        } @else if $i % 2 == 0 {
+          animation-delay: 500ms;
+        } @else {
+          animation-delay: 1s;
+        }
+      }
+    }
+
+    @include responsive-screen("large") {
+      @for $i from 1 through 100 {
+        &--#{$i} {
+          @if $i % 2 == 0 {
+            animation-delay: 0s;
+          } @else {
+            animation-delay: 500ms;
+          }
+        }
+      }
+    }
+
+    @include responsive-screen("medium") {
+      @for $i from 1 through 100 {
+        &--#{$i} {
+          @if $i % 2 != 0 {
+            animation-delay: 0s;
+          } @else {
+            animation-delay: 500ms;
+          }
+        }
+      }
+    }
+
+    @include responsive-screen("tiny") {
+      @for $i from 1 through 100 {
+        &--#{$i} {
+          animation-delay: 0s;
+        }
+      }
+    }
   }
 
   &__bloc {
@@ -53,6 +138,11 @@
     @include ellipsis-line;
     width: 30rem;
     font-weight: bold;
+
+    @include responsive-screen("tiny") {
+      width: 20rem;
+      @include ellipsis-line;
+    }
   }
 
   &__description {
