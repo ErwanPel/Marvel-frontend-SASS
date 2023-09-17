@@ -86,9 +86,26 @@ export default function CharactersPage({
       className="page"
       initial={{
         opacity: 0,
+        rotateY: -70,
+        rotateX: 15,
+        translateX: 1200,
+        translateY: -100,
+        transformOrigin: 100,
+        borderColor: "rgba(228, 228, 228, 1)",
       }}
       animate={{
         opacity: 1,
+        rotateY: 0,
+        rotateX: 0,
+        translateX: 0,
+        translateY: 0,
+        transformOrigin: 100,
+        borderColor: "rgba(228, 228, 228, 0)",
+        transition: {
+          duration: 0.8,
+          delay: 1.2,
+          ease: [0.43, 0.04, 0.84, 0.52],
+        },
       }}
       exit={{
         rotateY: -70,
@@ -110,6 +127,7 @@ export default function CharactersPage({
       ) : (
         <>
           <StickyTopBar
+            directionCard="to right"
             setMenu={setMenu}
             disconnectModal={disconnectModal}
             data={data}

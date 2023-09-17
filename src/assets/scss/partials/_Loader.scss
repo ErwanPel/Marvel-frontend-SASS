@@ -2,14 +2,16 @@
 
 .boxload {
   height: 70vh;
+  width: 100%;
   position: absolute;
-  left: 50vw;
-  top: 50vh;
+  @include flex-center;
+  animation: opacity-animation 700ms 1.2s both;
 
   &__loader {
     color: $main-color;
-    font-size: 5rem;
+    font-size: 3rem;
     animation: spin 1.5s infinite running;
+    opacity: 0.8;
 
     &:hover {
       animation-play-state: paused;

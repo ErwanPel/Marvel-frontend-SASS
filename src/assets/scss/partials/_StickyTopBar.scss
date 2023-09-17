@@ -17,6 +17,14 @@
     gap: 5rem;
     @extend %wrapper;
 
+    &__right {
+      animation: fade-in-cards-right 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+    }
+
+    &__left {
+      animation: fade-in-cards-left 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+    }
+
     @include responsive-screen("large") {
       @include flex-center(column);
       gap: 2rem;

@@ -758,6 +758,14 @@ form button {
   padding: 4rem;
   gap: 4rem;
 }
+@media screen and (max-width: 500px) {
+  .cards-bloc {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+}
 .cards-bloc__empty {
   font-size: 2.2rem;
   margin-top: 10%;
@@ -913,14 +921,19 @@ form button {
 
 .boxload {
   height: 70vh;
+  width: 100%;
   position: absolute;
-  left: 50vw;
-  top: 50vh;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  animation: opacity-animation 700ms 1.2s both;
 }
 .boxload__loader {
   color: rgb(229, 38, 38);
-  font-size: 5rem;
+  font-size: 3rem;
   animation: spin 1.5s infinite running;
+  opacity: 0.8;
 }
 .boxload__loader:hover {
   animation-play-state: paused;
@@ -944,6 +957,12 @@ form button {
 .searchbar .navbar {
   display: flex;
   gap: 5rem;
+}
+.searchbar .navbar__right {
+  animation: fade-in-cards-right 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
+}
+.searchbar .navbar__left {
+  animation: fade-in-cards-left 1s cubic-bezier(0.17, 1.13, 0.47, 0.7);
 }
 @media screen and (max-width: 1140px) {
   .searchbar .navbar {

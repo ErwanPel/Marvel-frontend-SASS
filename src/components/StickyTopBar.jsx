@@ -16,6 +16,7 @@ export default function StickyTopBar({
   setAutocompleteList,
   disconnectModal,
   setMenu,
+  directionCard,
 }) {
   return (
     <div
@@ -26,7 +27,13 @@ export default function StickyTopBar({
       }
       onClick={() => setAutocompleteList(false)}
     >
-      <nav className="navbar">
+      <nav
+        className={
+          directionCard === "to right"
+            ? "navbar navbar__right"
+            : "navbar navbar__left"
+        }
+      >
         <Search
           setMenu={setMenu}
           search={search}

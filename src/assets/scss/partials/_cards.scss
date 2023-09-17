@@ -6,6 +6,13 @@
   padding: 4rem;
   gap: 4rem;
 
+  @include responsive-screen("tiny") {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+
   &__empty {
     @extend %to-complete;
     font-size: 2.2rem;
