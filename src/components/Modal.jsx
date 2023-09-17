@@ -37,54 +37,54 @@ export default function Modal({
           : closeDisconnectModal
       }
     >
-      <div
-        className={
-          userError ? "modal-window__bloc user-error" : "modal-window__bloc"
-        }
-        onClick={(event) => event.stopPropagation()}
-      >
-        {signModal && (
-          <FontAwesomeIcon
-            icon="xmark"
-            className="modal-window__close"
-            onClick={closeSignModal}
-          />
-        )}
-        {loginModal && (
-          <FontAwesomeIcon
-            icon="xmark"
-            className="modal-window__close"
-            onClick={closeLoginModal}
-          />
-        )}
-        {disconnectModal && (
-          <FontAwesomeIcon
-            icon="xmark"
-            className="modal-window__close"
-            onClick={closeDisconnectModal}
-          />
-        )}
-        {signModal && (
-          <SignPage
-            signModal={signModal}
-            setSignModal={setSignModal}
-            setToken={setToken}
-            setUserError={setUserError}
-            setLoginModal={setLoginModal}
-          />
-        )}
-        {loginModal && (
-          <LoginPage
-            loginModal={loginModal}
-            setLoginModal={setLoginModal}
-            setToken={setToken}
-            setUserError={setUserError}
-            setSignModal={setSignModal}
-          />
-        )}
-        {disconnectModal && (
-          <p className="disconnect-message">You have been disconnected :)</p>
-        )}
+      <div className={userError && "user-error"}>
+        <div
+          className="modal-window__bloc"
+          onClick={(event) => event.stopPropagation()}
+        >
+          {signModal && (
+            <FontAwesomeIcon
+              icon="xmark"
+              className="modal-window__close"
+              onClick={closeSignModal}
+            />
+          )}
+          {loginModal && (
+            <FontAwesomeIcon
+              icon="xmark"
+              className="modal-window__close"
+              onClick={closeLoginModal}
+            />
+          )}
+          {disconnectModal && (
+            <FontAwesomeIcon
+              icon="xmark"
+              className="modal-window__close"
+              onClick={closeDisconnectModal}
+            />
+          )}
+          {signModal && (
+            <SignPage
+              signModal={signModal}
+              setSignModal={setSignModal}
+              setToken={setToken}
+              setUserError={setUserError}
+              setLoginModal={setLoginModal}
+            />
+          )}
+          {loginModal && (
+            <LoginPage
+              loginModal={loginModal}
+              setLoginModal={setLoginModal}
+              setToken={setToken}
+              setUserError={setUserError}
+              setSignModal={setSignModal}
+            />
+          )}
+          {disconnectModal && (
+            <p className="disconnect-message">You have been disconnected :)</p>
+          )}
+        </div>
       </div>
     </div>
   );
