@@ -102,8 +102,8 @@ export default function CharactersPage({
         transformOrigin: 100,
         borderColor: "rgba(228, 228, 228, 0)",
         transition: {
-          duration: 2,
-          delay: 1.2,
+          duration: 1.2,
+          delay: 1.6,
           ease: [0.43, 0.04, 0.84, 0.52],
         },
       }}

@@ -71,7 +71,7 @@ export default function ComicPage({
         translateX: -800,
         opacity: 0,
         transition: {
-          duration: 0.7,
+          duration: 0.9,
         },
       }}
     >
