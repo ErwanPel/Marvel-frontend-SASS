@@ -6,22 +6,22 @@ import { displayModal } from "../assets/utils/displayModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import Loader from "../components/Loader";
+import { useModalContext } from "../context/ModalContext";
 
 export default function ComicPage({
   favoriteChar,
   setFavoriteChar,
   token,
-  loginModal,
-  signModal,
   favoriteComics,
   setFavoriteComics,
-  setLoginModal,
-  disconnectModal,
   setMenu,
 }) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [backCharacter, setBackCharacter] = useState(false);
+
+  const { loginModal, signModal, disconnectModal, setLoginModal } =
+    useModalContext();
 
   const navigate = useNavigate();
   const location = useLocation();

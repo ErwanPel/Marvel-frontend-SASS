@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useModalContext } from "../context/ModalContext";
 
-export default function SignPage({
-  setSignModal,
-  setToken,
-  setUserError,
-  setLoginModal,
-}) {
+export default function SignPage({ setToken, setUserError }) {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +12,8 @@ export default function SignPage({
   const [error, setError] = useState("");
   const [agree, setAgree] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const { setLoginModal, setSignModal } = useModalContext();
 
   const handleModal = () => {
     setLoginModal(() => true);

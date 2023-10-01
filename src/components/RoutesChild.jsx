@@ -8,12 +8,8 @@ import AllComicsPage from "../pages/AllComicsPage";
 import { AnimatePresence } from "framer-motion";
 
 export default function RouteChild({
-  disconnectModal,
   directionCard,
   setDirectionCard,
-  loginModal,
-  setLoginModal,
-  signModal,
   token,
   favoriteComics,
   setFavoriteComics,
@@ -33,15 +29,11 @@ export default function RouteChild({
           element={
             <AllCharactersPage
               setMenu={setMenu}
-              disconnectModal={disconnectModal}
               setDirectionCard={setDirectionCard}
               directionCard={directionCard}
-              loginModal={loginModal}
-              signModal={signModal}
               token={token}
               favoriteChar={favoriteChar}
               setFavoriteChar={setFavoriteChar}
-              setLoginModal={setLoginModal}
               autocompleteList={autocompleteList}
               setAutocompleteList={setAutocompleteList}
             />
@@ -55,10 +47,6 @@ export default function RouteChild({
               favoriteChar={favoriteChar}
               setFavoriteChar={setFavoriteChar}
               token={token}
-              loginModal={loginModal}
-              setLoginModal={setLoginModal}
-              signModal={signModal}
-              disconnectModal={disconnectModal}
               favoriteComics={favoriteComics}
               setFavoriteComics={setFavoriteComics}
             />
@@ -69,15 +57,11 @@ export default function RouteChild({
           element={
             <AllComicsPage
               setMenu={setMenu}
-              disconnectModal={disconnectModal}
               setDirectionCard={setDirectionCard}
               directionCard={directionCard}
-              loginModal={loginModal}
-              signModal={signModal}
               token={token}
               favoriteComics={favoriteComics}
               setFavoriteComics={setFavoriteComics}
-              setLoginModal={setLoginModal}
               autocompleteList={autocompleteList}
               setAutocompleteList={setAutocompleteList}
             />
@@ -88,13 +72,9 @@ export default function RouteChild({
           element={
             <ComicPage
               setMenu={setMenu}
-              loginModal={loginModal}
-              signModal={signModal}
               token={token}
               favoriteChar={favoriteChar}
               setFavoriteChar={setFavoriteChar}
-              setLoginModal={setLoginModal}
-              disconnectModal={disconnectModal}
               autocompleteList={autocompleteList}
               setAutocompleteList={setAutocompleteList}
             />

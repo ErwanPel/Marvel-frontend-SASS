@@ -7,14 +7,10 @@ export default function Cards({
   setFavoriteChar,
   favoriteComics,
   setFavoriteComics,
-  loginModal,
-  setLoginModal,
-  signModal,
   favoriteSort,
   token,
   setAutocompleteList,
   directionCard,
-  disconnectModal,
   setMenu,
 }) {
   return (
@@ -40,14 +36,10 @@ export default function Cards({
               setFavoriteChar={setFavoriteChar}
               favoriteComics={favoriteComics}
               setFavoriteComics={setFavoriteComics}
-              loginModal={loginModal}
-              setLoginModal={setLoginModal}
-              signModal={signModal}
               favoriteSort={favoriteSort}
               token={token}
               setAutocompleteList={setAutocompleteList}
               directionCard={directionCard}
-              disconnectModal={disconnectModal}
             />
           );
         })

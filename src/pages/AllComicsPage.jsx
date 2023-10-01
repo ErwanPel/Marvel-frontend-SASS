@@ -6,15 +6,11 @@ import Loader from "../components/Loader";
 import StickyTopBar from "../components/StickyTopBar";
 
 export default function AllComicsPage({
-  loginModal,
-  signModal,
   token,
-  setLoginModal,
   favoriteComics,
   setFavoriteComics,
   autocompleteList,
   setAutocompleteList,
-  disconnectModal,
   setMenu,
 }) {
   const [data, setData] = useState([]);
@@ -128,7 +124,6 @@ export default function AllComicsPage({
           <StickyTopBar
             directionCard="to left"
             setMenu={setMenu}
-            disconnectModal={disconnectModal}
             data={data}
             search={search}
             setSearch={setSearch}
@@ -137,8 +132,6 @@ export default function AllComicsPage({
             page={page}
             setPage={setPage}
             selectPage={selectPage}
-            loginModal={loginModal}
-            signModal={signModal}
             autocompleteList={autocompleteList}
             setAutocompleteList={setAutocompleteList}
           />
@@ -149,12 +142,8 @@ export default function AllComicsPage({
             data={data}
             favoriteComics={favoriteComics}
             setFavoriteComics={setFavoriteComics}
-            loginModal={loginModal}
-            signModal={signModal}
             path={/comic/}
             favoriteSort={favoriteComics}
-            setLoginModal={setLoginModal}
-            disconnectModal={disconnectModal}
             token={token}
             setAutocompleteList={setAutocompleteList}
           />

@@ -1,25 +1,29 @@
 import Logo from "../assets/img/LogoMarvel.webp";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { useModalContext } from "../context/ModalContext";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header({
-  loginModal,
-  setLoginModal,
-  signModal,
-  setSignModal,
   token,
   setToken,
   setFavoriteChar,
   setFavoriteComics,
   setAutocompleteList,
   setDirectionCard,
-  setDisconnectModal,
   menu,
   setMenu,
 }) {
   const navigate = useNavigate();
+
+  const {
+    setSignModal,
+    signModal,
+    setLoginModal,
+    loginModal,
+    setDisconnectModal,
+  } = useModalContext();
 
   const getSignUp = () => {
     setMenu(() => false);

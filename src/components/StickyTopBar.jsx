@@ -1,5 +1,6 @@
 import Search from "./Search";
 import NavPages from "./NavPages";
+import { useModalContext } from "../context/ModalContext";
 
 export default function StickyTopBar({
   data,
@@ -10,14 +11,13 @@ export default function StickyTopBar({
   page,
   setPage,
   selectPage,
-  loginModal,
-  signModal,
   autocompleteList,
   setAutocompleteList,
-  disconnectModal,
   setMenu,
   directionCard,
 }) {
+  const { loginModal, signModal, disconnectModal } = useModalContext();
+
   return (
     <div
       className={

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
 import { displayModal } from "../assets/utils/displayModal";
+import { useModalContext } from "../context/ModalContext";
 
 export default function Card({
   picture,
@@ -11,16 +12,15 @@ export default function Card({
   setFavoriteChar,
   favoriteComics,
   setFavoriteComics,
-  loginModal,
-  setLoginModal,
-  signModal,
   favoriteSort,
   token,
   directionCard,
-  disconnectModal,
   setMenu,
   numberCard,
 }) {
+  const { loginModal, setLoginModal, signModal, disconnectModal } =
+    useModalContext();
+
   return (
     <Link
       className={

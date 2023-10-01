@@ -2,17 +2,19 @@ import SignPage from "../pages/SignPage";
 import LoginPage from "../pages/LoginPage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useModalContext } from "../context/ModalContext";
 
-export default function Modal({
-  loginModal,
-  setLoginModal,
-  signModal,
-  setSignModal,
-  setToken,
-  disconnectModal,
-  setDisconnectModal,
-}) {
+export default function Modal({ setToken }) {
   const [userError, setUserError] = useState(false);
+
+  const {
+    setSignModal,
+    signModal,
+    setLoginModal,
+    loginModal,
+    setDisconnectModal,
+    disconnectModal,
+  } = useModalContext();
 
   const closeSignModal = () => {
     setSignModal(() => false);

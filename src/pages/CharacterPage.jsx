@@ -5,6 +5,7 @@ import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
 import { displayModal } from "../assets/utils/displayModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import { useModalContext } from "../context/ModalContext";
 
 import ComicsByCharacter from "../components/ComicsByCharacter";
 import Loader from "../components/Loader";
@@ -13,16 +14,15 @@ export default function CharacterPage({
   favoriteChar,
   setFavoriteChar,
   token,
-  loginModal,
-  signModal,
   favoriteComics,
   setFavoriteComics,
-  setLoginModal,
-  disconnectModal,
   setMenu,
 }) {
   const [characterData, setCharacterData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { loginModal, signModal, disconnectModal, setLoginModal } =
+    useModalContext();
 
   const location = useLocation();
   const { characterId } = useParams();

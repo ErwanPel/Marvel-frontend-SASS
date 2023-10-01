@@ -2,6 +2,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { useState } from "react";
 import Cookies from "js-cookie";
+import { useModalContext } from "./context/ModalContext";
 
 import Header from "./components/Header";
 
@@ -34,9 +35,6 @@ library.add(
 );
 
 function App() {
-  const [loginModal, setLoginModal] = useState(false);
-  const [signModal, setSignModal] = useState(false);
-  const [disconnectModal, setDisconnectModal] = useState(false);
   const [token, setToken] = useState(Cookies.get("token") || "");
   const [favoriteComics, setFavoriteComics] = useState([]);
   const [favoriteChar, setFavoriteChar] = useState([]);
@@ -44,17 +42,14 @@ function App() {
   const [autocompleteList, setAutocompleteList] = useState(false);
   const [directionCard, setDirectionCard] = useState("to right");
 
+  const { loginModal, signModal, disconnectModal } = useModalContext();
+
   return (
     <Router>
       <Header
         menu={menu}
         setMenu={setMenu}
-        setDisconnectModal={setDisconnectModal}
         setDirectionCard={setDirectionCard}
-        loginModal={loginModal}
-        setLoginModal={setLoginModal}
-        signModal={signModal}
-        setSignModal={setSignModal}
         token={token}
         setToken={setToken}
         favoriteComics={favoriteComics}
@@ -66,12 +61,8 @@ function App() {
       <RouteChild
         setMenu={setMenu}
         autocompleteList={autocompleteList}
-        disconnectModal={disconnectModal}
         directionCard={directionCard}
         setDirectionCard={setDirectionCard}
-        loginModal={loginModal}
-        setLoginModal={setLoginModal}
-        signModal={signModal}
         token={token}
         favoriteComics={favoriteComics}
         setFavoriteComics={setFavoriteComics}
@@ -79,28 +70,9 @@ function App() {
         setFavoriteChar={setFavoriteChar}
         setAutocompleteList={setAutocompleteList}
       />
-      {loginModal && (
-        <Modal
-          loginModal={loginModal}
-          setLoginModal={setLoginModal}
-          setToken={setToken}
-          setSignModal={setSignModal}
-        />
-      )}
-      {signModal && (
-        <Modal
-          signModal={signModal}
-          setSignModal={setSignModal}
-          setToken={setToken}
-          setLoginModal={setLoginModal}
-        />
-      )}
-      {disconnectModal && (
-        <Modal
-          setDisconnectModal={setDisconnectModal}
-          disconnectModal={disconnectModal}
-        />
-      )}
+      {loginModal && <Modal setToken={setToken} />}
+      {signModal && <Modal setToken={setToken} />}
+      {disconnectModal && <Modal />}
     </Router>
   );
 }

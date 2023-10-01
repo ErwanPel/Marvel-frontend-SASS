@@ -6,15 +6,11 @@ import Loader from "../components/Loader";
 import StickyTopBar from "../components/StickyTopBar";
 
 export default function CharactersPage({
-  loginModal,
-  signModal,
   token,
   favoriteChar,
   setFavoriteChar,
-  setLoginModal,
   autocompleteList,
   setAutocompleteList,
-  disconnectModal,
   setMenu,
 }) {
   const [data, setData] = useState([]);
@@ -129,7 +125,6 @@ export default function CharactersPage({
           <StickyTopBar
             directionCard="to right"
             setMenu={setMenu}
-            disconnectModal={disconnectModal}
             data={data}
             search={search}
             setSearch={setSearch}
@@ -138,8 +133,6 @@ export default function CharactersPage({
             page={page}
             setPage={setPage}
             selectPage={selectPage}
-            loginModal={loginModal}
-            signModal={signModal}
             autocompleteList={autocompleteList}
             setAutocompleteList={setAutocompleteList}
           />
@@ -149,10 +142,6 @@ export default function CharactersPage({
             data={data}
             favoriteChar={favoriteChar}
             setFavoriteChar={setFavoriteChar}
-            loginModal={loginModal}
-            setLoginModal={setLoginModal}
-            signModal={signModal}
-            disconnectModal={disconnectModal}
             path="/"
             favoriteSort={favoriteChar}
             token={token}
