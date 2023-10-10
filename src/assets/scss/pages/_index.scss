@@ -1,6 +1,7 @@
 // This file regroup all the subfiles of the "pages" folder which is
 // use in the "App.scss"
 
+@forward "HomePage";
 @forward "CharacterPage";
 @forward "ComicPage";
 @forward "Sign-Login";

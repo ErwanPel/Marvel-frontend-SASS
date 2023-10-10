@@ -2,7 +2,6 @@ import Logo from "../assets/img/LogoMarvel.webp";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useModalContext } from "../context/ModalContext";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header({
@@ -24,6 +23,18 @@ export default function Header({
     loginModal,
     setDisconnectModal,
   } = useModalContext();
+
+  const goToComics = (event) => {
+    setMenu(false);
+    setDirectionCard("to left");
+    navigate("/comics");
+  };
+
+  const goToCharacters = (event) => {
+    setMenu(false);
+    setDirectionCard("to right");
+    navigate("/characters");
+  };
 
   const getSignUp = () => {
     setMenu(() => false);
@@ -56,30 +67,30 @@ export default function Header({
         to="/"
         onClick={() => {
           setMenu(false);
-          setDirectionCard("to right");
         }}
+        tabIndex={(signModal || loginModal) && "-1  "}
       >
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
       <nav>
         <button
           className="header__button"
-          onClick={() => {
-            setMenu(false);
-            setDirectionCard("to right");
-            navigate("/");
+          onClick={() => goToCharacters()}
+          onKeyUp={(event) => {
+            event.code === "Enter" && goToCharacters();
           }}
+          tabIndex={(signModal || loginModal) && "-1  "}
         >
           PERSONNAGES
         </button>
 
         <button
           className="header__button"
-          onClick={() => {
-            setMenu(false);
-            setDirectionCard("to left");
-            navigate("/comics");
+          onClick={goToComics}
+          onKeyUp={(event) => {
+            event.code === "Enter" && goToComics();
           }}
+          tabIndex={(signModal || loginModal) && "-1"}
         >
           COMICS
         </button>
@@ -88,22 +99,47 @@ export default function Header({
         <FontAwesomeIcon
           className="menu__icon"
           icon="bars"
+          tabIndex={signModal || loginModal ? "-1" : "0"}
           onClick={() => setMenu(!menu)}
           onMouseEnter={() => setMenu(true)}
+          onKeyUp={(event) => {
+            event.code === "Enter" && setMenu(true);
+          }}
         />
         {menu && (
           <div className="bloc-menu" onMouseLeave={() => setMenu(() => false)}>
             {!token ? (
               <>
-                <div className="bloc-menu__item" onClick={getSignUp}>
+                <div
+                  tabIndex={0}
+                  className="bloc-menu__item"
+                  onClick={getSignUp}
+                  onKeyUp={(event) => {
+                    event.code === "Enter" && getSignUp();
+                  }}
+                >
                   S'inscrire
                 </div>
-                <div className="bloc-menu__item" onClick={getLogin}>
+                <div
+                  tabIndex={0}
+                  className="bloc-menu__item"
+                  onClick={getLogin}
+                  onKeyUp={(event) => {
+                    event.code === "Enter" && getLogin();
+                  }}
+                >
                   Connexion
                 </div>
               </>
             ) : (
-              <div className="bloc-menu__item" onClick={removeToken}>
+              <div
+                tabIndex={0}
+                className="bloc-menu__item"
+                onClick={removeToken}
+                onKeyUp={(event) => {
+                  event.code === "Enter" && removeToken();
+                }}
+              >
                 Deconnexion
               </div>
             )}

@@ -27,6 +27,25 @@ export default function CharacterPage({
   const location = useLocation();
   const { characterId } = useParams();
 
+  const keyOnFavorite = (event) => {
+    if (token) {
+      handleFav(
+        favoriteComics,
+        setFavoriteComics,
+        favoriteChar,
+        setFavoriteChar,
+        characterData._id,
+        characterData,
+        deleteFav,
+        sendFav,
+        token,
+        event
+      );
+    } else {
+      displayModal(setLoginModal, loginModal, event);
+    }
+  };
+
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -73,6 +92,7 @@ export default function CharacterPage({
       <div className="biography-bloc">
         <div className="biography-bloc__left">
           <div
+            tabIndex={signModal || loginModal ? "-1" : "0"}
             className={
               ((loginModal || signModal || disconnectModal) &&
                 "favorite__modal") ||
@@ -97,6 +117,9 @@ export default function CharacterPage({
                     )
                 : (event) => displayModal(setLoginModal, loginModal, event)
             }
+            onKeyUp={(event) => {
+              event.code === "Enter" && keyOnFavorite(event);
+            }}
           >
             <FontAwesomeIcon
               className="favorite__icon"

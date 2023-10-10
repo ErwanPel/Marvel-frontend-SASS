@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { sendFav, deleteFav, handleFav } from "../assets/utils/favoriteData";
@@ -21,6 +22,25 @@ export default function Card({
   const { loginModal, setLoginModal, signModal, disconnectModal } =
     useModalContext();
 
+  const keyOnFavorite = (event) => {
+    if (token) {
+      handleFav(
+        favoriteComics,
+        setFavoriteComics,
+        favoriteChar,
+        setFavoriteChar,
+        element._id,
+        element,
+        deleteFav,
+        sendFav,
+        token,
+        event
+      );
+    } else {
+      displayModal(setLoginModal, loginModal, event);
+    }
+  };
+
   return (
     <Link
       className={
@@ -31,6 +51,7 @@ export default function Card({
       to={`${path}${element._id}`}
       state={{ data: element }}
       onClick={() => setMenu(false)}
+      tabIndex={(signModal || loginModal) && "-1"}
     >
       <div
         className={
@@ -40,6 +61,7 @@ export default function Card({
         }
       >
         <div
+          tabIndex={signModal || loginModal ? "-1" : 0}
           className={
             ((loginModal || signModal || disconnectModal) &&
               "favorite__modal") ||
@@ -47,6 +69,9 @@ export default function Card({
               ? "favorite"
               : "favorite__fullheart")
           }
+          onKeyUp={(event) => {
+            event.code === "Enter" && keyOnFavorite(event);
+          }}
           onClick={
             token
               ? (event) =>

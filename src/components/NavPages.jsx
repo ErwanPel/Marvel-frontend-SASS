@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useModalContext } from "../context/ModalContext";
 
 export default function NavPage({ page, setPage, selectPage, setMenu }) {
+  const { signModal, loginModal } = useModalContext();
+
   return (
     <div className="navpage">
       <FontAwesomeIcon
@@ -35,6 +38,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
           setPage(event.target.value);
         }}
         value={page}
+        tabIndex={signModal || loginModal ? "-1" : "0"}
       >
         {selectPage.map((element, index) => {
           return (

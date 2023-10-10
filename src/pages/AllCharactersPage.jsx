@@ -142,7 +142,7 @@ export default function CharactersPage({
             data={data}
             favoriteChar={favoriteChar}
             setFavoriteChar={setFavoriteChar}
-            path="/"
+            path="/characters/"
             favoriteSort={favoriteChar}
             token={token}
             setAutocompleteList={setAutocompleteList}

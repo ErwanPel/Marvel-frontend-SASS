@@ -47,22 +47,34 @@ export default function Modal({ setToken }) {
           {signModal && (
             <FontAwesomeIcon
               icon="xmark"
+              tabIndex={0}
               className="modal-window__close"
               onClick={closeSignModal}
+              onKeyUp={(event) => {
+                event.code === "Enter" && closeSignModal();
+              }}
             />
           )}
           {loginModal && (
             <FontAwesomeIcon
               icon="xmark"
+              tabIndex={0}
               className="modal-window__close"
               onClick={closeLoginModal}
+              onKeyUp={(event) => {
+                event.code === "Enter" && closeLoginModal();
+              }}
             />
           )}
           {disconnectModal && (
             <FontAwesomeIcon
               icon="xmark"
+              tabIndex={0}
               className="modal-window__close"
               onClick={closeDisconnectModal}
+              onKeyUp={(event) => {
+                event.code === "Enter" && closeDisconnectModal();
+              }}
             />
           )}
           {signModal && (

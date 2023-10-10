@@ -147,7 +147,7 @@
 
   &__description {
     font-size: $font-standard;
-    @include max-bloc-text-size(2.2rem, 5);
+    @include max-bloc-text-size(2.2rem, 3);
     text-align: justify;
 
     @include responsive-screen("tiny") {
@@ -165,6 +165,10 @@
     @include absolute-element(1rem, calc(100% - 4rem));
     // animation: little-fav 2s ease-in-out;
 
+    &:focus {
+      background-color: rgb(167, 163, 163);
+    }
+
     &__modal {
       @include favorite-item(transparent);
       @include absolute-element(1rem, calc(100% - 4rem));
@@ -173,6 +177,10 @@
       @include favorite-item($main-color, white);
       // transition: background-color 1s;
       @include absolute-element(1rem, calc(100% - 4rem));
+
+      &:focus {
+        background-color: rgb(132, 69, 69);
+      }
     }
     &__icon {
       font-size: 1.6rem;

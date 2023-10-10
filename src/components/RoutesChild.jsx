@@ -6,6 +6,7 @@ import ComicPage from "../pages/ComicPage";
 import AllComicsPage from "../pages/AllComicsPage";
 
 import { AnimatePresence } from "framer-motion";
+import HomePage from "../pages/HomePage";
 
 export default function RouteChild({
   directionCard,
@@ -24,8 +25,9 @@ export default function RouteChild({
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/"
+          path="/characters"
           element={
             <AllCharactersPage
               setMenu={setMenu}
@@ -40,7 +42,7 @@ export default function RouteChild({
           }
         />
         <Route
-          path="/:characterId"
+          path="/characters/:characterId"
           element={
             <CharacterPage
               setMenu={setMenu}

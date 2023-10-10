@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import { useModalContext } from "../context/ModalContext";
 
 export default function ComicsByCharacter({ characterId, setMenu }) {
   const [comicData, setComicData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { signModal, loginModal } = useModalContext();
 
   const fetchData = async () => {
     try {
@@ -35,6 +38,7 @@ export default function ComicsByCharacter({ characterId, setMenu }) {
         comicData.comics.map((comic) => {
           return (
             <Link
+              tabIndex={(signModal || loginModal) && "-1"}
               key={comic._id}
               className="biography-comic"
               to={`/comic/${comic._id}`}

@@ -78,6 +78,7 @@ export default function LoginPage({ setUserError, setToken }) {
       <div className="inputBloc">
         <label htmlFor="email">Ton email :</label>
         <input
+          autoFocus
           type="email"
           name="email"
           id="email"
@@ -106,7 +107,14 @@ export default function LoginPage({ setUserError, setToken }) {
       ) : (
         <>
           <button className={agree && "button__valid"}>Se connecter</button>
-          <p onClick={handleModal} className="account-message">
+          <p
+            tabIndex={0}
+            onKeyUp={(event) => {
+              event.code === "Enter" && handleModal();
+            }}
+            onClick={handleModal}
+            className="account-message"
+          >
             No account ? Register here !
           </p>
         </>

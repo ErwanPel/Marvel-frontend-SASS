@@ -95,6 +95,7 @@ export default function SignPage({ setToken, setUserError }) {
       <div className="inputBloc">
         <label htmlFor="name">Ton pseudo :</label>
         <input
+          autoFocus
           type="text"
           name="name"
           id="name"
@@ -158,7 +159,14 @@ export default function SignPage({ setToken, setUserError }) {
       ) : (
         <>
           <button className={agree && "button__valid"}>S'inscrire</button>
-          <p onClick={handleModal} className="account-message">
+          <p
+            tabIndex={0}
+            onClick={handleModal}
+            onKeyUp={(event) => {
+              event.code === "Enter" && handleModal();
+            }}
+            className="account-message"
+          >
             Have already an account ? Log you !
           </p>
         </>

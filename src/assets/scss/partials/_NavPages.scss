@@ -14,7 +14,7 @@
   color: $main-color;
   font-size: 2rem;
   padding: 1rem;
-  border-radius: 80%;
+  border-radius: 20px 5px 20px 5px;
   transition: background-color 250ms ease-in, color 150ms ease-in;
 
   @include responsive-screen("small") {

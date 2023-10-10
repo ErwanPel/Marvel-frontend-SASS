@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useModalContext } from "../context/ModalContext";
 
 export default function Search({
   search,
@@ -12,6 +13,8 @@ export default function Search({
   setMenu,
 }) {
   const [hasFocus, setFocus] = useState(false);
+
+  const { signModal, loginModal } = useModalContext();
 
   // Initialization of an array for the autocomplete searchBar
   let arrayAutocomplete = [];
@@ -52,6 +55,7 @@ export default function Search({
             setPage(1);
           }}
           value={search}
+          tabIndex={signModal || loginModal ? "-1" : "0"}
         />
         {autocompleteList && (
           <div className="autocomplete">

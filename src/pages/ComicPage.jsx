@@ -27,6 +27,31 @@ export default function ComicPage({
   const location = useLocation();
   const { comicId } = useParams();
 
+  const keyOnFavorite = (event) => {
+    if (token) {
+      handleFav(
+        favoriteComics,
+        setFavoriteComics,
+        favoriteChar,
+        setFavoriteChar,
+        comicData._id,
+        comicData,
+        deleteFav,
+        sendFav,
+        token,
+        event
+      );
+    } else {
+      displayModal(setLoginModal, loginModal, event);
+    }
+  };
+
+  const keyOnBack = (path) => {
+    setMenu(false);
+    setBackCharacter(false);
+    navigate(path);
+  };
+
   console.log("ici", disconnectModal);
 
   const fetchData = async () => {
@@ -81,12 +106,16 @@ export default function ComicPage({
           <div className="comic__row">
             {backCharacter && (
               <FontAwesomeIcon
+                tabIndex={signModal || loginModal ? "-1" : "0 "}
                 className="back-arrow"
                 icon="arrow-left"
                 onClick={() => {
                   setMenu(false);
                   setBackCharacter(false);
                   navigate(location.state.from);
+                }}
+                onKeyUp={(event) => {
+                  event.code === "Enter" && keyOnBack(location.state.from);
                 }}
               />
             )}
@@ -104,6 +133,7 @@ export default function ComicPage({
                 <p>{comicData.description}</p>
               </div>
               <div
+                tabIndex={signModal || loginModal ? "-1" : "0"}
                 className={
                   ((loginModal || signModal || disconnectModal) &&
                     "favorite__modal") ||
@@ -128,6 +158,9 @@ export default function ComicPage({
                         )
                     : (event) => displayModal(setLoginModal, loginModal, event)
                 }
+                onKeyUp={(event) => {
+                  event.code === "Enter" && keyOnFavorite(event);
+                }}
               >
                 <FontAwesomeIcon
                   className="favorite__icon"
@@ -143,12 +176,16 @@ export default function ComicPage({
           <p>Sorry 🦹‍♂️</p>
           {backCharacter && (
             <FontAwesomeIcon
+              tabIndex={signModal || loginModal ? "-1" : "0 "}
               className="back-arrow"
               icon="arrow-left"
               onClick={() => {
                 setMenu(false);
                 setBackCharacter(false);
                 navigate(location.state.from);
+              }}
+              onKeyUp={(event) => {
+                event.code === "Enter" && keyOnBack(location.state.from);
               }}
             />
           )}

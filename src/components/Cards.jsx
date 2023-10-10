@@ -23,7 +23,8 @@ export default function Cards({
     >
       {data.results ? (
         data.results.map((element, index) => {
-          let picture = `${element.thumbnail.path}/portrait_large.${element.thumbnail.extension}`;
+          console.log(element.thumbnail);
+          let picture = `${element.thumbnail.path}/portrait_xlarge.${element.thumbnail.extension}`;
           return (
             <Card
               numberCard={`${index + 1}`}

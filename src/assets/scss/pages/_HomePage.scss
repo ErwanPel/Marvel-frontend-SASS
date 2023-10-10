@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.home {
+  @include flex-around(column);
+  width: 100vw;
+  height: 70vh;
+
+  & p {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: yellow;
+    color: $main-color;
+    font-size: 5rem;
+    transform: rotate(-5deg);
+  }
+}
+
+.home img {
+  width: 25%;
+  height: 50%;
+}
