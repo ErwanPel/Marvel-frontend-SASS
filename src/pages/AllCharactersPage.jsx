@@ -29,6 +29,7 @@ export default function CharactersPage({
       try {
         const response = await axios.get(
           "https://site--marvel-backend--fwddjdqr85yq.code.run/favorites",
+
           { headers: { authorization: `Bearer ${token}` } }
         );
 
@@ -59,6 +60,7 @@ export default function CharactersPage({
           `https://site--marvel-backend--fwddjdqr85yq.code.run/characters?page=${page}${name}`,
           { signal: controller.signal }
         );
+
         setData(data);
         setSelectPage(Array.from(Array(Math.ceil(data.count / 100)).keys()));
         setIsLoading(false);

@@ -52,8 +52,6 @@ export default function ComicPage({
     navigate(path);
   };
 
-  console.log("ici", disconnectModal);
-
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -78,8 +76,6 @@ export default function ComicPage({
       fetchData();
     }
   }, []);
-
-  console.log(token);
 
   return isLoading ? (
     <Loader />
@@ -137,7 +133,7 @@ export default function ComicPage({
                 className={
                   ((loginModal || signModal || disconnectModal) &&
                     "favorite__modal") ||
-                  (favoriteChar.indexOf(comicData._id) === -1
+                  (!favoriteComics.find((find) => find._id === comicData._id)
                     ? "favorite"
                     : "favorite__fullheart")
                 }
@@ -150,7 +146,7 @@ export default function ComicPage({
                           favoriteChar,
                           setFavoriteChar,
                           comicData._id,
-                          comicData.name,
+                          comicData,
                           deleteFav,
                           sendFav,
                           token,

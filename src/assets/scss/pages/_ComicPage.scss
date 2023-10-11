@@ -71,6 +71,10 @@
       @include absolute-element(1rem, calc(50% - 0.8rem));
     }
 
+    &:focus {
+      background-color: rgb(167, 163, 163);
+    }
+
     &__modal {
       @include favorite-item(transparent);
       @include absolute-element(2rem, calc(100% - 5rem));
@@ -86,6 +90,10 @@
 
       @include responsive-screen("medium") {
         @include absolute-element(1rem, calc(50% - 0.8rem));
+      }
+
+      &:focus {
+        background-color: rgb(132, 69, 69);
       }
     }
     &__icon {

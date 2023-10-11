@@ -132,16 +132,25 @@ export default function Header({
                 </div>
               </>
             ) : (
-              <div
-                tabIndex={0}
-                className="bloc-menu__item"
-                onClick={removeToken}
-                onKeyUp={(event) => {
-                  event.code === "Enter" && removeToken();
-                }}
-              >
-                Deconnexion
-              </div>
+              <>
+                <div
+                  tabIndex={0}
+                  className="bloc-menu__item"
+                  onClick={() => navigate("/favorites")}
+                >
+                  Mes favoris
+                </div>
+                <div
+                  tabIndex={0}
+                  className="bloc-menu__item"
+                  onClick={removeToken}
+                  onKeyUp={(event) => {
+                    event.code === "Enter" && removeToken();
+                  }}
+                >
+                  Deconnexion
+                </div>
+              </>
             )}
           </div>
         )}

@@ -32,7 +32,8 @@
 
   @include responsive-screen("tiny") {
     width: 85%;
-    height: 40rem;
+    height: 48rem;
+    margin-top: 2rem;
   }
 
   &__right {

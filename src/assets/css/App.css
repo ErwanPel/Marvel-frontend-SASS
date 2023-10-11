@@ -339,8 +339,8 @@ h4 {
 }
 
 .home img {
-  width: 25%;
-  height: 50%;
+  width: 30rem;
+  height: 30rem;
 }
 
 .biography-bloc {
@@ -582,6 +582,9 @@ p.to-complete {
     left: calc(50% - 0.8rem);
   }
 }
+.comic-bloc .favorite:focus {
+  background-color: rgb(167, 163, 163);
+}
 .comic-bloc .favorite__modal {
   z-index: 1;
   flex-direction: row;
@@ -634,6 +637,9 @@ p.to-complete {
     top: 1rem;
     left: calc(50% - 0.8rem);
   }
+}
+.comic-bloc .favorite__fullheart:focus {
+  background-color: rgb(132, 69, 69);
 }
 .comic-bloc .favorite__icon {
   font-size: 1.6rem;
@@ -781,6 +787,36 @@ form button {
   overflow: hidden;
 }
 
+.favorite-page {
+  flex-direction: column;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.favorite-page__bloc {
+  padding: 4rem;
+  flex-direction: row;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+@media screen and (max-width: 500px) {
+  .favorite-page__bloc {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .favorite-page__bloc::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .cards-bloc {
   flex-direction: row;
   display: flex !important;
@@ -849,7 +885,8 @@ form button {
 @media screen and (max-width: 500px) {
   .card {
     width: 85%;
-    height: 40rem;
+    height: 48rem;
+    margin-top: 2rem;
   }
 }
 .card__right {

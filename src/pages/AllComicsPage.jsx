@@ -65,9 +65,9 @@ export default function AllComicsPage({
         controller.abort();
       }
     };
-    console.log("useEffect characters activated");
+
     fetchData();
-    console.log("ici", data);
+
     if (data.length > 0) {
       return () => {
         controller.abort();

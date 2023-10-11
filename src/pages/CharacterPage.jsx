@@ -66,7 +66,6 @@ export default function CharacterPage({
     } else {
       fetchData();
     }
-    console.log(characterData);
   }, []);
 
   return isLoading ? (
@@ -96,7 +95,7 @@ export default function CharacterPage({
             className={
               ((loginModal || signModal || disconnectModal) &&
                 "favorite__modal") ||
-              (favoriteChar.indexOf(characterData._id) === -1
+              (!favoriteChar.find((find) => find._id === characterData._id)
                 ? "favorite"
                 : "favorite__fullheart")
             }
@@ -109,7 +108,7 @@ export default function CharacterPage({
                       favoriteChar,
                       setFavoriteChar,
                       characterData._id,
-                      characterData.name,
+                      characterData,
                       deleteFav,
                       sendFav,
                       token,

@@ -42,7 +42,11 @@ export default function ComicsByCharacter({ characterId, setMenu }) {
               key={comic._id}
               className="biography-comic"
               to={`/comic/${comic._id}`}
-              state={{ data: comic, from: `/${characterId}`, back: true }}
+              state={{
+                data: comic,
+                from: `/characters/${characterId}`,
+                back: true,
+              }}
               onClick={() => setMenu(false)}
             >
               <img

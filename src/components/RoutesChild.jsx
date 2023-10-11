@@ -7,6 +7,7 @@ import AllComicsPage from "../pages/AllComicsPage";
 
 import { AnimatePresence } from "framer-motion";
 import HomePage from "../pages/HomePage";
+import FavoritesPage from "../pages/FavoritesPage";
 
 export default function RouteChild({
   directionCard,
@@ -75,9 +76,25 @@ export default function RouteChild({
             <ComicPage
               setMenu={setMenu}
               token={token}
+              favoriteComics={favoriteComics}
+              setFavoriteComics={setFavoriteComics}
               favoriteChar={favoriteChar}
               setFavoriteChar={setFavoriteChar}
               autocompleteList={autocompleteList}
+              setAutocompleteList={setAutocompleteList}
+            />
+          }
+        />
+        <Route
+          path="/favorites"
+          element={
+            <FavoritesPage
+              token={token}
+              favoriteChar={favoriteChar}
+              setFavoriteChar={setFavoriteChar}
+              favoriteComics={favoriteComics}
+              setFavoriteComics={setFavoriteComics}
+              setMenu={setMenu}
               setAutocompleteList={setAutocompleteList}
             />
           }

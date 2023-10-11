@@ -65,7 +65,7 @@ export default function Card({
           className={
             ((loginModal || signModal || disconnectModal) &&
               "favorite__modal") ||
-            (favoriteSort.indexOf(element._id) === -1
+            (!favoriteSort.find((find) => find._id === element._id)
               ? "favorite"
               : "favorite__fullheart")
           }

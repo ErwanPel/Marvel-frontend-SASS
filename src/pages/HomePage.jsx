@@ -10,7 +10,11 @@ export default function HomePage() {
         opacity: 0,
       }}
       animate={{
-        opacity: 1.2,
+        opacity: 1,
+        transition: {
+          duration: 1.2,
+          ease: [0.43, 0.04, 0.84, 0.52],
+        },
       }}
       exit={{
         opacity: 0,

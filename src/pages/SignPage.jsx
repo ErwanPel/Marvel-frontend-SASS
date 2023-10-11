@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -29,8 +30,7 @@ export default function SignPage({ setToken, setUserError }) {
   useEffect(() => {
     const enableButton = () => {
       const reg = /^[\w\.\-]+[\w\.\-]*@[\w\.\-]{2,}\.[a-z_\.\-]+[a-z_\-]+$/;
-      console.log("ici", reg.test(email));
-      console.log(agree, email, password);
+
       if (
         reg.test(email) === true &&
         username &&
