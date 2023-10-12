@@ -38,6 +38,7 @@ export default function ComicsByCharacter({ characterId, setMenu }) {
         comicData.comics.map((comic) => {
           return (
             <Link
+              label-aria={`go to the article of ${comic.title}`}
               tabIndex={(signModal || loginModal) && "-1"}
               key={comic._id}
               className="biography-comic"
@@ -51,7 +52,7 @@ export default function ComicsByCharacter({ characterId, setMenu }) {
             >
               <img
                 src={`${comic.thumbnail.path}/portrait_small.${comic.thumbnail.extension}`}
-                alt=""
+                alt={`image du comic ${comic.title}`}
               />{" "}
               <h5>{comic.title}</h5>
             </Link>

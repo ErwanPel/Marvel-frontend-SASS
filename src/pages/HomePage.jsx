@@ -24,7 +24,7 @@ export default function HomePage() {
         },
       }}
     >
-      <p>Welcome to the Marvel's fan site</p>
+      <h1>Welcome to the Marvel's fan site</h1>
       <img src={spiderman} alt="image de spiderman" />
     </motion.main>
   );

@@ -91,6 +91,7 @@ export default function CharacterPage({
       <div className="biography-bloc">
         <div className="biography-bloc__left">
           <div
+            aria-label="add or remove from my favorite"
             tabIndex={signModal || loginModal ? "-1" : "0"}
             className={
               ((loginModal || signModal || disconnectModal) &&

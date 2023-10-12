@@ -32,7 +32,7 @@
 .comic-bloc {
   @include flex-center(row);
 
-  background-color: $card-color;
+  background-color: $white-color;
   width: 65rem;
   padding: 2rem;
   position: relative;
@@ -63,7 +63,7 @@
   }
 
   .favorite {
-    @include favorite-item($icon-color);
+    @include favorite-item($white-color);
     @include absolute-element(2rem, calc(100% - 5rem));
     // animation: little-fav 2s ease-in-out;
 
@@ -84,7 +84,7 @@
       }
     }
     &__fullheart {
-      @include favorite-item($main-color, $icon-color);
+      @include favorite-item($main-color, $white-color);
       // transition: background-color 1s;
       @include absolute-element(2rem, calc(100% - 5rem));
 
@@ -96,7 +96,7 @@
         background-color: rgb(132, 69, 69);
       }
     }
-    &__icon {
+    &__white {
       font-size: 1.6rem;
     }
   }

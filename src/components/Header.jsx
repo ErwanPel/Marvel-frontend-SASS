@@ -74,6 +74,7 @@ export default function Header({
       </Link>
       <nav>
         <button
+          aria-label="go to the all characters page"
           className="header__button"
           onClick={() => goToCharacters()}
           onKeyUp={(event) => {
@@ -85,6 +86,7 @@ export default function Header({
         </button>
 
         <button
+          aria-label="go to the all comics page"
           className="header__button"
           onClick={goToComics}
           onKeyUp={(event) => {
@@ -97,6 +99,8 @@ export default function Header({
       </nav>
       <div className="menu">
         <FontAwesomeIcon
+          aria-hidden={false}
+          aria-label="open the drop-down menu"
           className="menu__icon"
           icon="bars"
           tabIndex={signModal || loginModal ? "-1" : "0"}
@@ -111,6 +115,7 @@ export default function Header({
             {!token ? (
               <>
                 <div
+                  aria-label="open the window for sign in"
                   tabIndex={0}
                   className="bloc-menu__item"
                   onClick={getSignUp}
@@ -121,6 +126,7 @@ export default function Header({
                   S'inscrire
                 </div>
                 <div
+                  aria-label="open the window for log in"
                   tabIndex={0}
                   className="bloc-menu__item"
                   onClick={getLogin}
@@ -134,6 +140,7 @@ export default function Header({
             ) : (
               <>
                 <div
+                  aria-label="go to your favorites page"
                   tabIndex={0}
                   className="bloc-menu__item"
                   onClick={() => navigate("/favorites")}
@@ -141,9 +148,10 @@ export default function Header({
                     event.code === "Enter" && navigate("/favorites");
                   }}
                 >
-                  Mes favoris
+                  Favoris
                 </div>
                 <div
+                  aria-label="disconnect your session"
                   tabIndex={0}
                   className="bloc-menu__item"
                   onClick={removeToken}

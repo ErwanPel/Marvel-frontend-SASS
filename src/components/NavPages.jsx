@@ -7,6 +7,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
   return (
     <div className="navpage">
       <FontAwesomeIcon
+        aria-hidden={false}
+        aria-label="go to the first page"
         tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page > 1
@@ -20,6 +22,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
         }}
       />
       <FontAwesomeIcon
+        aria-hidden={false}
+        aria-label="go to the previous page"
         tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page > 1
@@ -33,6 +37,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
         }}
       />
       <select
+        aria-label="select your page with the arrows or on press 'Enter'"
         name="page"
         id="page"
         onChange={(event) => {
@@ -52,6 +57,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
       </select>
 
       <FontAwesomeIcon
+        aria-hidden={false}
+        aria-label="go to the next page"
         tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page < selectPage.length
@@ -66,6 +73,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
       />
 
       <FontAwesomeIcon
+        aria-hidden={false}
+        aria-label="go to the last page"
         tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page < selectPage.length

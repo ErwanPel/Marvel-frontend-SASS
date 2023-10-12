@@ -102,6 +102,8 @@ export default function ComicPage({
           <div className="comic__row">
             {backCharacter && (
               <FontAwesomeIcon
+                aria-hidden={false}
+                aria-label={`Go back to the page of the character`}
                 tabIndex={signModal || loginModal ? "-1" : "0 "}
                 className="back-arrow"
                 icon="arrow-left"
@@ -129,6 +131,7 @@ export default function ComicPage({
                 <p>{comicData.description}</p>
               </div>
               <div
+                aria-label="add or remove from my favorite"
                 tabIndex={signModal || loginModal ? "-1" : "0"}
                 className={
                   ((loginModal || signModal || disconnectModal) &&

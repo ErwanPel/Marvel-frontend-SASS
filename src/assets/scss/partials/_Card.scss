@@ -7,12 +7,39 @@
   width: 100%;
   position: relative;
   border: 4px solid $main-color;
-  background-color: $card-color;
+  background-color: white;
   box-shadow: -2px -1px 3px $main-color;
   transition: transform 300ms ease-in;
 
   &:hover {
     transform: perspective(90rem) rotateY(5deg) scaleZ(0.9);
+  }
+
+  .favorite {
+    @include favorite-item($white-color);
+    @include absolute-element(1rem, calc(100% - 4rem));
+    // animation: little-fav 2s ease-in-out;
+
+    &:focus {
+      background-color: rgb(167, 163, 163);
+    }
+
+    &__modal {
+      @include favorite-item(transparent);
+      @include absolute-element(1rem, calc(100% - 4rem));
+    }
+    &__fullheart {
+      @include favorite-item($main-color, $white-color);
+      // transition: background-color 1s;
+      @include absolute-element(1rem, calc(100% - 4rem));
+
+      &:focus {
+        background-color: rgb(132, 69, 69);
+      }
+    }
+    &__icon {
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -158,33 +185,6 @@
     &--empty {
       @extend %to-complete;
       font-size: $font-standard;
-    }
-  }
-
-  .favorite {
-    @include favorite-item($icon-color);
-    @include absolute-element(1rem, calc(100% - 4rem));
-    // animation: little-fav 2s ease-in-out;
-
-    &:focus {
-      background-color: rgb(167, 163, 163);
-    }
-
-    &__modal {
-      @include favorite-item(transparent);
-      @include absolute-element(1rem, calc(100% - 4rem));
-    }
-    &__fullheart {
-      @include favorite-item($main-color, white);
-      // transition: background-color 1s;
-      @include absolute-element(1rem, calc(100% - 4rem));
-
-      &:focus {
-        background-color: rgb(132, 69, 69);
-      }
-    }
-    &__icon {
-      font-size: 1.6rem;
     }
   }
 }

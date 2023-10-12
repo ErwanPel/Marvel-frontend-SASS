@@ -46,6 +46,8 @@ export default function Modal({ setToken }) {
         >
           {signModal && (
             <FontAwesomeIcon
+              aria-hidden={false}
+              aria-label="close the modal window"
               icon="xmark"
               tabIndex={0}
               className="modal-window__close"
@@ -57,6 +59,8 @@ export default function Modal({ setToken }) {
           )}
           {loginModal && (
             <FontAwesomeIcon
+              aria-hidden={false}
+              aria-label="close the modal window"
               icon="xmark"
               tabIndex={0}
               className="modal-window__close"
@@ -68,6 +72,8 @@ export default function Modal({ setToken }) {
           )}
           {disconnectModal && (
             <FontAwesomeIcon
+              aria-hidden={false}
+              aria-label="close the modal window"
               icon="xmark"
               tabIndex={0}
               className="modal-window__close"

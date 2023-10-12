@@ -43,6 +43,7 @@ export default function Card({
 
   return (
     <Link
+      label-aria={`go to the article of ${element.title || element.name}`}
       className={
         directionCard === "to right"
           ? `card card__right card__right--${numberCard}`
@@ -61,6 +62,7 @@ export default function Card({
         }
       >
         <div
+          aria-label="add or remove from my favorite"
           tabIndex={signModal || loginModal ? "-1" : 0}
           className={
             ((loginModal || signModal || disconnectModal) &&
@@ -97,7 +99,12 @@ export default function Card({
         </div>
         <div className="card__bloc">
           <h4 className="card__title">{element.name || element.title}</h4>
-          {picture && <img src={picture} alt="picture of a hero" />}
+          {picture && (
+            <img
+              src={picture}
+              alt={`picture of ${element.name || element.title}`}
+            />
+          )}
         </div>
         <div className="bloc-description">
           {element.description ? (

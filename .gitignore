@@ -13,6 +13,7 @@ dist-ssr
 *.local
 yarn.lock
 todo.txt
+rapportAccessibility.txt
 
 # Editor directories and files
 .vscode/*
