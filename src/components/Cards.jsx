@@ -44,7 +44,9 @@ export default function Cards({
           );
         })
       ) : (
-        <p className="cards-bloc__empty">Sorry but nothing is find</p>
+        <p lang="en" className="cards-bloc__empty">
+          Sorry but nothing is find
+        </p>
       )}
     </main>
   );

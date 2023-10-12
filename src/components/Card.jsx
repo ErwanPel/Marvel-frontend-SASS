@@ -43,6 +43,7 @@ export default function Card({
 
   return (
     <Link
+      lang="en"
       label-aria={`go to the article of ${element.title || element.name}`}
       className={
         directionCard === "to right"
@@ -62,6 +63,7 @@ export default function Card({
         }
       >
         <div
+          lang="en"
           aria-label="add or remove from my favorite"
           tabIndex={signModal || loginModal ? "-1" : 0}
           className={
@@ -98,9 +100,12 @@ export default function Card({
           />
         </div>
         <div className="card__bloc">
-          <h4 className="card__title">{element.name || element.title}</h4>
+          <h4 lang="en" className="card__title">
+            {element.name || element.title}
+          </h4>
           {picture && (
             <img
+              lang="en"
               src={picture}
               alt={`picture of ${element.name || element.title}`}
             />
@@ -108,9 +113,13 @@ export default function Card({
         </div>
         <div className="bloc-description">
           {element.description ? (
-            <p className="card__description">{element.description}</p>
+            <p lang="en" className="card__description">
+              {element.description}
+            </p>
           ) : (
-            <p className="card__description--empty">Need to be completed !</p>
+            <p lang="en" className="card__description--empty">
+              Need to be completed !
+            </p>
           )}
         </div>
       </div>

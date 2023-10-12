@@ -60,7 +60,7 @@ export default function FavoritesPage({
         },
       }}
     >
-      <h2>Favorites Character</h2>
+      <h2 lang="en">Favorites Character</h2>
       <div className="favorite-page__bloc">
         {favoriteChar.map((fav, index) => {
           let picture = `${fav.thumbnail.path}/portrait_xlarge.${fav.thumbnail.extension}`;
@@ -84,7 +84,7 @@ export default function FavoritesPage({
           );
         })}
       </div>
-      <h2>Favorites Comics</h2>
+      <h2 lang="en">Favorites Comics</h2>
       <div className="favorite-page__bloc">
         {favoriteComics.map((fav, index) => {
           let picture = `${fav.thumbnail.path}/portrait_xlarge.${fav.thumbnail.extension}`;

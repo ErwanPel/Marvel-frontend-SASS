@@ -31,13 +31,18 @@ export default function ComicsByCharacter({ characterId, setMenu }) {
   ) : (
     <div className="comics-window">
       {comicData?.comics === undefined ? (
-        <p className="to-complete">Oups there a technical problem</p>
+        <p lang="en" className="to-complete">
+          Oups there a technical problem
+        </p>
       ) : comicData?.comics.length === 0 ? (
-        <p className="to-complete">Pas de comics</p>
+        <p lang="en" className="to-complete">
+          Pas de comics
+        </p>
       ) : (
         comicData.comics.map((comic) => {
           return (
             <Link
+              lang="en"
               label-aria={`go to the article of ${comic.title}`}
               tabIndex={(signModal || loginModal) && "-1"}
               key={comic._id}
@@ -54,7 +59,7 @@ export default function ComicsByCharacter({ characterId, setMenu }) {
                 src={`${comic.thumbnail.path}/portrait_small.${comic.thumbnail.extension}`}
                 alt={`image du comic ${comic.title}`}
               />{" "}
-              <h5>{comic.title}</h5>
+              <h5 lang="en">{comic.title}</h5>
             </Link>
           );
         })

@@ -67,6 +67,8 @@ export default function Search({
                   return (
                     <div
                       tabIndex={0}
+                      lang="en"
+                      aria-label={`${item}`}
                       className="autocomplete__item"
                       key={index}
                       onClick={() => getItem(item)}
