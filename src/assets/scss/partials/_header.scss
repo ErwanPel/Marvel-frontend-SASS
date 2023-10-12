@@ -65,6 +65,7 @@ header nav {
 
 header img {
   width: 20rem;
+  height: 8rem;
 
   @include responsive-screen("small") {
     width: 15rem;
