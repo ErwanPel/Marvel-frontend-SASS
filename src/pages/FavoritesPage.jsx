@@ -2,6 +2,7 @@ import Card from "../components/Card";
 import { useEffect } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function FavoritesPage({
   token,
@@ -12,7 +13,7 @@ export default function FavoritesPage({
   setMenu,
   setAutocompleteList,
 }) {
-  console.log(favoriteChar);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // This useEffect contain the fetchFav function which obtain the list
@@ -38,7 +39,7 @@ export default function FavoritesPage({
     fetchFav();
   }, [token]);
 
-  return (
+  return token ? (
     <motion.main
       className="favorite-page"
       initial={{
@@ -108,5 +109,7 @@ export default function FavoritesPage({
         })}
       </div>
     </motion.main>
+  ) : (
+    navigate("/")
   );
 }

@@ -137,6 +137,9 @@ export default function Header({
                   tabIndex={0}
                   className="bloc-menu__item"
                   onClick={() => navigate("/favorites")}
+                  onKeyUp={(event) => {
+                    event.code === "Enter" && navigate("/favorites");
+                  }}
                 >
                   Mes favoris
                 </div>

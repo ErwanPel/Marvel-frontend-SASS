@@ -3522,6 +3522,10 @@ header img {
 .navpage__chevron--left:hover {
   animation: chevron-left 2s infinite ease-in-out;
 }
+.navpage__chevron:focus {
+  background-color: rgb(205, 205, 205);
+  color: #bf1717;
+}
 .navpage__chevron:active {
   opacity: 0.7;
 }

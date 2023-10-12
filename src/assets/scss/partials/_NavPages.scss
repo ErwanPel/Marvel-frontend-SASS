@@ -35,6 +35,11 @@
     animation: chevron-left 2s infinite ease-in-out;
   }
 
+  &:focus {
+    background-color: $white-color;
+    @include darker-c($main-color, -20%);
+  }
+
   &:active {
     opacity: 0.7;
   }

@@ -7,6 +7,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
   return (
     <div className="navpage">
       <FontAwesomeIcon
+        tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page > 1
             ? "navpage__chevron navpage__chevron--left"
@@ -19,6 +20,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
         }}
       />
       <FontAwesomeIcon
+        tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page > 1
             ? "navpage__chevron navpage__chevron--left"
@@ -50,6 +52,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
       </select>
 
       <FontAwesomeIcon
+        tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page < selectPage.length
             ? "navpage__chevron navpage__chevron--right"
@@ -63,6 +66,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
       />
 
       <FontAwesomeIcon
+        tabIndex={signModal || loginModal ? "-1" : "0"}
         className={
           page < selectPage.length
             ? "navpage__chevron navpage__chevron--right"
