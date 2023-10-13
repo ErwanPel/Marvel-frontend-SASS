@@ -72,7 +72,7 @@ export default function Header({
       >
         <img src={Logo} alt="Logo marvel écrit en blanc sur fond rouge" />
       </Link>
-      <nav>
+      <nav aria-label="main navigation">
         <button
           aria-label="go to the all characters page"
           className="header__button"
@@ -97,18 +97,22 @@ export default function Header({
           COMICS
         </button>
       </nav>
-      <div className="menu">
+      <bouton
+        className="menu"
+        aria-haspopup="menu"
+        aria-controls="bloc-menu"
+        aria-expanded
+        tabIndex={signModal || loginModal ? "-1" : "0"}
+        onClick={() => setMenu(!menu)}
+        onMouseEnter={() => setMenu(true)}
+        onKeyUp={(event) => {
+          event.code === "Enter" && setMenu(!menu);
+        }}
+      >
         <FontAwesomeIcon
           aria-hidden={false}
-          aria-label="open the drop-down menu"
           className="menu__icon"
           icon="bars"
-          tabIndex={signModal || loginModal ? "-1" : "0"}
-          onClick={() => setMenu(!menu)}
-          onMouseEnter={() => setMenu(true)}
-          onKeyUp={(event) => {
-            event.code === "Enter" && setMenu(true);
-          }}
         />
         {menu && (
           <div className="bloc-menu" onMouseLeave={() => setMenu(() => false)}>
@@ -165,7 +169,7 @@ export default function Header({
             )}
           </div>
         )}
-      </div>
+      </bouton>
     </header>
   );
 }

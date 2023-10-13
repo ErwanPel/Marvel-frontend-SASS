@@ -40,10 +40,11 @@ export default function Search({
   };
 
   return (
-    <div className="navsearch">
+    <form role="search" className="navsearch">
       <label htmlFor="search">{label}</label>
       <div className="autocomplete-bloc">
         <input
+          aria-label="search characters or comics"
           type="text"
           name="search"
           id="search"
@@ -87,6 +88,6 @@ export default function Search({
           </div>
         )}
       </div>
-    </div>
+    </form>
   );
 }

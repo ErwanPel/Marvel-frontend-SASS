@@ -5,7 +5,7 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
   const { signModal, loginModal } = useModalContext();
 
   return (
-    <div className="navpage">
+    <nav aria-label="page navigation" className="navpage">
       <FontAwesomeIcon
         aria-hidden={false}
         aria-label="go to the first page"
@@ -87,6 +87,6 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
           setPage(selectPage.length);
         }}
       />
-    </div>
+    </nav>
   );
 }
