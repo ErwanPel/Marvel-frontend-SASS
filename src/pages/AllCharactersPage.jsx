@@ -69,7 +69,7 @@ export default function CharactersPage({
         controller.abort();
       }
     };
-
+    document.title = "All Characters";
     fetchData();
     if (data.length > 0) {
       return () => {

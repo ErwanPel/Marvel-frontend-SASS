@@ -62,7 +62,7 @@ export default function Card({
             : "card__transition card__transition--left"
         }
       >
-        <div
+        <button
           lang="en"
           aria-label="add or remove from my favorite"
           tabIndex={signModal || loginModal ? "-1" : 0}
@@ -98,7 +98,7 @@ export default function Card({
             className="favorite__icon"
             icon="fa-regular fa-heart"
           />
-        </div>
+        </button>
         <div className="card__bloc">
           <h4 lang="en" className="card__title">
             {element.name || element.title}

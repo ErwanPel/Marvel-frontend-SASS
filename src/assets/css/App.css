@@ -380,9 +380,6 @@ h4 {
 .biography-bloc .favorite:hover {
   cursor: pointer;
 }
-.biography-bloc .favorite:focus {
-  background-color: rgb(167, 163, 163);
-}
 .biography-bloc .favorite__modal {
   z-index: 1;
   flex-direction: row;
@@ -421,9 +418,6 @@ h4 {
 }
 .biography-bloc .favorite__fullheart:hover {
   cursor: pointer;
-}
-.biography-bloc .favorite__fullheart:focus {
-  background-color: rgb(132, 69, 69);
 }
 .biography-bloc .favorite__icon {
   font-size: 1.6rem;
@@ -582,9 +576,6 @@ p.to-complete {
     left: calc(50% - 0.8rem);
   }
 }
-.comic-bloc .favorite:focus {
-  background-color: rgb(167, 163, 163);
-}
 .comic-bloc .favorite__modal {
   z-index: 1;
   flex-direction: row;
@@ -637,9 +628,6 @@ p.to-complete {
     top: 1rem;
     left: calc(50% - 0.8rem);
   }
-}
-.comic-bloc .favorite__fullheart:focus {
-  background-color: rgb(132, 69, 69);
 }
 .comic-bloc .favorite__white {
   font-size: 1.6rem;
@@ -886,9 +874,6 @@ form button {
 .card__transition .favorite:hover {
   cursor: pointer;
 }
-.card__transition .favorite:focus {
-  background-color: rgb(167, 163, 163);
-}
 .card__transition .favorite__modal {
   z-index: 1;
   flex-direction: row;
@@ -927,9 +912,6 @@ form button {
 }
 .card__transition .favorite__fullheart:hover {
   cursor: pointer;
-}
-.card__transition .favorite__fullheart:focus {
-  background-color: rgb(132, 69, 69);
 }
 .card__transition .favorite__icon {
   font-size: 1.6rem;

@@ -65,7 +65,7 @@ export default function AllComicsPage({
         controller.abort();
       }
     };
-
+    document.title = "All Comics";
     fetchData();
 
     if (data.length > 0) {

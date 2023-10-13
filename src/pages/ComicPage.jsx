@@ -75,6 +75,7 @@ export default function ComicPage({
     } else {
       fetchData();
     }
+    document.title = "Comic";
   }, []);
 
   return isLoading ? (
@@ -130,7 +131,7 @@ export default function ComicPage({
                 <h3>Description</h3>
                 <p>{comicData.description}</p>
               </div>
-              <div
+              <button
                 aria-label="add or remove from my favorite"
                 tabIndex={signModal || loginModal ? "-1" : "0"}
                 className={
@@ -165,7 +166,7 @@ export default function ComicPage({
                   className="favorite__icon"
                   icon="fa-regular fa-heart"
                 />
-              </div>
+              </button>
             </div>
           </div>
         </>

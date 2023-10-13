@@ -66,6 +66,7 @@ export default function CharacterPage({
     } else {
       fetchData();
     }
+    document.title = "Character";
   }, []);
 
   return isLoading ? (
@@ -90,7 +91,7 @@ export default function CharacterPage({
       <h2>{characterData.name}</h2>
       <div className="biography-bloc">
         <div className="biography-bloc__left">
-          <div
+          <button
             aria-label="add or remove from my favorite"
             tabIndex={signModal || loginModal ? "-1" : "0"}
             className={
@@ -125,7 +126,7 @@ export default function CharacterPage({
               className="favorite__icon"
               icon="fa-regular fa-heart"
             />
-          </div>
+          </button>
           {!characterData.thumbnail.path.match("image_not_available") && (
             <img
               src={`${characterData.thumbnail.path}/portrait_uncanny.${characterData.thumbnail.extension}`}
