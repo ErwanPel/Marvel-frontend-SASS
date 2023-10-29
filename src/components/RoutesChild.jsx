@@ -24,7 +24,7 @@ export default function RouteChild({
   const location = useLocation();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="sync">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
         <Route

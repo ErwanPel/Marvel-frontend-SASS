@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import spiderman from "../assets/img/spiderman.webp";
+import avengers from "../assets/img/avengers.webp";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
@@ -24,8 +24,7 @@ export default function HomePage() {
         },
       }}
     >
-      <h1 lang="en">Welcome to the Marvel's fan site</h1>
-      <img src={spiderman} alt="image de spiderman" />
+      <img src={avengers} alt="image de spiderman" />
     </motion.main>
   );
 }

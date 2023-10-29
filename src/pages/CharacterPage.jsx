@@ -82,7 +82,7 @@ export default function CharacterPage({
       exit={{
         translateY: 800,
         transition: {
-          duration: 0.9,
+          duration: 0.8,
           ease: [0.43, 0.04, 0.84, 0.52],
         },
         opacity: 0,
