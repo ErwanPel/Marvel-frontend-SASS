@@ -53,6 +53,15 @@ This project uses SASS for style management, which consists of a set of SASS fil
 3) Pages: this folder contains the style for each page.
 4) Partials: this folder contains the style for individual components.
 
+For this project, I also put in place elements to make it accessible:
+
+1) The site is fully searchable by keyboard only.
+2) Contrasts contain a ratio sufficient to distinguish between background and content.
+3) I preferred HTML5 tags adapted with their associated roles.
+4) I tested the site with a "NVDA" screen reader.
+
+Of course, perfect accessibility does not exist and this site still requires other accessibility elements.
+
 ## Screenshots
 
 <div align="center">
