@@ -22,9 +22,9 @@ Project Marvel - Frontend
 
 ## Tech Stack
 
-[**Client:**](https://github.com/ErwanPel/Marvel-frontend-SASS) React.js, SASS, Framer Motion
+**Client:** React.js, SASS, Framer Motion
 
-**Server:** Node.js, Express.js, MongoDB
+[**Server:**](https://github.com/ErwanPel/Marvel-backend) Node.js, Express.js, MongoDB
 
 
 ## Overview
