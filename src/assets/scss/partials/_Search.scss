@@ -19,6 +19,7 @@
 
   input {
     text-align: center;
+    border-radius: 40px 10px 40px 10px;
     width: 30rem;
     height: 3rem;
     background-color: $white-color;
@@ -33,15 +34,17 @@
 
 .autocomplete-bloc {
   position: relative;
-  border: 1px solid rgb(153, 65, 65);
-  width: 30rem;
+  border: 2px solid rgb(153, 65, 65);
+  width: 30.36rem;
+  border-radius: 40px 10px 40px 10px;
 }
 
 .autocomplete {
-  width: 100%;
+  width: 97%;
   border: 1px solid rgb(153, 65, 65);
   max-height: 23rem;
   color: $white-color;
+  border-radius: 5px 20px 5px;
   position: absolute;
   z-index: 4;
   overflow: hidden;

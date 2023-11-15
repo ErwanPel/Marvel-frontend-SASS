@@ -418,6 +418,7 @@ main.home {
   display: flex !important;
   justify-content: center;
   align-items: center;
+  border-radius: 35px;
   gap: 2rem;
   padding: 2rem;
   padding-top: 6rem;
@@ -430,6 +431,9 @@ main.home {
   .biography-bloc__left {
     animation-timing-function: initial;
   }
+}
+.biography-bloc__left img {
+  border-radius: 40px 8px 40px 8px;
 }
 .biography-bloc__left div {
   flex-direction: column;
@@ -449,6 +453,7 @@ main.home {
   display: flex !important;
   justify-content: center;
   align-items: center;
+  border-radius: 35px;
   width: 60rem;
   padding: 2rem;
   background-color: white;
@@ -511,6 +516,7 @@ p.to-complete {
   justify-content: center;
   align-items: center;
   background-color: white;
+  border-radius: 35px;
   width: 65rem;
   padding: 2rem;
   position: relative;
@@ -533,6 +539,9 @@ p.to-complete {
   .comic-bloc p {
     padding: 1.5rem;
   }
+}
+.comic-bloc img {
+  border-radius: 5px;
 }
 @media screen and (max-width: 830px) {
   .comic-bloc img {
@@ -746,6 +755,7 @@ form button {
   display: flex !important;
   justify-content: space-around;
   align-items: center;
+  border-radius: 20px 5px 20px 5px;
   padding: 1rem;
   border: 1px solid black;
   box-shadow: -2px -1px 2px black;
@@ -840,6 +850,7 @@ form button {
   background-color: white;
   box-shadow: -2px -1px 3px rgb(229, 38, 38);
   transition: transform 300ms ease-in;
+  border-radius: 70px 15px 70px 15px;
 }
 .card__transition:hover {
   transform: perspective(90rem) rotateY(5deg) scaleZ(0.9);
@@ -924,7 +935,7 @@ form button {
 }
 @media screen and (max-width: 500px) {
   .card {
-    width: 85%;
+    width: 100%;
     height: 48rem;
     margin-top: 2rem;
   }
@@ -3075,6 +3086,7 @@ form button {
   }
 }
 .card__description {
+  width: 80%;
   font-size: 1.4rem;
   line-height: 2.2rem;
   max-height: 6.6rem;
@@ -3090,6 +3102,10 @@ form button {
 }
 .card__description--empty {
   font-size: 1.4rem;
+}
+
+.card img {
+  border-radius: 15px 5px 15px 5px;
 }
 
 .bloc-description {
@@ -3236,12 +3252,8 @@ header img {
 }
 @media screen and (max-width: 655px) {
   header img {
-    width: 15rem;
-  }
-}
-@media screen and (max-width: 500px) {
-  header img {
-    width: 13rem;
+    width: 10rem;
+    height: 5rem;
   }
 }
 
@@ -3260,6 +3272,7 @@ header img {
 .menu__icon {
   background-color: rgb(57, 57, 57);
   color: rgb(229, 38, 38);
+  border-radius: 20px 5px 20px 5px;
   font-size: 2.4rem;
   border: 1px solid rgb(229, 38, 38);
   padding: 1rem 1.3rem;
@@ -3276,6 +3289,10 @@ header img {
   position: absolute;
   top: 100%;
   left: calc(-50% - 1rem);
+  border-top: 2px solid rgb(153, 65, 65);
+  border-inline: 2px solid rgb(153, 65, 65);
+  border-radius: 20px 5px 20px 5px;
+  overflow: hidden;
   width: 12rem;
   color: white;
   z-index: 3;
@@ -3284,14 +3301,14 @@ header img {
 }
 @media screen and (max-width: 655px) {
   .bloc-menu {
-    width: 10rem;
+    width: 9rem;
     position: absolute;
     top: 100%;
     left: calc(-50% - 0.8rem);
   }
 }
 .bloc-menu__item {
-  border: 1px solid rgb(153, 65, 65);
+  border-bottom: 2px solid rgb(153, 65, 65);
   background-color: rgb(0, 0, 0);
   padding: 1.2rem;
   text-align: center;
@@ -3305,6 +3322,7 @@ header img {
 @media screen and (max-width: 655px) {
   .bloc-menu__item {
     padding: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 .bloc-menu__item:hover {
@@ -3394,6 +3412,7 @@ header img {
 }
 .navsearch input {
   text-align: center;
+  border-radius: 40px 10px 40px 10px;
   width: 30rem;
   height: 3rem;
   background-color: white;
@@ -3406,15 +3425,17 @@ header img {
 
 .autocomplete-bloc {
   position: relative;
-  border: 1px solid rgb(153, 65, 65);
-  width: 30rem;
+  border: 2px solid rgb(153, 65, 65);
+  width: 30.36rem;
+  border-radius: 40px 10px 40px 10px;
 }
 
 .autocomplete {
-  width: 100%;
+  width: 97%;
   border: 1px solid rgb(153, 65, 65);
   max-height: 23rem;
   color: white;
+  border-radius: 5px 20px 5px;
   position: absolute;
   z-index: 4;
   overflow: hidden;
@@ -3428,7 +3449,7 @@ header img {
   display: none;
 }
 .autocomplete__item {
-  border: 1px solid rgb(153, 65, 65);
+  border-bottom: 2px solid rgb(153, 65, 65);
   background-color: rgb(0, 0, 0);
   padding: 1.2rem;
   text-align: center;
@@ -3442,6 +3463,7 @@ header img {
 @media screen and (max-width: 655px) {
   .autocomplete__item {
     padding: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 .autocomplete__item:hover {
@@ -3519,10 +3541,12 @@ header img {
 select {
   background-color: #000414;
   color: rgb(229, 38, 38);
+  border-radius: 20px 5px 20px 5px;
   width: 10rem;
   font-size: 1.6rem;
   text-align: center;
   height: 4.2rem;
+  border-width: 2px;
 }
 select:hover {
   cursor: pointer;

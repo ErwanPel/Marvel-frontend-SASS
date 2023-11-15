@@ -33,6 +33,7 @@
 
 .biography-bloc__left {
   @include flex-center(column);
+  border-radius: 35px;
   gap: 2rem;
   padding: 2rem;
   padding-top: 6rem;
@@ -44,6 +45,10 @@
 
   @include responsive-screen("small") {
     animation-timing-function: initial;
+  }
+
+  img {
+    border-radius: 40px 8px 40px 8px;
   }
 
   div {
@@ -60,6 +65,7 @@
 
 .biography-bloc__right {
   @include flex-center(column);
+  border-radius: 35px;
   width: 60rem;
   padding: 2rem;
   background-color: $white-color;

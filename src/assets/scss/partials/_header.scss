@@ -68,11 +68,8 @@ header img {
   height: 8rem;
 
   @include responsive-screen("small") {
-    width: 15rem;
-  }
-
-  @include responsive-screen("tiny") {
-    width: 13rem;
+    width: 10rem;
+    height: 5rem;
   }
 }
 
@@ -86,6 +83,7 @@ header img {
   &__icon {
     background-color: $secondary-color;
     color: $main-color;
+    border-radius: 20px 5px 20px 5px;
     font-size: 2.4rem;
     border: 1px solid $main-color;
     padding: 1rem 1.3rem;
@@ -100,6 +98,10 @@ header img {
 
 .bloc-menu {
   @include absolute-element(100%, calc(-50% - 1rem));
+  border-top: 2px solid rgb(153, 65, 65);
+  border-inline: 2px solid rgb(153, 65, 65);
+  border-radius: 20px 5px 20px 5px;
+  overflow: hidden;
   width: 12rem;
   color: $white-color;
   z-index: 3;
@@ -107,7 +109,7 @@ header img {
   transform-origin: top;
 
   @include responsive-screen("small") {
-    width: 10rem;
+    width: 9rem;
     @include absolute-element(100%, calc(-50% - 0.8rem));
   }
 

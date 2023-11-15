@@ -60,10 +60,12 @@
 select {
   background-color: #000414;
   color: $main-color;
+  border-radius: 20px 5px 20px 5px;
   width: 10rem;
   font-size: 1.6rem;
   text-align: center;
   height: 4.2rem;
+  border-width: 2px;
 
   &:hover {
     cursor: pointer;

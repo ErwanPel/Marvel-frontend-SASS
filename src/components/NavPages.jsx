@@ -4,6 +4,11 @@ import { useModalContext } from "../context/ModalContext";
 export default function NavPage({ page, setPage, selectPage, setMenu }) {
   const { signModal, loginModal } = useModalContext();
 
+  const changePage = (direction) => {
+    setMenu(false);
+    setPage(direction);
+  };
+
   return (
     <nav aria-label="page navigation" className="navpage">
       <FontAwesomeIcon
@@ -16,10 +21,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
             : "navpage__unvisible"
         }
         icon="angles-left"
-        onClick={() => {
-          setMenu(false);
-          setPage(1);
-        }}
+        onClick={() => changePage(1)}
+        onKeyUp={(event) => event.code === "Enter" && changePage(1)}
       />
       <FontAwesomeIcon
         aria-hidden={false}
@@ -31,10 +34,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
             : "navpage__unvisible"
         }
         icon="chevron-left"
-        onClick={() => {
-          setMenu(false);
-          setPage(page - 1);
-        }}
+        onClick={() => changePage(page - 1)}
+        onKeyUp={(event) => event.code === "Enter" && changePage(page - 1)}
       />
       <select
         aria-label="select your page with the arrows or on press 'Enter'"
@@ -66,10 +67,8 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
             : "navpage__unvisible"
         }
         icon="chevron-right"
-        onClick={() => {
-          setMenu(false);
-          setPage(page + 1);
-        }}
+        onClick={() => changePage(page + 1)}
+        onKeyUp={(event) => event.code === "Enter" && changePage(page + 1)}
       />
 
       <FontAwesomeIcon
@@ -82,10 +81,10 @@ export default function NavPage({ page, setPage, selectPage, setMenu }) {
             : "navpage__unvisible"
         }
         icon="angles-right"
-        onClick={() => {
-          setMenu(false);
-          setPage(selectPage.length);
-        }}
+        onClick={() => changePage(selectPage.length)}
+        onKeyUp={(event) =>
+          event.code === "Enter" && changePage(selectPage.length)
+        }
       />
     </nav>
   );

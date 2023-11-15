@@ -33,6 +33,7 @@
   @include flex-center(row);
 
   background-color: $white-color;
+  border-radius: 35px;
   width: 65rem;
   padding: 2rem;
   position: relative;
@@ -57,6 +58,7 @@
   }
 
   img {
+    border-radius: 5px;
     @include responsive-screen("medium") {
       margin-bottom: 2rem;
     }
